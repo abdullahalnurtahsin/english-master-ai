@@ -1,0 +1,17 @@
+{
+  "id": "./",
+  "name": "English Master AI",
+  "short_name": "English Master",
+  "description": "Beginner English lessons, vocabulary and practice with Bengali support.",
+  "lang": "bn",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#10233f",
+  "orientation": "portrait",
+  "icons": [
+    {"src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}

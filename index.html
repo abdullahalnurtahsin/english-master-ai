@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10233f">
+  <meta name="description" content="English Master AI — beginner English lessons, vocabulary and practice.">
+  <title>English Master AI</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <style>
+    :root{--navy:#10233f;--blue:#2563eb;--sky:#eaf2ff;--ink:#15243a;--muted:#65748b;--paper:#f5f7fb;--white:#fff;--green:#13845b;--line:#e5eaf2;--gold:#f2b84b;--radius:22px}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;padding-bottom:92px}
+    button,input{font:inherit} button{cursor:pointer}
+    .top{background:var(--navy);color:white;padding:23px 18px 28px;border-radius:0 0 28px 28px}
+    .topline{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:760px;margin:auto}
+    .brand{font-weight:800;letter-spacing:.2px;font-size:18px}.tag{font-size:11px;color:#bed0ee;border:1px solid #526783;padding:5px 9px;border-radius:20px}
+    .welcome{max-width:760px;margin:25px auto 0}.eyebrow{font-size:12px;color:#b8c9e4}.welcome h1{font-size:27px;line-height:1.25;margin:7px 0}.welcome p{color:#cbd7e8;margin:7px 0 0;font-size:14px}
+    main{max-width:760px;margin:18px auto;padding:0 15px}.page{display:none}.page.active{display:block}
+    .hero{background:linear-gradient(130deg,#2563eb,#4b83ed);color:#fff;padding:20px;border-radius:var(--radius);box-shadow:0 10px 22px #2563eb20}
+    .hero small{opacity:.85}.hero h2{font-size:21px;margin:7px 0}.hero p{font-size:13px;line-height:1.55;opacity:.95;margin:0 0 14px}
+    .btn{border:0;border-radius:13px;padding:11px 15px;font-weight:700;background:var(--white);color:var(--navy)}.btn.primary{background:var(--navy);color:#fff}.btn.blue{background:#fff;color:#1e55c7}.btn.light{background:var(--sky);color:#194b9e}.btn:disabled{opacity:.45;cursor:not-allowed}
+    .section-head{display:flex;justify-content:space-between;align-items:center;margin:23px 2px 11px}.section-head h3{font-size:16px;margin:0}.muted{font-size:12px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.tile,.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 3px 12px #162b4a08}.tile .emoji{font-size:22px}.tile h4{margin:8px 0 3px;font-size:15px}.tile p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}
+    .progress-card{margin-top:12px;background:white;padding:16px;border:1px solid var(--line);border-radius:18px}.progress-top{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:700}.track{height:9px;background:#e9eef6;border-radius:20px;margin-top:11px;overflow:hidden}.fill{height:100%;width:0;background:var(--green);border-radius:20px;transition:width .25s}
+    .lesson-title{font-size:21px;margin:8px 0 4px}.lesson-sub{color:var(--muted);font-size:13px;margin:0 0 16px}.sentence{padding:14px;margin:10px 0;border:1px solid var(--line);border-radius:15px;background:white}.sentence strong{display:block;font-size:17px}.sentence .bn{margin-top:5px;font-size:14px}.pron{font-size:12px;color:var(--muted);margin-top:4px}.sentence-actions{display:flex;justify-content:space-between;align-items:center;margin-top:10px}.small-btn{border:0;background:var(--sky);color:#164caa;border-radius:10px;padding:7px 11px;font-size:12px;font-weight:700}
+    .search{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;background:white;outline:none;margin:8px 0 12px}.search:focus{border-color:#6392ec}.word-card{display:flex;justify-content:space-between;align-items:center;gap:10px}.word-card h4{margin:0;font-size:18px}.word-card p{margin:4px 0;color:var(--muted);font-size:13px}.word-card .meaning{font-weight:700;color:var(--ink)}
+    .quiz{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.quiz-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between}.question{font-size:19px;font-weight:800;margin:18px 0}.options{display:grid;gap:9px}.option{border:1px solid var(--line);background:#fff;padding:13px;border-radius:13px;text-align:left;color:var(--ink)}.option.correct{border-color:#19966a;background:#e9f8f1}.option.wrong{border-color:#d66;background:#fff0f0}.feedback{font-size:13px;margin-top:12px;min-height:22px}.quiz-bottom{display:flex;justify-content:flex-end;margin-top:14px}
+    .empty{padding:24px;text-align:center;color:var(--muted);background:white;border:1px dashed #cdd7e6;border-radius:16px}
+    nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom));}
+    .nav-inner{width:100%;max-width:760px;display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.nav-btn{border:0;background:transparent;color:#738198;border-radius:12px;padding:7px 2px;font-size:11px;font-weight:700}.nav-btn span{display:block;font-size:19px;margin-bottom:3px}.nav-btn.active{background:var(--sky);color:#1f55bd}
+    .note{font-size:11px;color:var(--muted);text-align:center;margin:20px 8px 0;line-height:1.5}.badge{display:inline-block;padding:4px 9px;border-radius:30px;background:#e7f7ef;color:#13734f;font-size:11px;font-weight:700}
+    @media(min-width:620px){.welcome h1{font-size:32px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা</div></div>
+    <div class="welcome"><div class="eyebrow">আজ থেকেই শুরু হোক</div><h1>Learn English, step by step.</h1><p>প্রতিদিন অল্প অল্প শিখো, নিয়মিত অনুশীলন করো, আত্মবিশ্বাস বাড়াও।</p></div>
+  </header>
+  <main>
+    <section id="home" class="page active">
+      <div class="hero"><small>তোমার প্রথম পাঠ</small><h2>নিজের পরিচয় দেওয়া</h2><p>সহজ ইংরেজি বাক্য দিয়ে কথা বলা শুরু করো। প্রতিটি বাক্যের বাংলা অর্থ দেখো এবং উচ্চারণ শুনে অনুশীলন করো।</p><button class="btn blue" onclick="showPage('learn')">পাঠ শুরু করো →</button></div>
+      <div class="section-head"><h3>তোমার শেখার জায়গা</h3><span class="muted">৪টি অংশ</span></div>
+      <div class="grid">
+        <div class="tile" onclick="showPage('learn')"><div class="emoji">📖</div><h4>পাঠ</h4><p>সহজ বাক্য ও ব্যাখ্যা</p></div>
+        <div class="tile" onclick="showPage('words')"><div class="emoji">🧠</div><h4>শব্দভান্ডার</h4><p>নতুন শব্দ ও অর্থ</p></div>
+        <div class="tile" onclick="showPage('practice')"><div class="emoji">✍️</div><h4>অনুশীলন</h4><p>নিজেকে যাচাই করো</p></div>
+        <div class="tile" onclick="showPage('home')"><div class="emoji">📈</div><h4>অগ্রগতি</h4><p>তোমার শেখার হিসাব</p></div>
+      </div>
+      <div class="section-head"><h3>আজকের অগ্রগতি</h3><span class="badge">চালিয়ে যাও!</span></div>
+      <div class="progress-card"><div class="progress-top"><span>শেখা শব্দ</span><span id="word-progress-label">০ / ১২</span></div><div class="track"><div class="fill" id="word-progress"></div></div><div class="progress-top" style="margin-top:15px"><span>কুইজের সেরা ফল</span><span id="best-score">এখনো শুরু হয়নি</span></div></div>
+      <p class="note">এটি প্রথম প্রোটোটাইপ। এখন পাঠ, শব্দ ও কুইজ কাজ করবে; AI Tutor এখনো যুক্ত হয়নি।</p>
+    </section>
+
+    <section id="learn" class="page">
+      <div class="section-head"><h3>পাঠ ১: নিজের পরিচয়</h3><span class="badge">Beginner</span></div>
+      <h2 class="lesson-title">Introducing Yourself</h2><p class="lesson-sub">নিজের সম্পর্কে সহজে ইংরেজিতে বলতে শেখো। প্রতিটি বাক্য শুনে ২–৩ বার বলার চেষ্টা করো।</p>
+      <div id="sentences"></div>
+      <div class="card"><strong>ছোট্ট নিয়ম</strong><p style="font-size:14px;line-height:1.6;margin-bottom:0">“I am” অর্থ “আমি” বা “আমি একজন/আছি”। নিজের পরিচয় দিতে এটি ব্যবহার করা যায়। যেমন: <b>I am a student.</b></p></div>
+      <div style="margin-top:14px"><button class="btn primary" onclick="completeLesson()">পাঠ শেষ করেছি ✓</button></div>
+    </section>
+
+    <section id="words" class="page">
+      <div class="section-head"><h3>শব্দভান্ডার</h3><span class="muted" id="learned-count">০ / ১২ শেখা</span></div>
+      <p class="lesson-sub">শব্দের অর্থ পড়ো। যেগুলো শিখেছ, সেগুলো “শিখেছি” দিয়ে চিহ্নিত করো।</p>
+      <input id="word-search" class="search" type="search" placeholder="ইংরেজি বা বাংলা শব্দ খুঁজো…" oninput="renderWords()">
+      <div id="word-list" style="display:grid;gap:9px"></div>
+    </section>
+
+    <section id="practice" class="page">
+      <div class="section-head"><h3>আজকের অনুশীলন</h3><span class="badge">৫টি প্রশ্ন</span></div>
+      <p class="lesson-sub">সঠিক ইংরেজি বাক্যটি বেছে নাও। ভুল হলে সঠিক উত্তর দেখানো হবে।</p>
+      <div class="quiz" id="quiz-box"></div>
+    </section>
+  </main>
+  <nav><div class="nav-inner">
+    <button class="nav-btn active" data-page="home" onclick="showPage('home')"><span>⌂</span>হোম</button>
+    <button class="nav-btn" data-page="learn" onclick="showPage('learn')"><span>▤</span>পাঠ</button>
+    <button class="nav-btn" data-page="words" onclick="showPage('words')"><span>✦</span>শব্দ</button>
+    <button class="nav-btn" data-page="practice" onclick="showPage('practice')"><span>✓</span>অনুশীলন</button>
+  </div></nav>
+<script>
+  'use strict';
+  const lessonSentences = [
+    {en:'My name is Sam.',bn:'আমার নাম স্যাম।',pron:'মাই নেম ইজ স্যাম।'},
+    {en:'I am a student.',bn:'আমি একজন শিক্ষার্থী।',pron:'আই অ্যাম আ স্টুডেন্ট।'},
+    {en:'I live in Bangladesh.',bn:'আমি বাংলাদেশে বাস করি।',pron:'আই লিভ ইন বাংলাদেশ।'},
+    {en:'I like reading books.',bn:'আমি বই পড়তে পছন্দ করি।',pron:'আই লাইক রিডিং বুকস।'},
+    {en:'I am learning English.',bn:'আমি ইংরেজি শিখছি।',pron:'আই অ্যাম লার্নিং ইংলিশ।'}
+  ];
+  const words = [
+    {en:'Learn',bn:'শেখা',ex:'I learn English.'},{en:'Speak',bn:'কথা বলা',ex:'I speak slowly.'},
+    {en:'Read',bn:'পড়া',ex:'I read a book.'},{en:'Write',bn:'লেখা',ex:'I write every day.'},
+    {en:'Improve',bn:'উন্নতি করা',ex:'I want to improve.'},{en:'Practice',bn:'অনুশীলন করা',ex:'Practice makes progress.'},
+    {en:'Confidence',bn:'আত্মবিশ্বাস',ex:'I speak with confidence.'},{en:'Question',bn:'প্রশ্ন',ex:'I have a question.'},
+    {en:'Answer',bn:'উত্তর',ex:'I know the answer.'},{en:'Understand',bn:'বোঝা',ex:'I understand English.'},
+    {en:'Choose',bn:'বেছে নেওয়া',ex:'Choose the right word.'},{en:'Explain',bn:'ব্যাখ্যা করা',ex:'Please explain this.'}
+  ];
+  const quizQuestions = [
+    {q:'“আমি একজন শিক্ষার্থী।”',opts:['I am a student.','I is a student.','I are student.'],a:0,why:'“I” এর সঙ্গে “am” বসে।'},
+    {q:'“আমার নাম স্যাম।”',opts:['My name are Tahsin.','My name is Sam.','My names Tahsin.'],a:1,why:'একটি নাম বোঝাতে “My name is…” ব্যবহার করি।'},
+    {q:'“আমি বাংলাদেশে বাস করি।”',opts:['I live in Bangladesh.','I lives in Bangladesh.','I living Bangladesh.'],a:0,why:'“I” এর সঙ্গে বর্তমান কালে “live” হয়।'},
+    {q:'“আমি বই পড়তে পছন্দ করি।”',opts:['I likes reading books.','I like read books.','I like reading books.'],a:2,why:'“I like + verb-ing” একটি সঠিক গঠন।'},
+    {q:'“আমি ইংরেজি শিখছি।”',opts:['I am learn English.','I am learning English.','I learning English.'],a:1,why:'চলমান কাজ বোঝাতে “am + verb-ing” ব্যবহার করি।'}
+  ];
+  const storeKey='ema_v1_progress';
+  let saved={learned:[],lessonDone:false,best:null};
+  try{const raw=localStorage.getItem(storeKey);if(raw)saved={...saved,...JSON.parse(raw)};}catch(e){console.warn('Progress storage unavailable',e);}
+  function save(){try{localStorage.setItem(storeKey,JSON.stringify(saved));}catch(e){console.warn('Could not save progress',e);}updateProgress();}
+  function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='words')renderWords();if(id==='practice'&&!quizStarted)startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+  function speak(text){if(!('speechSynthesis' in window)){alert('এই ব্রাউজারে উচ্চারণ শোনার সুবিধা পাওয়া যাচ্ছে না।');return;}window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;window.speechSynthesis.speak(u);}
+  function renderSentences(){document.getElementById('sentences').innerHTML=lessonSentences.map((s,i)=>`<article class="sentence"><strong>${s.en}</strong><div class="bn">${s.bn}</div><div class="pron">উচ্চারণ: ${s.pron}</div><div class="sentence-actions"><span class="muted">বাক্য ${i+1}</span><button class="small-btn" onclick="speak(${JSON.stringify(s.en)})">🔊 শুনুন</button></div></article>`).join('');}
+  function completeLesson(){saved.lessonDone=true;save();alert('দারুণ! পাঠ ১ সম্পন্ন হয়েছে। আবার অনুশীলন করো।');}
+  function renderWords(){const q=(document.getElementById('word-search')?.value||'').trim().toLowerCase();const list=words.map((w,i)=>({...w,i})).filter(w=>w.en.toLowerCase().includes(q)||w.bn.includes(q));document.getElementById('word-list').innerHTML=list.length?list.map(w=>`<article class="card word-card"><div><h4>${w.en}</h4><p class="meaning">${w.bn}</p><p>উদাহরণ: ${w.ex}</p></div><button class="small-btn" onclick="toggleLearned(${w.i})">${saved.learned.includes(w.i)?'✓ শিখেছি':'শিখেছি'}</button></article>`).join(''):'<div class="empty">এই শব্দটি পাওয়া যায়নি।</div>';document.getElementById('learned-count').textContent=`${saved.learned.length} / ${words.length} শেখা`;}
+  function toggleLearned(i){saved.learned=saved.learned.includes(i)?saved.learned.filter(x=>x!==i):[...saved.learned,i];save();renderWords();}
+  let quizIndex=0,quizScore=0,quizAnswered=false,quizStarted=false;
+  function startQuiz(){quizIndex=0;quizScore=0;quizAnswered=false;quizStarted=true;renderQuiz();}
+  function renderQuiz(){const box=document.getElementById('quiz-box');if(quizIndex>=quizQuestions.length){if(saved.best===null||quizScore>saved.best)saved.best=quizScore;save();box.innerHTML=`<div style="text-align:center;padding:15px"><div style="font-size:36px">🎉</div><h3>অনুশীলন শেষ!</h3><p>তোমার ফল: <b>${quizScore} / ${quizQuestions.length}</b></p><p class="muted">ভুলগুলো আবার দেখে নিলে আরও ভালো হবে।</p><button class="btn primary" onclick="startQuiz()">আবার চেষ্টা করো</button></div>`;return;}const q=quizQuestions[quizIndex];box.innerHTML=`<div class="quiz-meta"><span>প্রশ্ন ${quizIndex+1} / ${quizQuestions.length}</span><span>স্কোর: ${quizScore}</span></div><div class="track"><div class="fill" style="width:${quizIndex/quizQuestions.length*100}%"></div></div><div class="question">${q.q}</div><div class="options">${q.opts.map((o,i)=>`<button class="option" id="opt-${i}" onclick="answerQuiz(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div><div class="feedback" id="quiz-feedback"></div><div class="quiz-bottom"><button class="btn primary" id="next-question" onclick="nextQuestion()" disabled>পরের প্রশ্ন →</button></div>`;quizAnswered=false;}
+  function answerQuiz(i){if(quizAnswered)return;quizAnswered=true;const q=quizQuestions[quizIndex];document.querySelectorAll('.option').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===i&&i!==q.a)b.classList.add('wrong');});if(i===q.a)quizScore++;document.getElementById('quiz-feedback').textContent=(i===q.a?'সঠিক উত্তর! ':'আবার চেষ্টা করো। ')+q.why;document.getElementById('next-question').disabled=false;}
+  function nextQuestion(){if(!quizAnswered)return;quizIndex++;renderQuiz();}
+  function updateProgress(){const n=saved.learned.length;document.getElementById('word-progress-label').textContent=`${n} / ${words.length}`;document.getElementById('word-progress').style.width=(n/words.length*100)+'%';document.getElementById('best-score').textContent=saved.best===null?'এখনো শুরু হয়নি':`${saved.best} / ${quizQuestions.length}`;}
+  renderSentences();updateProgress();
+  if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.log('Offline setup skipped',err)));}
+</script>
+</body>
+</html>

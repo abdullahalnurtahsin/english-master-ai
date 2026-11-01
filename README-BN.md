@@ -1,27 +1,31 @@
-# English Master AI — প্রথম প্রোটোটাইপ
+# English Master AI — সংস্করণ 0.2
 
-এটি একটি বিনামূল্যের, মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA starter। এতে আছে:
+বাংলা সহায়তায় Beginner ইংরেজি শেখার মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA।
 
-- Beginner Lesson 1: নিজের পরিচয় দেওয়া
-- ইংরেজি বাক্য শোনার জন্য browser speech feature
-- ১২টি শব্দের তালিকা, সার্চ এবং শেখা/না-শেখা চিহ্নিত করা
-- ৫ প্রশ্নের কুইজ এবং স্থানীয়ভাবে অগ্রগতি সংরক্ষণ
-- Service worker দিয়ে basic offline cache
+## এই সংস্করণে যা আছে
+- Lesson 01: নিজের পরিচয় দেওয়া — ১০টি বাক্য, বাংলা অর্থ ও বাংলা উচ্চারণ
+- ব্রাউজারের Speech Synthesis দিয়ে ইংরেজি বাক্য শোনা
+- `I am`, `I live in`, `I like`—এই তিনটি প্রাথমিক বাক্যগঠনের নিয়ম
+- নাম, শহর ও পছন্দ লিখে নিজের পরিচয়ের নমুনা তৈরি
+- ২০টি শব্দ, বাংলা অর্থ, উদাহরণ, সার্চ ও শেখা-চিহ্ন
+- ৮ প্রশ্নের কুইজ এবং একটি লিখিত অনুশীলন
+- এই ব্রাউজারে শেখার অগ্রগতি Local Storage-এ সংরক্ষণ
+- Service worker দিয়ে মৌলিক offline cache
 
 ## গুরুত্বপূর্ণ সীমাবদ্ধতা
-
-- এখনো কোনো AI model বা API যুক্ত নেই। নামের মধ্যে “AI” থাকলেও এই প্রোটোটাইপটি এখন AI উত্তর তৈরি করে না।
+- এখনো কোনো AI model বা API যুক্ত নেই। “AI Tutor” এখনো কাজ করে না।
 - OpenAI API key বা অন্য কোনো secret কখনো `index.html`-এ রাখবে না।
-- অগ্রগতি শুধু এই browser/device-এর local storage-এ থাকে; browser data মুছে গেলে তা হারাতে পারে।
-- GitHub Pages-এ প্রকাশ করলে repository/public code সবাই দেখতে পারবে। এখানে ব্যক্তিগত তথ্য রাখবে না।
+- অগ্রগতি একই browser/device-এর local storage-এ থাকে; browser data মুছে গেলে তা হারাতে পারে।
+- GitHub Pages-এ প্রকাশ করলে public repository-র কোড যে কেউ দেখতে পারবে। ব্যক্তিগত তথ্য রেখো না।
+- উচ্চারণ শোনার সুবিধা browser ও device-এর speech synthesis engine-এর ওপর নির্ভরশীল।
 
-## GitHub Pages-এ প্রকাশ
+## GitHub-এ আপডেট
+1. ZIP extract করো।
+2. Repository `english-master-ai` খোলো।
+3. `Add file` → `Upload files` নির্বাচন করো।
+4. এই ফোল্ডারের ভেতরের ফাইলগুলো root-এ upload করো: `index.html`, `manifest.json`, `service-worker.js`, `icon-192.png`, `icon-512.png`। চাইলে `README-BN.md`-ও upload করো।
+5. পুরোনো ফাইলের একই নাম হলে GitHub replacement দেখাবে; আপডেট commit করো।
+6. Pages settings আগের মতো `main` এবং `/(root)` থাকবে। Deploy শেষ হলে website refresh করো।
 
-1. ZIP extract করে ফাইলগুলো বের করো।
-2. GitHub-এ `english-master-ai` নামে একটি **Public** repository বানাও।
-3. এই ফোল্ডারের ভেতরের ফাইলগুলো repository-র root-এ upload করো (ফোল্ডার নিজে নয়): `index.html`, `manifest.json`, `service-worker.js`, `icon-192.png`, `icon-512.png`। `README-BN.md`-ও upload করতে পারো।
-4. Repository → Settings → Pages → Build and deployment → Source: `Deploy from a branch` নির্বাচন করো।
-5. Branch: `main`, Folder: `/(root)` নির্বাচন করে Save করো।
-6. Pages settings-এ প্রকাশিত URL এলে Chrome-এ খোলো। Chrome menu → `Install app` বা `Add to Home screen` চাপো।
-
-GitHub Pages free public repository-তে ব্যবহার করা যায়। প্রকাশিত সাইট public হবে।
+## প্রকাশিত ঠিকানা
+`https://abdullahalnurtahsin.github.io/english-master-ai/`

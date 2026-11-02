@@ -1,37 +1,41 @@
-# English Master AI — সংস্করণ 0.4
+# English Master AI — সংস্করণ 0.5
 
-বাংলা সহায়তায় Beginner ইংরেজি শেখার মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA।
+বাংলা সহায়তায় ইংরেজি শেখার মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA।
 
 ## এই সংস্করণে যা আছে
-- Lesson 01: নিজের পরিচয় দেওয়া — ১০টি বাক্য, বাংলা অর্থ ও বাংলা উচ্চারণ
-- ব্রাউজারের Speech Synthesis দিয়ে ইংরেজি বাক্য শোনা
-- ২০টি শব্দ, বাংলা অর্থ, উদাহরণ, সার্চ ও শেখা-চিহ্ন
-- Grammar Master-এর ৪টি প্রাথমিক অধ্যায়: Pronouns ও be verb, A/An, Simple Present, Present Continuous
-- **Tense Master-এর ১২টি Tense** — Present, Past ও Future-এর চারটি করে Tense
-- প্রতিটি Tense-এ ব্যবহার, affirmative/negative/question structure, বাংলা ব্যাখ্যা, উদাহরণ, উচ্চারণ ও MCQ অনুশীলন
-- Tense, Grammar, শব্দ শেখা ও কুইজের অগ্রগতি একই ব্রাউজারের Local Storage-এ সংরক্ষণ
-- ৮ প্রশ্নের প্রাথমিক কুইজ ও একটি লিখিত অনুশীলন
-- Service worker দিয়ে মৌলিক offline cache; নতুন সংস্করণে cache version v4 করা হয়েছে
+- Lesson 01: নিজের পরিচয় দেওয়া — ১০টি বাক্য, বাংলা অর্থ ও উচ্চারণ-সহায়তা
+- **Vocabulary Master: ২০০টি শব্দ** — ২০টি ভিত্তি শব্দ এবং ১৫টি দৈনন্দিন বিষয়ভিত্তিক বিভাগে ১২টি করে নতুন শব্দ
+- ১৫টি বিষয়: পরিবার ও মানুষ, বাড়ি ও ঘর, খাবার ও পানীয়, শিক্ষা, প্রকৃতি ও আবহাওয়া, প্রাণী, শরীর ও ব্যক্তিগত পরিচর্যা, পোশাক, ভ্রমণ ও যানবাহন, সময় ও ক্যালেন্ডার, অনুভূতি ও ব্যক্তিত্ব, দৈনন্দিন কাজের ক্রিয়া, পেশা ও কাজ, প্রযুক্তি ও ইন্টারনেট, স্থান ও সমাজ
+- প্রতিটি শব্দে বাংলা অর্থ, আনুমানিক বাংলা উচ্চারণ-সহায়তা, ইংরেজি অডিও, উদাহরণ বাক্য ও বাংলা অনুবাদ
+- ইংরেজি শব্দ, বাংলা অর্থ ও উচ্চারণ-সহায়তা দিয়ে সার্চ
+- বিষয়ভিত্তিক অথবা সব শব্দ থেকে ১০ প্রশ্নের Vocabulary Test; সঙ্গে তাৎক্ষণিক feedback ও সেরা ফল সংরক্ষণ
+- আগের সংস্করণের শব্দ-শেখা progress index ০–১৯ অপরিবর্তিত; নতুন শব্দের জন্য নতুন index
+- Grammar Master-এর ৪টি প্রাথমিক অধ্যায়
+- Tense Master-এর ১২টি Tense — Present, Past ও Future
+- ৮ প্রশ্নের প্রাথমিক কুইজ ও লিখিত অনুশীলন
+- শেখার অগ্রগতি একই ব্রাউজারের Local Storage-এ সংরক্ষণ
+- Service worker cache version v5
 
 ## শেখার পরামর্শ
-- ১২টি Tense একদিনে মুখস্থ করার চেষ্টা কোরো না। প্রতিদিন ১–২টি Tense পড়ো।
-- প্রতিটি Tense-এর affirmative, negative ও question form দিয়ে নিজের ৩টি বাক্য তৈরি করো।
-- V1, V2 ও V3 আলাদা করে অনুশীলন করো।
+- একদিনে ২০০টি শব্দ মুখস্থ করার চেষ্টা কোরো না। প্রতিদিন একটি বিষয় থেকে ৮–১২টি শব্দ শিখো।
+- প্রথমে অর্থ পড়ো, তারপর উচ্চারণ শোনো, উদাহরণ বাক্য পড়ো এবং শেষে শব্দটি “শিখেছি” হিসেবে চিহ্নিত করো।
+- একটি বিষয় শেষ হলে “এই বিষয়ের টেস্ট” দাও। ভুল শব্দগুলো আবার পড়ো।
+- বাংলা হরফে দেওয়া উচ্চারণ কেবল আনুমানিক সহায়তা; সঠিক উচ্চারণ অনুশীলনের জন্য অডিও শুনবে।
 
 ## গুরুত্বপূর্ণ সীমাবদ্ধতা
-- এখনো কোনো AI model বা API যুক্ত নেই। “AI Tutor” এখনো কাজ করে না।
+- এখনো কোনো AI model বা API যুক্ত নেই। “AI Tutor” এখনো যুক্ত করা হয়নি।
 - OpenAI API key বা অন্য কোনো secret কখনো `index.html`-এ রাখবে না।
 - অগ্রগতি একই browser/device-এর local storage-এ থাকে; browser data মুছে গেলে তা হারাতে পারে।
 - GitHub Pages-এ প্রকাশ করলে public repository-র কোড যে কেউ দেখতে পারবে। ব্যক্তিগত তথ্য রেখো না।
-- উচ্চারণ শোনার সুবিধা browser ও device-এর speech synthesis engine-এর ওপর নির্ভরশীল।
+- উচ্চারণের অডিও browser/device-এর speech synthesis engine-এর ওপর নির্ভরশীল।
 
 ## GitHub-এ আপডেট
-1. ZIP extract করো।
+1. ZIP Extract করো।
 2. Repository `english-master-ai` খোলো।
 3. `Add file` → `Upload files` নির্বাচন করো।
 4. এই ফোল্ডারের ভেতরের **সব ৬টি ফাইল** root-এ upload করো: `index.html`, `manifest.json`, `service-worker.js`, `icon-192.png`, `icon-512.png`, `README-BN.md`।
 5. একই নামের পুরোনো ফাইলগুলো replace করে commit করো।
-6. Pages settings আগের মতো `main` এবং `/(root)` থাকবে। Deploy শেষ হলে website refresh করো। Browser-এ পুরোনো cache থাকলে একবার hard refresh বা private tab দিয়ে পরীক্ষা করো।
+6. Pages settings আগের মতো `main` এবং `/(root)` থাকবে। Deploy শেষ হলে website refresh করো। Browser-এ পুরোনো cache থাকলে বন্ধ করে আবার খুলে দেখো বা private tab দিয়ে পরীক্ষা করো। Site Data / Local Storage মুছবে না।
 
 ## প্রকাশিত ঠিকানা
 `https://abdullahalnurtahsin.github.io/english-master-ai/`

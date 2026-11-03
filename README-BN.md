@@ -1,36 +1,32 @@
-# English Master AI — সংস্করণ 0.7
+# English Master AI — সংস্করণ 0.8
 
 বাংলা সহায়তায় ইংরেজি শেখার মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA।
 
 ## এই সংস্করণে যা আছে
-- Version 0.6-এর সব সুবিধা বজায়: Lesson 01, Vocabulary Master-এর ২০০টি শব্দ, Grammar-এর ৪টি অধ্যায়, ১২টি Tense, Smart Revision, Daily Goal, Daily Quiz ও ভুল শব্দের তালিকা।
-- **Listening Master:** চারটি অনুশীলন — শব্দ শুনে অর্থ চেনা, বাক্য শুনে অর্থ বোঝা, ছোট কথোপকথন শুনে প্রশ্নের উত্তর দেওয়া, এবং শুনে ইংরেজি বাক্য টাইপ করা।
-- **Audio speed:** ধীরে, একটু ধীরে ও স্বাভাবিক গতির বিকল্প।
-- **Listening progress:** শব্দ, বাক্য, কথোপকথন ও dictation-এর অগ্রগতি, মোট session, প্রতিটি মডিউলের সেরা ফল এবং ভুল আইটেম সংরক্ষণ। কথোপকথন সম্পন্ন হিসেবে গণনা হবে তখনই, যখন ওই কথোপকথনের সব প্রশ্ন একই অনুশীলনে সঠিক হবে।
-- **Progress compatibility:** পুরোনো `ema_v1_progress` Local Storage key এবং আগের Vocabulary word indexes অপরিবর্তিত। নতুন Listening data একই progress object-এর `listening` field-এ যোগ হয়।
-- Service worker cache version `english-master-ai-v7`।
+- Version 0.7-এর সব সুবিধা বজায়: Lesson 01, ২০০টি Vocabulary শব্দ, Grammar-এর ৪টি অধ্যায়, ১২টি Tense, Smart Revision, Daily Goal, Daily Quiz ও চারটি Listening অনুশীলন।
+- **Tutor Practice Beta:** তিনটি নির্দিষ্ট Beginner topic — Introducing Yourself, Daily Routine, Hobbies & Interests; প্রতিটিতে ৫টি প্রশ্ন, বাংলা hint, নমুনা উত্তর, বাক্য-গঠন যাচাই ও Text-to-Speech।
+- **Optional microphone input:** ব্রাউজার Speech Recognition সমর্থন করলে কণ্ঠ থেকে টেক্সট ইনপুট বসাতে পারে; না হলে কিবোর্ডে উত্তর দেওয়া যাবে।
+- **Privacy:** Tutor-এর raw answer/chat transcript Local Storage-এ রাখা হয় না। শুধু sessions, aggregate score, topic completion ও last session date সংরক্ষিত হয়। চাইলে কাল্পনিক নাম/তথ্য ব্যবহার করা যায়।
+- **Progress compatibility:** পুরোনো `ema_v1_progress` Local Storage key এবং আগের Vocabulary indexes অপরিবর্তিত। Tutor aggregate progress একই object-এর `tutor` field-এ থাকে।
+- Service worker cache version `english-master-ai-v8`।
 
-## Listening কীভাবে কাজ করে
-- অডিও ব্রাউজার/ফোনের Web Speech `SpeechSynthesis` Text-to-Speech দিয়ে তৈরি হয়; কোনো prerecorded audio file ব্যবহার করা হয়নি।
-- en-US voice পাওয়া গেলে সেটি ব্যবহারের চেষ্টা করে; না পেলে ডিভাইসের default English voice ব্যবহার হয়।
-- TTS voice ও উচ্চারণ Android/Chrome ও ইনস্টল করা voice engine অনুযায়ী আলাদা হতে পারে।
-- Audio না চললে ফোনের Settings → Text-to-Speech output-এ English voice/engine চালু করে Chrome আবার খোলো। ব্রাউজার TTS সমর্থন না করলে Listening audio পাওয়া যাবে না।
-- Dictation-এ case ও সাধারণ punctuation উপেক্ষা করে শব্দের মিল যাচাই করা হয়; এটি speech recognition নয়—শিক্ষার্থী কীবোর্ডে উত্তর টাইপ করে।
+## গুরুত্বপূর্ণ: এটি Live AI নয়
+Tutor Practice Beta হলো নির্দিষ্ট প্রশ্ন ও নিয়মভিত্তিক বাক্য-গঠন যাচাইয়ের guided demo। এটি মুক্তভাবে যেকোনো প্রশ্ন বুঝতে, সব ধরনের grammar error ধরতে বা নিজে নতুন উত্তর তৈরি করতে পারে না। কোনো OpenAI API বা অন্য AI model সংযুক্ত করা হয়নি।
 
-## গুরুত্বপূর্ণ সীমাবদ্ধতা
-- এখনো কোনো AI model বা API যুক্ত নেই। AI Tutor এখনো যুক্ত হয়নি।
-- Listening voice হলো device-generated TTS; মানুষের রেকর্ড করা native-speaker audio নয়।
-- Progress একই browser/device-এর Local Storage-এ থাকে; একাধিক ডিভাইসে sync হয় না। Browser-এর Site Data মুছলে অগ্রগতি হারাতে পারে।
-- OpenAI API key বা অন্য কোনো secret কখনো `index.html`-এ রাখবে না।
-- GitHub Pages-এ প্রকাশ করলে public repository-র কোড সবাই দেখতে পারবে। ব্যক্তিগত তথ্য রেখো না।
+প্রকৃত AI Tutor যোগ করতে হলে নিরাপদ server-side backend, access control, rate limit, usage monitoring এবং বয়স-উপযোগী safety/privacy ব্যবস্থা দরকার। API key কখনো `index.html`, browser code, Android app বা public GitHub repository-তে রাখা যাবে না; OpenAI-ও API key browser/app-এ প্রকাশ না করে backend-এ রাখার নির্দেশ দেয়। See: https://developers.openai.com/api/reference/overview and https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
+
+## Microphone ও audio
+- Question/sample voice browser `SpeechSynthesis` দিয়ে তৈরি হয়; কণ্ঠ ডিভাইসভেদে আলাদা হতে পারে।
+- Microphone input browser-এর `SpeechRecognition`/`webkitSpeechRecognition` API থাকলে কাজ করবে। সব browser বা device-এ সমর্থিত নয়।
+- Speech recognition browser/device service ব্যবহার করতে পারে। ব্যক্তিগত বা সংবেদনশীল তথ্য মাইক্রোফোনে বলবে না।
 
 ## GitHub-এ আপডেট
 1. ZIP Extract করো।
 2. Repository `english-master-ai` খোলো।
 3. `Add file` → `Upload files` নির্বাচন করো।
 4. এই ফোল্ডারের ভেতরের **সব ৬টি ফাইল** root-এ upload করো: `index.html`, `manifest.json`, `service-worker.js`, `icon-192.png`, `icon-512.png`, `README-BN.md`।
-5. একই নামের পুরোনো ফাইলগুলো replace করে commit করো। আলাদা করে delete করার প্রয়োজন নেই।
-6. Pages settings আগের মতো `main` এবং `/(root)` থাকবে। Deploy শেষ হলে website reload করো। PWA পুরোনো কপি দেখালে কিছুক্ষণ অপেক্ষা করে পেজ বন্ধ/আবার খোলো বা Chrome-এর নতুন private tab-এ পরীক্ষা করো. **Site Data / Local Storage মুছবে না.**
+5. একই নামের পুরোনো ফাইল replace করে Commit changes করো; আগে delete করার প্রয়োজন নেই।
+6. Pages branch `main` এবং folder `/(root)` আগের মতো থাকবে। Deploy শেষ হলে website reload করো। পুরোনো cached copy দেখালে কিছুক্ষণ অপেক্ষা করে close/reopen বা নতুন private tab-এ পরীক্ষা করো। **Site Data / Local Storage মুছবে না।**
 
 ## প্রকাশিত ঠিকানা
 `https://abdullahalnurtahsin.github.io/english-master-ai/`

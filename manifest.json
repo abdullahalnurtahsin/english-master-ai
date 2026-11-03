@@ -2,7 +2,7 @@
   "id": "./",
   "name": "English Master AI",
   "short_name": "English Master",
-  "description": "বাংলা সহায়তায় ইংরেজি পাঠ, Vocabulary, Grammar, Tense, Smart Revision ও Listening Practice.",
+  "description": "বাংলা সহায়তায় ইংরেজি পাঠ, Vocabulary, Grammar, Tense, Listening ও Guided Tutor Practice.",
   "lang": "bn",
   "start_url": "./",
   "scope": "./",

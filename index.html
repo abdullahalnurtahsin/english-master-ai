@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10233f">
-  <meta name="description" content="English Master AI — বাংলা সহায়তায় ইংরেজি পাঠ, শব্দভান্ডার, Grammar, Tense, দৈনিক পুনরাবৃত্তি ও Listening Practice।">
+  <meta name="description" content="English Master AI — বাংলা সহায়তায় ইংরেজি পাঠ, Vocabulary, Grammar, Tense, Listening ও Tutor Practice।">
   <title>English Master AI</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icon-192.png" type="image/png">
   <style>
     :root{--navy:#10233f;--blue:#2563eb;--sky:#eaf2ff;--ink:#15243a;--muted:#65748b;--paper:#f5f7fb;--white:#fff;--green:#13845b;--line:#e5eaf2;--red:#bd3c45;--radius:22px}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;padding-bottom:94px}button,input{font:inherit}button{cursor:pointer}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;padding-bottom:132px}button,input{font:inherit}button{cursor:pointer}
     .top{background:var(--navy);color:white;padding:23px 18px 28px;border-radius:0 0 28px 28px}.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:760px;margin:auto}.brand{font-weight:800;letter-spacing:.2px;font-size:18px}.tag{font-size:11px;color:#bed0ee;border:1px solid #526783;padding:5px 9px;border-radius:20px}.welcome{max-width:760px;margin:25px auto 0}.eyebrow{font-size:12px;color:#b8c9e4}.welcome h1{font-size:27px;line-height:1.25;margin:7px 0}.welcome p{color:#cbd7e8;margin:7px 0 0;font-size:14px}
     main{max-width:760px;margin:18px auto;padding:0 15px}.page{display:none}.page.active{display:block}.hero{background:linear-gradient(130deg,#2563eb,#4b83ed);color:#fff;padding:20px;border-radius:var(--radius);box-shadow:0 10px 22px #2563eb20}.hero small{opacity:.85}.hero h2{font-size:21px;margin:7px 0}.hero p{font-size:13px;line-height:1.55;opacity:.95;margin:0 0 14px}
     .btn{border:0;border-radius:13px;padding:11px 15px;font-weight:700;background:var(--white);color:var(--navy)}.btn.primary{background:var(--navy);color:#fff}.btn.blue{background:#fff;color:#1e55c7}.btn.light{background:var(--sky);color:#194b9e}.btn:disabled{opacity:.45;cursor:not-allowed}.section-head{display:flex;justify-content:space-between;align-items:center;margin:23px 2px 11px;gap:10px}.section-head h3{font-size:16px;margin:0}.muted{font-size:12px;color:var(--muted)}
@@ -22,8 +22,11 @@
     .topic-card{text-align:left;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;color:var(--ink);box-shadow:0 3px 12px #162b4a08}.topic-card strong{display:block;margin:5px 0}.topic-card small{color:var(--muted);line-height:1.45}.topic-card .topic-status{font-size:11px;color:var(--green);font-weight:800}.grammar-example{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid var(--line)}.grammar-example:last-child{border-bottom:0}.grammar-example p{margin:3px 0;font-size:13px;line-height:1.5}.grammar-example strong{font-size:15px}.grammar-exercise{margin-top:14px;background:#f7faff;border:1px solid #dbe7fb;border-radius:16px;padding:15px}.grammar-exercise h4{margin:0 0 10px}.grammar-feedback{font-size:13px;line-height:1.55;margin-top:10px;min-height:20px}.rule{padding:15px;margin:10px 0;border-radius:15px;border:1px solid #dbe7fb;background:#f7faff}.rule h4{margin:0 0 6px}.rule p{margin:5px 0;font-size:13px;line-height:1.65}.rule code{font-family:inherit;color:#174ea6;font-weight:800}.form-grid{display:grid;grid-template-columns:1fr;gap:9px}.field-label{font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px}.text-input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}.intro-result{background:#edf4ff;border:1px solid #d6e5ff;border-radius:14px;padding:14px;margin-top:12px;line-height:1.8;white-space:pre-line}.writing-task{margin-top:14px}.success-text{color:var(--green);font-weight:700}.error-text{color:var(--red);font-weight:700}.badge{display:inline-block;padding:4px 9px;border-radius:30px;background:#e7f7ef;color:#13734f;font-size:11px;font-weight:700}.note{font-size:11px;color:var(--muted);text-align:center;margin:20px 8px 0;line-height:1.5}
     nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom))}.nav-inner{width:100%;max-width:760px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.nav-btn{border:0;background:transparent;color:#738198;border-radius:12px;padding:7px 2px;font-size:11px;font-weight:700}.nav-btn span{display:block;font-size:19px;margin-bottom:3px}.nav-btn.active{background:var(--sky);color:#1f55bd}
 
-    .daily-hero{background:linear-gradient(130deg,#164e63,#0f766e);color:#fff;padding:18px;border-radius:20px}.daily-hero h2{margin:5px 0 6px;font-size:21px}.daily-hero p{margin:0;font-size:13px;line-height:1.55;color:#d8f3ee}.daily-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.daily-stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px}.daily-stat strong{display:block;font-size:21px;color:var(--navy)}.daily-stat span{font-size:11px;color:var(--muted)}.daily-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.daily-actions button{min-height:44px}.daily-list{display:grid;gap:9px}.daily-word{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.daily-word strong{display:block;font-size:15px}.daily-word small{display:block;color:var(--muted);margin-top:3px;line-height:1.4}.daily-word .word-tools{display:flex;gap:6px;align-items:center}.goal-select{max-width:130px}.streak-pill{display:inline-flex;align-items:center;gap:5px;background:#fff4dc;color:#8a5a00;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800}.daily-empty{padding:16px;text-align:center;background:#fff;border:1px dashed #cad5e3;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}.nav-inner{grid-template-columns:repeat(7,minmax(0,1fr))}.nav-btn{font-size:10px;padding:6px 1px}.nav-btn span{font-size:18px}
+    .daily-hero{background:linear-gradient(130deg,#164e63,#0f766e);color:#fff;padding:18px;border-radius:20px}.daily-hero h2{margin:5px 0 6px;font-size:21px}.daily-hero p{margin:0;font-size:13px;line-height:1.55;color:#d8f3ee}.daily-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.daily-stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px}.daily-stat strong{display:block;font-size:21px;color:var(--navy)}.daily-stat span{font-size:11px;color:var(--muted)}.daily-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.daily-actions button{min-height:44px}.daily-list{display:grid;gap:9px}.daily-word{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.daily-word strong{display:block;font-size:15px}.daily-word small{display:block;color:var(--muted);margin-top:3px;line-height:1.4}.daily-word .word-tools{display:flex;gap:6px;align-items:center}.goal-select{max-width:130px}.streak-pill{display:inline-flex;align-items:center;gap:5px;background:#fff4dc;color:#8a5a00;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800}.daily-empty{padding:16px;text-align:center;background:#fff;border:1px dashed #cad5e3;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}.nav-inner{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:3px}.nav-btn{font-size:10px;padding:4px 1px;min-height:39px}.nav-btn span{font-size:16px;margin-bottom:1px}.nav-btn span{font-size:18px}
     @media(max-width:360px){.nav-btn{font-size:9px}.nav-btn span{font-size:16px}.daily-actions{grid-template-columns:1fr}}
+    .tutor-hero{background:linear-gradient(130deg,#173b69,#2563eb);color:#fff;padding:18px;border-radius:20px}.tutor-hero h2{font-size:21px;margin:6px 0}.tutor-hero p{color:#e1ecff;font-size:13px;line-height:1.6;margin:0}.tutor-disclosure{background:#fff8e8;border:1px solid #f1dfb5;color:#725116;padding:12px 13px;border-radius:13px;font-size:12px;line-height:1.6;margin-top:12px}.tutor-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}.tutor-stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:11px 8px;text-align:center}.tutor-stat strong{display:block;font-size:19px;color:var(--navy)}.tutor-stat span{font-size:10px;color:var(--muted)}.tutor-topic-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.tutor-topic{border:1px solid var(--line);background:#fff;border-radius:15px;padding:13px;text-align:left;min-height:100px;color:var(--ink)}.tutor-topic strong{display:block;margin:5px 0;font-size:13px}.tutor-topic small{display:block;color:var(--muted);font-size:11px;line-height:1.4}.tutor-workspace{margin-top:14px}.tutor-chat-log{display:grid;gap:9px;max-height:340px;overflow:auto;padding:12px;background:#f7f9fc;border:1px solid var(--line);border-radius:16px}.tutor-message{max-width:92%;padding:10px 12px;border-radius:14px;font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}.tutor-message .who{display:block;font-weight:800;font-size:10px;margin-bottom:4px;opacity:.8}.tutor-message.bot{justify-self:start;background:#fff;border:1px solid #e1e8f2;border-bottom-left-radius:4px}.tutor-message.user{justify-self:end;background:#e8f0ff;border:1px solid #d5e3ff;border-bottom-right-radius:4px}.tutor-bn{display:block;color:var(--muted);font-size:11px;margin-top:5px}.tutor-question-card{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;margin-top:11px}.tutor-question-card h4{margin:0 0 4px}.tutor-question-card p{font-size:13px;line-height:1.55}.tutor-input{width:100%;min-height:48px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:16px}.tutor-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:9px}.tutor-controls .btn,.tutor-controls .small-btn{min-height:42px}.tutor-feedback{font-size:13px;line-height:1.6;padding:11px;border-radius:12px;margin-top:10px;background:#f3f6fb}.tutor-feedback.good{background:#e9f8f1;color:#126c4b}.tutor-feedback.bad{background:#fff0f0;color:#a52f39}.tutor-session-end{text-align:center;padding:18px}.tutor-session-end .score{font-size:30px;font-weight:900;color:var(--green)}.tutor-privacy{font-size:11px;line-height:1.6;color:var(--muted);margin-top:12px}.tutor-topic-badge{display:inline-block;background:#eaf2ff;color:#194b9e;padding:4px 9px;border-radius:20px;font-size:10px;font-weight:800}
+    @media(max-width:360px){.tutor-topic-grid{grid-template-columns:1fr}.tutor-stat{padding:9px 5px}.tutor-stat strong{font-size:17px}}
+
 
     @media(min-width:620px){.welcome h1{font-size:32px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
@@ -34,13 +37,13 @@
 </head>
 <body>
   <header class="top">
-    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা · v0.7</div></div>
+    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা · v0.8</div></div>
     <div class="welcome"><div class="eyebrow">আজ থেকেই শুরু হোক</div><h1>Learn English, step by step.</h1><p>প্রতিদিন অল্প অল্প শিখো, নিয়মিত অনুশীলন করো, আত্মবিশ্বাস বাড়াও।</p></div>
   </header>
   <main>
     <section id="home" class="page active">
       <div class="hero"><small>তোমার প্রথম পাঠ · Lesson 01</small><h2>নিজের পরিচয় দেওয়া</h2><p>অভিবাদন, নিজের নাম, কোথায় থাকো এবং কী পছন্দ করো—এসব সহজ ইংরেজি বাক্যে বলতে শেখো।</p><button class="btn blue" onclick="showPage('learn')">পাঠ শুরু করো →</button></div>
-      <div class="section-head"><h3>তোমার শেখার জায়গা</h3><span class="muted">৮টি অংশ</span></div>
+      <div class="section-head"><h3>তোমার শেখার জায়গা</h3><span class="muted">৯টি অংশ</span></div>
       <div class="grid">
         <div class="tile" onclick="showPage('learn')"><div class="emoji">📖</div><h4>পাঠ</h4><p>বাক্য, অর্থ ও ব্যাকরণ</p></div>
         <div class="tile" onclick="showPage('words')"><div class="emoji">🧠</div><h4>Vocabulary Master</h4><p>২০০টি শব্দ · ১৬টি বিভাগ</p></div>
@@ -50,6 +53,7 @@
         <div class="tile" onclick="showPage('listening')"><div class="emoji">🎧</div><h4>Listening Master</h4><p>শুনে শব্দ, বাক্য ও কথোপকথন বোঝো</p></div>
         <div class="tile" onclick="showPage('practice')"><div class="emoji">📈</div><h4>নিজেকে যাচাই</h4><p>পাঠ ও কুইজের ফল</p></div>
         <div class="tile" onclick="showPage('daily')"><div class="emoji">🗓️</div><h4>আজকের শেখা</h4><p>দৈনিক লক্ষ্য ও পুনরাবৃত্তি</p></div>
+        <div class="tile" onclick="showPage('tutor')"><div class="emoji">🤖</div><h4>Tutor Practice Beta</h4><p>নির্দেশিত ইংরেজি কথোপকথন ও মাইক্রোফোন অনুশীলন</p></div>
       </div>
       <div class="section-head"><h3>🗓️ আজকের শেখার লক্ষ্য</h3><button class="small-btn" onclick="showPage('daily')">বিস্তারিত →</button></div>
       <div class="progress-card" onclick="showPage('daily')" role="button" tabindex="0" style="cursor:pointer">
@@ -141,6 +145,29 @@
       <p class="note">এই Listening Module-এ আগে থেকে রেকর্ড করা অডিও নেই। অডিও চালাতে ফোনে English Text-to-Speech/স্পিচ সার্ভিস চালু থাকতে হবে।</p>
     </section>
 
+    <section id="tutor" class="page">
+      <div class="section-head"><h3>🤖 Tutor Practice Beta</h3><span class="badge">Version 0.8</span></div>
+      <div class="tutor-hero">
+        <small>Guided English Conversation</small>
+        <h2>Let’s practise English together.</h2>
+        <p>ছোট প্রশ্নের উত্তর ইংরেজিতে দাও। প্রতিটি উত্তরের পর সহজ feedback, hint ও একটি নমুনা বাক্য পাবে।</p>
+        <div class="tutor-stats">
+          <div class="tutor-stat"><strong id="tutor-session-count">০</strong><span>সম্পন্ন সেশন</span></div>
+          <div class="tutor-stat"><strong id="tutor-answer-count">০</strong><span>সঠিক উত্তর</span></div>
+          <div class="tutor-stat"><strong id="tutor-best-score">—</strong><span>সেরা ফল</span></div>
+        </div>
+      </div>
+      <div class="tutor-disclosure"><b>এটি কী?</b> এই Beta-তে আগে থেকে তৈরি অনুশীলন ও নির্দিষ্ট বাক্য-গঠন যাচাই কাজ করে। এটি এখনো Live AI chatbot নয়; মুক্তভাবে যেকোনো প্রশ্ন বুঝতে পারে না।</div>
+      <div class="section-head"><h3>অনুশীলনের বিষয় বেছে নাও</h3><span class="muted">৩টি Beginner topic</span></div>
+      <div class="tutor-topic-grid">
+        <button class="tutor-topic" onclick="startTutorSession('intro')"><span>👋</span><strong>Introducing Yourself</strong><small>পরিচয়, দেশ, পছন্দ ও শেখার কথা</small></button>
+        <button class="tutor-topic" onclick="startTutorSession('daily')"><span>☀️</span><strong>Daily Routine</strong><small>সকালের কাজ ও প্রতিদিনের অভ্যাস</small></button>
+        <button class="tutor-topic" onclick="startTutorSession('hobbies')"><span>📚</span><strong>Hobbies & Interests</strong><small>অবসর, বই ও পছন্দের কাজ</small></button>
+      </div>
+      <div id="tutor-workspace" class="tutor-workspace"><div class="empty">একটি বিষয় বেছে নিয়ে অনুশীলন শুরু করো।</div></div>
+      <p class="tutor-privacy">গোপনীয়তা: তোমার লেখা বা বলা উত্তর এই অ্যাপে সংরক্ষণ করা হয় না; শুধু সেশনের সংখ্যা ও স্কোর রাখা হয়। চাইলে নিজের পরিচয়ের বদলে কাল্পনিক নাম/তথ্য ব্যবহার করো। মাইক্রোফোনের Speech Recognition ব্রাউজার বা ডিভাইসের সেবা ব্যবহার করতে পারে; ব্যক্তিগত তথ্য বলবে না।</p>
+    </section>
+
     <section id="daily" class="page">
       <div class="section-head"><h3>🗓️ Smart Revision</h3><span class="badge">Version 0.6</span></div>
       <div class="daily-hero">
@@ -213,6 +240,7 @@
     <button class="nav-btn" data-page="listening" onclick="showPage('listening')"><span>🎧</span>শোনা</button>
     <button class="nav-btn" data-page="grammar" onclick="showPage('grammar')"><span>🔤</span>Grammar</button>
     <button class="nav-btn" data-page="practice" onclick="showPage('practice')"><span>✓</span>অনুশীলন</button>
+    <button class="nav-btn" data-page="tutor" onclick="showPage('tutor')"><span>🤖</span>Tutor</button>
   </div></nav>
 <script>
 'use strict';
@@ -1861,6 +1889,12 @@ saved.listening={...listeningDefaults,...saved.listening};
 for(const field of ['wordsDone','sentencesDone','dialoguesDone','dictationsDone','wrongItems'])if(!Array.isArray(saved.listening[field]))saved.listening[field]=[];
 for(const field of ['attempts','bestScores','lastScores'])if(!saved.listening[field]||typeof saved.listening[field]!=='object'||Array.isArray(saved.listening[field]))saved.listening[field]={};
 if(!Number.isFinite(saved.listening.sessions))saved.listening.sessions=0;
+const tutorDefaults={sessions:0,totalCorrect:0,totalQuestions:0,bestScore:0,topicsDone:[],lastSessionDate:null};
+if(!saved.tutor||typeof saved.tutor!=='object'||Array.isArray(saved.tutor))saved.tutor={};
+saved.tutor={...tutorDefaults,...saved.tutor};
+if(!Array.isArray(saved.tutor.topicsDone))saved.tutor.topicsDone=[];
+for(const field of ['sessions','totalCorrect','totalQuestions','bestScore'])if(!Number.isFinite(saved.tutor[field]))saved.tutor[field]=0;
+
 function localDateKey(date=new Date()){const y=date.getFullYear();const m=String(date.getMonth()+1).padStart(2,'0');const d=String(date.getDate()).padStart(2,'0');return `${y}-${m}-${d}`;}
 function addDays(dateKey,days){const d=new Date(`${dateKey}T12:00:00`);d.setDate(d.getDate()+days);return localDateKey(d);}
 function getTodayLog(){const key=localDateKey();if(!saved.dailyLog[key])saved.dailyLog[key]={studiedWords:[],newWords:[],reviewedWords:[],quizCorrect:0,quizTotal:0,dailyQuizDone:false,dailyQuizScore:null,dailyQuizTotal:0};const log=saved.dailyLog[key];for(const field of ['studiedWords','newWords','reviewedWords'])if(!Array.isArray(log[field]))log[field]=[];if(typeof log.quizCorrect!=='number')log.quizCorrect=0;if(typeof log.quizTotal!=='number')log.quizTotal=0;if(typeof log.dailyQuizDone!=='boolean')log.dailyQuizDone=false;return log;}
@@ -1870,7 +1904,7 @@ for(const id of saved.learned){if(Number.isInteger(id)&&id>=0&&!saved.reviewStat
 saved.wrongWords=[...new Set(saved.wrongWords.filter(id=>Number.isInteger(id)&&id>=0))];
 function bnNum(n){return String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[Number(d)]);}
 function save(){try{localStorage.setItem(storeKey,JSON.stringify(saved));}catch(e){console.warn('Could not save progress',e);}updateProgress();if(document.getElementById('daily'))renderDailySummaryOnly();}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='words')renderWords();if(id==='listening')renderListeningDashboard();if(id==='daily')renderDailyPage();if(id==='grammar'){renderGrammar();renderTenses();}if(id==='practice'&&!quizStarted)startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='words')renderWords();if(id==='listening')renderListeningDashboard();if(id==='tutor')renderTutorDashboard();if(id==='daily')renderDailyPage();if(id==='grammar'){renderGrammar();renderTenses();}if(id==='practice'&&!quizStarted)startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
 function speak(text){if(!('speechSynthesis'in window)){alert('এই ব্রাউজারে উচ্চারণ শোনার সুবিধা পাওয়া যাচ্ছে না।');return;}window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;window.speechSynthesis.speak(u);}
 function renderSentences(){document.getElementById('sentences').innerHTML=lessonSentences.map((s,i)=>`<article class="sentence"><strong>${s.en}</strong><div class="bn">${s.bn}</div><div class="pron">বাংলা উচ্চারণ: ${s.pron}</div><div class="sentence-actions"><span class="muted">বাক্য ${bnNum(i+1)}</span><button class="small-btn" onclick='speak(${JSON.stringify(s.en)})' aria-label="ইংরেজি বাক্য শুনুন">🔊 শুনুন</button></div></article>`).join('');}
 function completeLesson(){saved.lessonDone=true;save();alert('দারুণ! পাঠ ১ সম্পন্ন হয়েছে। এবার কুইজ দিয়ে অনুশীলন করো।');}
@@ -2284,13 +2318,114 @@ function finishListeningMode(){
 }
 function resetListeningWorkspace(){if('speechSynthesis'in window)window.speechSynthesis.cancel();listeningMode=null;document.getElementById('listening-workspace').innerHTML='<div class="empty">শুরু করতে উপরের চারটি অনুশীলনের যেকোনো একটি বেছে নাও।</div>';}
 
+
+// Tutor Practice Beta v0.8. This is guided, rule-based practice; no live model/API is connected.
+const tutorBank={
+  intro:{name:'Introducing Yourself',bn:'নিজের পরিচয় দেওয়া',questions:[
+    {q:'How can you introduce yourself with a name?',bn:'নাম দিয়ে কীভাবে নিজের পরিচয় দেবে?',hint:'My name is + একটি নাম। কাল্পনিক নামও ব্যবহার করতে পারো।',sample:'My name is Alex.',sampleBn:'আমার নাম অ্যালেক্স।',check:s=>/^my name is [a-z][a-z '-]{0,38}$/.test(s)||/^i am [a-z][a-z '-]{0,38}$/.test(s),why:'নাম বলার জন্য “My name is…” একটি সহজ ও স্বাভাবিক গঠন।'},
+    {q:'How do you say that you are from Bangladesh?',bn:'তুমি বাংলাদেশ থেকে এসেছ—এটি কীভাবে বলবে?',hint:'I am from + দেশ।',sample:'I am from Bangladesh.',sampleBn:'আমি বাংলাদেশ থেকে এসেছি।',check:s=>/^i am from [a-z][a-z '-]{1,38}$/.test(s),why:'নিজের দেশ বা উৎস বলতে “I am from + place” ব্যবহার করো।'},
+    {q:'How do you say that you live in a city?',bn:'তুমি একটি শহরে থাকো—এটি কীভাবে বলবে?',hint:'I live in + city/place। নিজের শহরের বদলে উদাহরণও ব্যবহার করতে পারো।',sample:'I live in a city.',sampleBn:'আমি একটি শহরে থাকি।',check:s=>/^i live in [a-z][a-z '-]{1,38}$/.test(s),why:'কোথায় থাকো বোঝাতে “I live in…” ব্যবহার করো।'},
+    {q:'How do you say that you enjoy reading?',bn:'তুমি বই পড়তে পছন্দ করো—এটি কীভাবে বলবে?',hint:'I like + noun/verb-ing অথবা I enjoy + verb-ing।',sample:'I like reading books.',sampleBn:'আমি বই পড়তে পছন্দ করি।',check:s=>/^i (like|love|enjoy) .{2,}$/.test(s),why:'“I like” বা “I enjoy” দিয়ে পছন্দের কথা বলা যায়। “Enjoy”-এর পরে verb হলে সাধারণত -ing হয়।'},
+    {q:'How do you say that you are learning English?',bn:'তুমি ইংরেজি শিখছ—এটি কীভাবে বলবে?',hint:'I am + verb-ing + English।',sample:'I am learning English.',sampleBn:'আমি ইংরেজি শিখছি।',check:s=>/^i am learning english$/.test(s)||/^i am learning [a-z][a-z '-]{1,30}$/.test(s),why:'চলমান কাজ বোঝাতে “I am + verb-ing” ব্যবহার করো।'}
+  ]},
+  daily:{name:'Daily Routine',bn:'দৈনন্দিন কাজ',questions:[
+    {q:'How do you say that you wake up at 7?',bn:'তুমি ৭টায় ঘুম থেকে ওঠো—এটি কীভাবে বলবে?',hint:'I wake up at + time।',sample:'I wake up at seven.',sampleBn:'আমি সাতটায় ঘুম থেকে উঠি।',check:s=>/^i wake up at .{1,30}$/.test(s),why:'সময়ের আগে “at” ব্যবহার করো: at seven, at 7 am।'},
+    {q:'How do you say what you do in the morning?',bn:'সকালে তুমি কী করো—এটি কীভাবে বলবে?',hint:'In the morning, I + verb…',sample:'In the morning, I read a book.',sampleBn:'সকালে আমি একটি বই পড়ি।',check:s=>/^in the morning,? i .{2,}$/.test(s)||/^i .{2,} in the morning$/.test(s),why:'দিনের সময় বোঝাতে “In the morning…” দিয়ে বাক্য শুরু করতে পারো।'},
+    {q:'How do you say that you study English every day?',bn:'তুমি প্রতিদিন ইংরেজি পড়ো—এটি কীভাবে বলবে?',hint:'I study + subject + every day।',sample:'I study English every day.',sampleBn:'আমি প্রতিদিন ইংরেজি পড়ি।',check:s=>/^i study .{2,} every day$/.test(s),why:'“I” এর পরে Present Simple-এ verb-এর মূল রূপ “study” বসে।'},
+    {q:'How do you say what you do after class?',bn:'ক্লাসের পরে তুমি কী করো—এটি কীভাবে বলবে?',hint:'After class, I + verb… অথবা I … after class.',sample:'After class, I do my homework.',sampleBn:'ক্লাসের পরে আমি বাড়ির কাজ করি।',check:s=>/^after class,? i .{2,}$/.test(s)||/^i .{2,} after class$/.test(s),why:'“After class” বাক্যের শুরুতে বা শেষে বসতে পারে।'},
+    {q:'How do you describe your evening?',bn:'সন্ধ্যায় তুমি কী করো—এটি কীভাবে বলবে?',hint:'In the evening, I + verb…',sample:'In the evening, I read books.',sampleBn:'সন্ধ্যায় আমি বই পড়ি।',check:s=>/^in the evening,? i .{2,}$/.test(s)||/^i .{2,} in the evening$/.test(s),why:'“In the evening” দিয়ে সন্ধ্যার অভ্যাস বোঝানো যায়।'}
+  ]},
+  hobbies:{name:'Hobbies & Interests',bn:'শখ ও আগ্রহ',questions:[
+    {q:'How do you say what you do in your free time?',bn:'অবসর সময়ে কী করো—এটি কীভাবে বলবে?',hint:'In my free time, I + verb…',sample:'In my free time, I read books.',sampleBn:'অবসর সময়ে আমি বই পড়ি।',check:s=>/^in my free time,? i .{2,}$/.test(s)||/^i .{2,} in my free time$/.test(s),why:'অবসরের কাজ বলতে “In my free time…” ব্যবহার করো।'},
+    {q:'How do you say that you like storybooks?',bn:'তুমি গল্পের বই পছন্দ করো—এটি কীভাবে বলবে?',hint:'I like + type of book + books.',sample:'I like storybooks.',sampleBn:'আমি গল্পের বই পছন্দ করি।',check:s=>/^i like .{2,}$/.test(s),why:'পছন্দ বোঝাতে “I like + noun” ব্যবহার করো।'},
+    {q:'How do you say that you enjoy gardening?',bn:'তুমি বাগান করতে আনন্দ পাও—এটি কীভাবে বলবে?',hint:'I enjoy + verb-ing।',sample:'I enjoy gardening.',sampleBn:'আমি বাগান করতে আনন্দ পাই।',check:s=>/^i enjoy .{2,}$/.test(s),why:'“Enjoy”-এর পরে কোনো কাজের verb এলে সাধারণত -ing হয়।'},
+    {q:'How do you say how often you read?',bn:'তুমি কত ঘন ঘন পড়ো—এটি কীভাবে বলবে?',hint:'I read + frequency, যেমন every day বা sometimes।',sample:'I read every day.',sampleBn:'আমি প্রতিদিন পড়ি।',check:s=>/^i read .{2,}$/.test(s),why:'কত ঘন ঘন কাজটি করো, তা every day, sometimes, often দিয়ে বোঝানো যায়।'},
+    {q:'How do you say what skill you want to learn?',bn:'তুমি কোন দক্ষতা শিখতে চাও—এটি কীভাবে বলবে?',hint:'I want to learn + skill/subject।',sample:'I want to learn English.',sampleBn:'আমি ইংরেজি শিখতে চাই।',check:s=>/^i want to learn .{2,}$/.test(s),why:'ইচ্ছা বোঝাতে “I want to + verb-এর মূল রূপ” ব্যবহার করো।'}
+  ]}
+};
+let tutorTopic=null,tutorIndex=0,tutorCorrect=0,tutorTries=0,tutorAnswered=false,tutorSessionDone=false,tutorRecognition=null;
+function tutorNormalize(value){return String(value||'').toLowerCase().trim().replace(/[’‘]/g,"'").replace(/i'm\b/g,'i am').replace(/[^a-z0-9\s'-]/g,' ').replace(/\s+/g,' ').trim();}
+function renderTutorDashboard(){
+  const t=saved.tutor||{};
+  const a=document.getElementById('tutor-session-count');if(a)a.textContent=bnNum(t.sessions||0);
+  const b=document.getElementById('tutor-answer-count');if(b)b.textContent=bnNum(t.totalCorrect||0);
+  const c=document.getElementById('tutor-best-score');if(c)c.textContent=(t.bestScore||0)?`${bnNum(t.bestScore)}/৫`:'—';
+}
+function startTutorSession(topic){
+  if(!tutorBank[topic])return;
+  if(tutorRecognition){try{tutorRecognition.stop();}catch(e){}tutorRecognition=null;}
+  tutorTopic=topic;tutorIndex=0;tutorCorrect=0;tutorTries=0;tutorAnswered=false;tutorSessionDone=false;
+  showPage('tutor');
+  const box=document.getElementById('tutor-workspace');box.innerHTML=`<div class="section-head" style="margin-top:0"><span class="tutor-topic-badge">${tutorBank[topic].name}</span><span class="muted">৫টি প্রশ্ন</span></div><div id="tutor-chat-log" class="tutor-chat-log" aria-live="polite"></div><div id="tutor-question-card" class="tutor-question-card"></div>`;
+  tutorAppendMessage('bot','Hello! Let’s practise one sentence at a time.','চলো, একবারে একটি বাক্য অনুশীলন করি।');
+  renderTutorQuestion();
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function tutorAppendMessage(role,text,bn=''){
+  const log=document.getElementById('tutor-chat-log');if(!log)return;
+  const item=document.createElement('div');item.className=`tutor-message ${role==='user'?'user':'bot'}`;
+  const who=document.createElement('span');who.className='who';who.textContent=role==='user'?'তুমি':'Tutor Practice';item.appendChild(who);
+  const content=document.createElement('span');content.textContent=text;item.appendChild(content);
+  if(bn){const meaning=document.createElement('span');meaning.className='tutor-bn';meaning.textContent=bn;item.appendChild(meaning);}
+  log.appendChild(item);log.scrollTop=log.scrollHeight;
+}
+function renderTutorQuestion(){
+  if(!tutorTopic||tutorSessionDone)return;
+  const list=tutorBank[tutorTopic].questions;const q=list[tutorIndex];const card=document.getElementById('tutor-question-card');if(!card)return;
+  tutorAnswered=false;tutorTries=0;
+  card.innerHTML=`<div class="listen-progress"><span>প্রশ্ন ${bnNum(tutorIndex+1)} / ${bnNum(list.length)}</span><span>সঠিক ${bnNum(tutorCorrect)}</span></div><div class="track"><div class="fill" style="width:${tutorIndex/list.length*100}%"></div></div><h4 style="margin-top:13px">${q.q}</h4><p class="muted" style="margin:5px 0 11px">${q.bn}</p><button class="small-btn" onclick="speakTutorQuestion()">🔊 প্রশ্ন শুনুন</button><label class="field-label" for="tutor-answer-input" style="margin-top:12px">ইংরেজিতে উত্তর লেখো</label><input id="tutor-answer-input" class="tutor-input" type="text" maxlength="160" placeholder="Write your answer in English…" autocomplete="off" onkeydown="if(event.key==='Enter')submitTutorAnswer()"><div class="tutor-controls"><button class="btn primary" onclick="submitTutorAnswer()">উত্তর যাচাই</button><button class="btn light" onclick="showTutorHint()">Hint</button><button class="small-btn" id="tutor-mic-button" onclick="startTutorVoiceInput()">🎙️ মাইক্রোফোন</button></div><div id="tutor-feedback" class="tutor-feedback" aria-live="polite" hidden></div><div id="tutor-next-wrap" class="tutor-controls"></div>`;
+}
+function speakTutorQuestion(){const q=tutorBank[tutorTopic]?.questions[tutorIndex];if(q)speak(q.q);}
+function showTutorHint(){const q=tutorBank[tutorTopic]?.questions[tutorIndex];const fb=document.getElementById('tutor-feedback');if(!q||!fb)return;fb.hidden=false;fb.className='tutor-feedback';fb.textContent='Hint: '+q.hint;}
+function submitTutorAnswer(){
+  if(tutorAnswered||!tutorTopic||tutorSessionDone)return;
+  const input=document.getElementById('tutor-answer-input');const raw=(input?.value||'').trim();
+  if(!raw){alert('আগে ইংরেজিতে একটি বাক্য লেখো।');return;}
+  const q=tutorBank[tutorTopic].questions[tutorIndex];const normalized=tutorNormalize(raw);const correct=!!q.check(normalized);
+  tutorTries++;tutorAppendMessage('user',raw);
+  const fb=document.getElementById('tutor-feedback');if(!fb)return;fb.hidden=false;
+  if(correct){
+    tutorAnswered=true;tutorCorrect++;if(input)input.disabled=true;
+    fb.className='tutor-feedback good';fb.textContent='সঠিক! '+q.why+' নমুনা: '+q.sample+' — '+q.sampleBn;
+    tutorAppendMessage('bot','Well done! That sentence works.','খুব ভালো! বাক্যটি গ্রহণযোগ্য হয়েছে।');
+    document.getElementById('tutor-next-wrap').innerHTML=`<button class="btn primary" onclick="nextTutorQuestion()">${tutorIndex===tutorBank[tutorTopic].questions.length-1?'ফলাফল দেখো':'পরের প্রশ্ন →'}</button>`;
+  }else{
+    fb.className='tutor-feedback bad';
+    if(tutorTries===1){fb.textContent='এখনো ঠিক হয়নি। '+q.hint+' আবার চেষ্টা করো।';tutorAppendMessage('bot','Try once more. Here is a hint: '+q.hint,'আরেকবার চেষ্টা করো।');}
+    else{fb.textContent='চেষ্টা ভালো হয়েছে। নমুনা বাক্য: '+q.sample+' — '+q.sampleBn+'। চাইলে এটি দেখে পরের প্রশ্নে যেতে পারো।';tutorAppendMessage('bot','Here is one example: '+q.sample,'নমুনা বাক্যটি দেখে শিখে নাও।');document.getElementById('tutor-next-wrap').innerHTML=`<button class="btn light" onclick="retryTutorQuestion()">আবার চেষ্টা করো</button><button class="btn primary" onclick="nextTutorQuestion()">পরের প্রশ্ন →</button>`;}
+  }
+}
+function retryTutorQuestion(){const input=document.getElementById('tutor-answer-input');if(input){input.value='';input.disabled=false;input.focus();}const fb=document.getElementById('tutor-feedback');if(fb)fb.hidden=true;const next=document.getElementById('tutor-next-wrap');if(next)next.innerHTML='';tutorAnswered=false;}
+function nextTutorQuestion(){if(!tutorTopic||tutorSessionDone)return;const total=tutorBank[tutorTopic].questions.length;if(!tutorAnswered&&tutorTries<2)return;tutorIndex++;if(tutorIndex>=total){finishTutorSession();return;}const q=tutorBank[tutorTopic].questions[tutorIndex];tutorAppendMessage('bot',q.q,q.bn);renderTutorQuestion();}
+function finishTutorSession(){
+  tutorSessionDone=true;const t=saved.tutor;const total=tutorBank[tutorTopic].questions.length;const percent=Math.round(tutorCorrect/total*100);
+  t.sessions++;t.totalCorrect+=tutorCorrect;t.totalQuestions+=total;t.bestScore=Math.max(t.bestScore,tutorCorrect);if(!t.topicsDone.includes(tutorTopic))t.topicsDone.push(tutorTopic);t.lastSessionDate=localDateKey();save();
+  const card=document.getElementById('tutor-question-card');if(card)card.innerHTML=`<div class="tutor-session-end"><div style="font-size:36px">🎉</div><h3>অনুশীলন শেষ!</h3><div class="score">${bnNum(tutorCorrect)} / ${bnNum(total)}</div><p>সঠিক উত্তরের হার: <b>${bnNum(percent)}%</b></p><p class="muted">এটি নিয়মভিত্তিক অনুশীলনের ফল, কোনো AI proficiency score নয়।</p><button class="btn primary" onclick="startTutorSession('${tutorTopic}')">আবার অনুশীলন</button> <button class="btn light" onclick="resetTutorWorkspace()">বিষয় বেছে নাও</button></div>`;
+  tutorAppendMessage('bot','Session complete. Keep practising a little every day!','অনুশীলন শেষ। প্রতিদিন অল্প করে চালিয়ে যাও।');
+}
+function resetTutorWorkspace(){if(tutorRecognition){try{tutorRecognition.stop();}catch(e){}tutorRecognition=null;}tutorTopic=null;tutorSessionDone=false;const box=document.getElementById('tutor-workspace');if(box)box.innerHTML='<div class="empty">একটি বিষয় বেছে নিয়ে অনুশীলন শুরু করো।</div>';}
+function startTutorVoiceInput(){
+  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SpeechRecognition){const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='এই ব্রাউজারে speech-to-text পাওয়া যাচ্ছে না। কিবোর্ডে উত্তর লিখে অনুশীলন চালিয়ে যাও।';}return;}
+  try{
+    if(tutorRecognition){try{tutorRecognition.stop();}catch(e){}}
+    tutorRecognition=new SpeechRecognition();tutorRecognition.lang='en-US';tutorRecognition.interimResults=false;tutorRecognition.maxAlternatives=1;
+    const button=document.getElementById('tutor-mic-button');if(button)button.textContent='🎙️ শুনছি…';
+    tutorRecognition.onresult=event=>{const transcript=event.results?.[0]?.[0]?.transcript||'';const input=document.getElementById('tutor-answer-input');if(input)input.value=transcript;const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback';fb.textContent='শোনা উত্তরটি বসানো হয়েছে। জমা দেওয়ার আগে দেখে নাও।';}};
+    tutorRecognition.onerror=()=>{const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='কণ্ঠ শনাক্ত করা যায়নি। আবার চেষ্টা করো অথবা কিবোর্ডে লেখো।';};};
+    tutorRecognition.onend=()=>{const button=document.getElementById('tutor-mic-button');if(button)button.textContent='🎙️ মাইক্রোফোন';tutorRecognition=null;};
+    tutorRecognition.start();
+  }catch(e){const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='মাইক্রোফোন চালু করা যায়নি। ব্রাউজারের অনুমতি পরীক্ষা করো অথবা কিবোর্ডে উত্তর লেখো।';}}
+}
+
+
 let quizIndex=0,quizScore=0,quizAnswered=false,quizStarted=false;
 function startQuiz(){quizIndex=0;quizScore=0;quizAnswered=false;quizStarted=true;renderQuiz();}
 function renderQuiz(){const box=document.getElementById('quiz-box');if(quizIndex>=quizQuestions.length){if(saved.best===null||quizScore>saved.best||saved.bestOutOf!==quizQuestions.length){saved.best=quizScore;saved.bestOutOf=quizQuestions.length;}save();box.innerHTML=`<div style="text-align:center;padding:15px"><div style="font-size:36px">🎉</div><h3>অনুশীলন শেষ!</h3><p>তোমার ফল: <b>${bnNum(quizScore)} / ${bnNum(quizQuestions.length)}</b></p><p class="muted">ভুলগুলো আবার দেখে নিলে আরও ভালো হবে।</p><button class="btn primary" onclick="startQuiz()">আবার চেষ্টা করো</button></div>`;return;}const q=quizQuestions[quizIndex];box.innerHTML=`<div class="quiz-meta"><span>প্রশ্ন ${bnNum(quizIndex+1)} / ${bnNum(quizQuestions.length)}</span><span>স্কোর: ${bnNum(quizScore)}</span></div><div class="track"><div class="fill" style="width:${quizIndex/quizQuestions.length*100}%"></div></div><div class="question">${q.q}</div><div class="options">${q.opts.map((o,i)=>`<button class="option" id="opt-${i}" onclick="answerQuiz(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div><div class="feedback" id="quiz-feedback" aria-live="polite"></div><div class="quiz-bottom"><button class="btn primary" id="next-question" onclick="nextQuestion()" disabled>পরের প্রশ্ন →</button></div>`;quizAnswered=false;}
 function answerQuiz(i){if(quizAnswered)return;quizAnswered=true;const q=quizQuestions[quizIndex];document.querySelectorAll('.option').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===i&&i!==q.a)b.classList.add('wrong');});if(i===q.a)quizScore++;document.getElementById('quiz-feedback').textContent=(i===q.a?'সঠিক উত্তর! ':'আবার চেষ্টা করো। ')+q.why;document.getElementById('next-question').disabled=false;}
 function nextQuestion(){if(!quizAnswered)return;quizIndex++;renderQuiz();}
 function checkWriting(){const val=document.getElementById('writing-answer').value.trim().toLowerCase().replace(/[.!?]/g,'').replace(/\s+/g,' ');const feedback=document.getElementById('writing-feedback');if(val==='i am learning english'){feedback.textContent='সঠিক হয়েছে! “I am learning English.” — খুব ভালো!';feedback.className='feedback success-text';}else{feedback.textContent='আবার চেষ্টা করো। সঠিক বাক্য: I am learning English. “I am + verb-ing” মনে রাখো।';feedback.className='feedback error-text';}}
-function updateProgress(){const n=saved.learned.length;const label=document.getElementById('word-progress-label');if(label)label.textContent=`${bnNum(n)} / ${bnNum(words.length)}`;const bar=document.getElementById('word-progress');if(bar)bar.style.width=(n/words.length*100)+'%';const best=document.getElementById('best-score');if(best)best.textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;const lesson=document.getElementById('lesson-status');if(lesson)lesson.textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;const gl=document.getElementById('grammar-progress-label');if(gl)gl.textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;const gb=document.getElementById('grammar-progress');if(gb)gb.style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;const tl=document.getElementById('tense-progress-label');if(tl)tl.textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;const tb=document.getElementById('tense-progress');if(tb)tb.style.width=(td/tenseTopics.length*100)+'%';renderDailySummaryOnly();renderListeningDashboard();}
+function updateProgress(){const n=saved.learned.length;const label=document.getElementById('word-progress-label');if(label)label.textContent=`${bnNum(n)} / ${bnNum(words.length)}`;const bar=document.getElementById('word-progress');if(bar)bar.style.width=(n/words.length*100)+'%';const best=document.getElementById('best-score');if(best)best.textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;const lesson=document.getElementById('lesson-status');if(lesson)lesson.textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;const gl=document.getElementById('grammar-progress-label');if(gl)gl.textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;const gb=document.getElementById('grammar-progress');if(gb)gb.style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;const tl=document.getElementById('tense-progress-label');if(tl)tl.textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;const tb=document.getElementById('tense-progress');if(tb)tb.style.width=(td/tenseTopics.length*100)+'%';renderDailySummaryOnly();renderListeningDashboard();renderTutorDashboard();}
 renderSentences();updateProgress();renderDailyPage();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.log('Offline setup skipped',err)));}
 </script>

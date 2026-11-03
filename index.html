@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10233f">
-  <meta name="description" content="English Master AI — বাংলা সহায়তায় ইংরেজি পাঠ, শব্দভান্ডার, Grammar ও অনুশীলন।">
+  <meta name="description" content="English Master AI — বাংলা সহায়তায় ইংরেজি পাঠ, শব্দভান্ডার, Grammar, Tense, দৈনিক পুনরাবৃত্তি ও Listening Practice।">
   <title>English Master AI</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icon-192.png" type="image/png">
@@ -21,29 +21,45 @@
     .quiz{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px}.quiz-meta{font-size:12px;color:var(--muted);display:flex;justify-content:space-between}.question{font-size:18px;font-weight:800;margin:18px 0}.options{display:grid;gap:9px}.option{border:1px solid var(--line);background:#fff;padding:13px;border-radius:13px;text-align:left;color:var(--ink)}.option.correct{border-color:#19966a;background:#e9f8f1}.option.wrong{border-color:#d66;background:#fff0f0}.feedback{font-size:13px;margin-top:12px;min-height:22px;line-height:1.5}.quiz-bottom{display:flex;justify-content:flex-end;margin-top:14px}.empty{padding:24px;text-align:center;color:var(--muted);background:white;border:1px dashed #cdd7e6;border-radius:16px}
     .topic-card{text-align:left;border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;color:var(--ink);box-shadow:0 3px 12px #162b4a08}.topic-card strong{display:block;margin:5px 0}.topic-card small{color:var(--muted);line-height:1.45}.topic-card .topic-status{font-size:11px;color:var(--green);font-weight:800}.grammar-example{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:11px 0;border-bottom:1px solid var(--line)}.grammar-example:last-child{border-bottom:0}.grammar-example p{margin:3px 0;font-size:13px;line-height:1.5}.grammar-example strong{font-size:15px}.grammar-exercise{margin-top:14px;background:#f7faff;border:1px solid #dbe7fb;border-radius:16px;padding:15px}.grammar-exercise h4{margin:0 0 10px}.grammar-feedback{font-size:13px;line-height:1.55;margin-top:10px;min-height:20px}.rule{padding:15px;margin:10px 0;border-radius:15px;border:1px solid #dbe7fb;background:#f7faff}.rule h4{margin:0 0 6px}.rule p{margin:5px 0;font-size:13px;line-height:1.65}.rule code{font-family:inherit;color:#174ea6;font-weight:800}.form-grid{display:grid;grid-template-columns:1fr;gap:9px}.field-label{font-size:12px;font-weight:700;color:var(--muted);display:block;margin-bottom:5px}.text-input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--ink)}.intro-result{background:#edf4ff;border:1px solid #d6e5ff;border-radius:14px;padding:14px;margin-top:12px;line-height:1.8;white-space:pre-line}.writing-task{margin-top:14px}.success-text{color:var(--green);font-weight:700}.error-text{color:var(--red);font-weight:700}.badge{display:inline-block;padding:4px 9px;border-radius:30px;background:#e7f7ef;color:#13734f;font-size:11px;font-weight:700}.note{font-size:11px;color:var(--muted);text-align:center;margin:20px 8px 0;line-height:1.5}
     nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:8px max(10px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom))}.nav-inner{width:100%;max-width:760px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px}.nav-btn{border:0;background:transparent;color:#738198;border-radius:12px;padding:7px 2px;font-size:11px;font-weight:700}.nav-btn span{display:block;font-size:19px;margin-bottom:3px}.nav-btn.active{background:var(--sky);color:#1f55bd}
+
+    .daily-hero{background:linear-gradient(130deg,#164e63,#0f766e);color:#fff;padding:18px;border-radius:20px}.daily-hero h2{margin:5px 0 6px;font-size:21px}.daily-hero p{margin:0;font-size:13px;line-height:1.55;color:#d8f3ee}.daily-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}.daily-stat{background:#fff;border:1px solid var(--line);border-radius:15px;padding:13px}.daily-stat strong{display:block;font-size:21px;color:var(--navy)}.daily-stat span{font-size:11px;color:var(--muted)}.daily-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.daily-actions button{min-height:44px}.daily-list{display:grid;gap:9px}.daily-word{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;display:flex;justify-content:space-between;gap:10px;align-items:center}.daily-word strong{display:block;font-size:15px}.daily-word small{display:block;color:var(--muted);margin-top:3px;line-height:1.4}.daily-word .word-tools{display:flex;gap:6px;align-items:center}.goal-select{max-width:130px}.streak-pill{display:inline-flex;align-items:center;gap:5px;background:#fff4dc;color:#8a5a00;padding:5px 9px;border-radius:20px;font-size:11px;font-weight:800}.daily-empty{padding:16px;text-align:center;background:#fff;border:1px dashed #cad5e3;border-radius:15px;color:var(--muted);font-size:13px;line-height:1.6}.nav-inner{grid-template-columns:repeat(7,minmax(0,1fr))}.nav-btn{font-size:10px;padding:6px 1px}.nav-btn span{font-size:18px}
+    @media(max-width:360px){.nav-btn{font-size:9px}.nav-btn span{font-size:16px}.daily-actions{grid-template-columns:1fr}}
+
     @media(min-width:620px){.welcome h1{font-size:32px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.form-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+    .listen-intro{background:linear-gradient(130deg,#4338a8,#2563eb);color:#fff;padding:18px;border-radius:20px}.listen-intro h2{margin:5px 0 6px;font-size:21px}.listen-intro p{margin:0;color:#e3eaff;font-size:13px;line-height:1.55}.listen-stat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:12px}.listen-stat{background:#fff;border:1px solid var(--line);padding:12px 9px;border-radius:14px;text-align:center}.listen-stat strong{display:block;font-size:20px;color:var(--navy)}.listen-stat span{font-size:10px;color:var(--muted)}.listen-mode-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.listen-mode{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;text-align:left;color:var(--ink);min-height:112px}.listen-mode .emoji{font-size:23px}.listen-mode strong{display:block;margin:6px 0 3px;font-size:14px}.listen-mode small{color:var(--muted);font-size:11px;line-height:1.4}.listen-workspace{margin-top:16px}.listen-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:12px 0}.listen-audio{background:#e9efff;color:#174aab;border:0;border-radius:14px;padding:13px 16px;font-weight:800;min-height:48px}.listen-speed{max-width:140px}.listen-question{font-size:17px;font-weight:800;line-height:1.55;margin:14px 0}.listen-feedback{font-size:13px;line-height:1.65;margin-top:12px;padding:11px;border-radius:12px;background:#f4f7fb}.listen-feedback.good{background:#e9f8f1;color:#126c4b}.listen-feedback.bad{background:#fff0f0;color:#a52f39}.listen-transcript{margin-top:12px;padding:12px;background:#f7faff;border:1px solid #dbe7fb;border-radius:13px;font-size:13px;line-height:1.7}.listen-transcript p{margin:4px 0}.listen-input{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:16px}.listen-mini-progress{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px;color:#e5f0ff;font-size:11px}.listen-progress{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}.listen-end{text-align:center;padding:15px 8px}.listen-end .big-score{font-size:30px;font-weight:900;color:var(--green)}
+    @media(max-width:360px){.listen-stat-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.listen-stat{padding:10px 5px}.listen-stat strong{font-size:17px}.listen-mode{padding:11px}.nav-btn{font-size:8px}}
+
   </style>
 </head>
 <body>
   <header class="top">
-    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা</div></div>
+    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা · v0.7</div></div>
     <div class="welcome"><div class="eyebrow">আজ থেকেই শুরু হোক</div><h1>Learn English, step by step.</h1><p>প্রতিদিন অল্প অল্প শিখো, নিয়মিত অনুশীলন করো, আত্মবিশ্বাস বাড়াও।</p></div>
   </header>
   <main>
     <section id="home" class="page active">
       <div class="hero"><small>তোমার প্রথম পাঠ · Lesson 01</small><h2>নিজের পরিচয় দেওয়া</h2><p>অভিবাদন, নিজের নাম, কোথায় থাকো এবং কী পছন্দ করো—এসব সহজ ইংরেজি বাক্যে বলতে শেখো।</p><button class="btn blue" onclick="showPage('learn')">পাঠ শুরু করো →</button></div>
-      <div class="section-head"><h3>তোমার শেখার জায়গা</h3><span class="muted">৫টি অংশ</span></div>
+      <div class="section-head"><h3>তোমার শেখার জায়গা</h3><span class="muted">৮টি অংশ</span></div>
       <div class="grid">
         <div class="tile" onclick="showPage('learn')"><div class="emoji">📖</div><h4>পাঠ</h4><p>বাক্য, অর্থ ও ব্যাকরণ</p></div>
-        <div class="tile" onclick="showPage('words')"><div class="emoji">🧠</div><h4>Vocabulary Master</h4><p>২০০টি শব্দ · ১৫টি বিষয়</p></div>
+        <div class="tile" onclick="showPage('words')"><div class="emoji">🧠</div><h4>Vocabulary Master</h4><p>২০০টি শব্দ · ১৬টি বিভাগ</p></div>
         <div class="tile" onclick="showPage('grammar')"><div class="emoji">🔤</div><h4>Grammar Master</h4><p>সহজ নিয়ম ও অনুশীলন</p></div>
         <div class="tile" onclick="showPage('grammar');document.getElementById('tense-master').scrollIntoView({behavior:'smooth'})"><div class="emoji">⏳</div><h4>Tense Master</h4><p>১২টি Tense ধাপে ধাপে</p></div>
         <div class="tile" onclick="showPage('practice')"><div class="emoji">✍️</div><h4>অনুশীলন</h4><p>কুইজ ও লিখে দেখা</p></div>
+        <div class="tile" onclick="showPage('listening')"><div class="emoji">🎧</div><h4>Listening Master</h4><p>শুনে শব্দ, বাক্য ও কথোপকথন বোঝো</p></div>
         <div class="tile" onclick="showPage('practice')"><div class="emoji">📈</div><h4>নিজেকে যাচাই</h4><p>পাঠ ও কুইজের ফল</p></div>
+        <div class="tile" onclick="showPage('daily')"><div class="emoji">🗓️</div><h4>আজকের শেখা</h4><p>দৈনিক লক্ষ্য ও পুনরাবৃত্তি</p></div>
+      </div>
+      <div class="section-head"><h3>🗓️ আজকের শেখার লক্ষ্য</h3><button class="small-btn" onclick="showPage('daily')">বিস্তারিত →</button></div>
+      <div class="progress-card" onclick="showPage('daily')" role="button" tabindex="0" style="cursor:pointer">
+        <div class="progress-top"><span id="home-daily-label">আজকের লক্ষ্য</span><span id="home-daily-count">০ / ১০ শব্দ</span></div>
+        <div class="track"><div class="fill" id="home-daily-progress"></div></div>
+        <p class="muted" id="home-daily-note" style="margin:9px 0 0">আজ ১০টি শব্দ শেখা বা পুনরাবৃত্তি করার চেষ্টা করো।</p>
       </div>
       <div class="section-head"><h3>আজকের অগ্রগতি</h3><span class="badge">চালিয়ে যাও!</span></div>
       <div class="progress-card">
-        <div class="progress-top"><span>শেখা শব্দ</span><span id="word-progress-label">০ / ২০</span></div><div class="track"><div class="fill" id="word-progress"></div></div>
+        <div class="progress-top"><span>শেখা শব্দ</span><span id="word-progress-label">০ / ২০০</span></div><div class="track"><div class="fill" id="word-progress"></div></div>
         <div class="progress-top" style="margin-top:15px"><span>পাঠ ১</span><span id="lesson-status">অসম্পূর্ণ</span></div>
         <div class="progress-top" style="margin-top:12px"><span>Grammar শেখা</span><span id="grammar-progress-label">০ / ৪</span></div>
         <div class="track"><div class="fill" id="grammar-progress"></div></div>
@@ -51,7 +67,7 @@
         <div class="track"><div class="fill" id="tense-progress"></div></div>
         <div class="progress-top" style="margin-top:12px"><span>কুইজের সেরা ফল</span><span id="best-score">এখনো শুরু হয়নি</span></div>
       </div>
-      <p class="note">Vocabulary Master-এ ২০০টি শব্দ, ১৫টি বিষয়, বাংলা অর্থ, উচ্চারণ-সহায়তা, উদাহরণ ও কুইজ রয়েছে। AI Tutor এখনো যুক্ত হয়নি।</p>
+      <p class="note">Vocabulary Master-এ ২০০টি শব্দ, ১৬টি বিভাগ, বাংলা অর্থ, উচ্চারণ-সহায়তা, উদাহরণ ও কুইজ রয়েছে। AI Tutor এখনো যুক্ত হয়নি।</p>
     </section>
 
     <section id="learn" class="page">
@@ -92,6 +108,72 @@
     </section>
 
 
+    <section id="listening" class="page">
+      <div class="section-head"><h3>🎧 Listening Master</h3><span class="badge">Version 0.7</span></div>
+      <div class="listen-intro">
+        <small>শুনে বোঝার অনুশীলন</small>
+        <h2>Listen carefully. Understand naturally.</h2>
+        <p>শব্দ, বাক্য ও ছোট কথোপকথন শুনে অর্থ বোঝার চেষ্টা করো। প্রয়োজন হলে ধীর গতিতে আবার শুনতে পারবে।</p>
+        <div class="listen-stat-grid">
+          <div class="listen-stat"><strong id="listen-words-done">০</strong><span>শব্দ সঠিক</span></div>
+          <div class="listen-stat"><strong id="listen-sentences-done">০</strong><span>বাক্য সঠিক</span></div>
+          <div class="listen-stat"><strong id="listen-sessions">০</strong><span>অনুশীলন শেষ</span></div>
+        </div>
+        <div class="listen-mini-progress"><span>কথোপকথন সম্পন্ন: <b id="listen-dialogues-done">০ / ৪</b></span><span>শুনে লেখা: <b id="listen-dictations-done">০ / ৮</b></span></div>
+      </div>
+      <div class="section-head"><h3>অনুশীলনের ধরন বেছে নাও</h3><span class="muted">৪টি মডিউল</span></div>
+      <div class="listen-mode-grid">
+        <button class="listen-mode" onclick="startListeningMode('words')"><span class="emoji">🔤</span><strong>শব্দ শুনে অর্থ চেনো</strong><small>একটি ইংরেজি শব্দ শুনে তার বাংলা অর্থ বেছে নাও।</small></button>
+        <button class="listen-mode" onclick="startListeningMode('sentences')"><span class="emoji">💬</span><strong>বাক্য শুনে বোঝো</strong><small>সম্পূর্ণ বাক্য শুনে সঠিক অর্থ নির্বাচন করো।</small></button>
+        <button class="listen-mode" onclick="startListeningMode('dialogues')"><span class="emoji">🗣️</span><strong>কথোপকথন বোঝো</strong><small>দুইজনের ছোট আলাপ শুনে প্রশ্নের উত্তর দাও।</small></button>
+        <button class="listen-mode" onclick="startListeningMode('dictation')"><span class="emoji">✍️</span><strong>শুনে লিখো</strong><small>শোনা ইংরেজি বাক্যটি নিজে টাইপ করে যাচাই করো।</small></button>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <label class="field-label" for="listening-speed">অডিওর গতি</label>
+        <select id="listening-speed" class="text-input listen-speed">
+          <option value="0.72">ধীরে</option>
+          <option value="0.85" selected>স্বাভাবিকের চেয়ে একটু ধীরে</option>
+          <option value="1">স্বাভাবিক</option>
+        </select>
+        <p class="muted" style="margin:9px 0 0">অডিও তোমার ব্রাউজার/ফোনের English Text-to-Speech কণ্ঠ দিয়ে তৈরি হবে। কণ্ঠ ও উচ্চারণ ডিভাইসভেদে আলাদা হতে পারে।</p>
+      </div>
+      <div id="listening-workspace" class="listen-workspace" aria-live="polite"><div class="empty">শুরু করতে উপরের চারটি অনুশীলনের যেকোনো একটি বেছে নাও।</div></div>
+      <p class="note">এই Listening Module-এ আগে থেকে রেকর্ড করা অডিও নেই। অডিও চালাতে ফোনে English Text-to-Speech/স্পিচ সার্ভিস চালু থাকতে হবে।</p>
+    </section>
+
+    <section id="daily" class="page">
+      <div class="section-head"><h3>🗓️ Smart Revision</h3><span class="badge">Version 0.6</span></div>
+      <div class="daily-hero">
+        <small>আজকের শেখার পরিকল্পনা</small>
+        <h2>প্রতিদিন একটু একটু করে এগিয়ে যাও</h2>
+        <p>নতুন শব্দ শেখো, নির্ধারিত শব্দ আবার ঝালিয়ে নাও, তারপর ছোট Daily Quiz দাও।</p>
+        <div class="daily-stat-grid">
+          <div class="daily-stat"><strong id="daily-studied-count">০ / ১০</strong><span>আজকের লক্ষ্য</span></div>
+          <div class="daily-stat"><strong id="daily-due-count">০</strong><span>আজ পুনরাবৃত্তি বাকি</span></div>
+          <div class="daily-stat"><strong id="daily-wrong-count">০</strong><span>ভুল শব্দ</span></div>
+          <div class="daily-stat"><strong id="daily-streak-count">০ দিন</strong><span>শেখার ধারাবাহিকতা</span></div>
+        </div>
+      </div>
+      <div class="progress-card">
+        <div class="progress-top"><span>দৈনিক লক্ষ্য</span><label class="field-label" for="daily-goal" style="margin:0">লক্ষ্য নির্বাচন</label></div>
+        <div class="progress-top" style="align-items:center;margin-top:8px"><span id="daily-goal-caption">আজ ১০টি শব্দ</span><select id="daily-goal" class="text-input goal-select" onchange="changeDailyGoal()"><option value="5">৫ শব্দ</option><option value="10" selected>১০ শব্দ</option><option value="15">১৫ শব্দ</option><option value="20">২০ শব্দ</option></select></div>
+        <div class="track"><div class="fill" id="daily-goal-progress"></div></div>
+        <p class="muted" id="daily-goal-message" style="margin:9px 0 0">আজকের লক্ষ্য শুরু করো। নিয়মিত অনুশীলনই সবচেয়ে গুরুত্বপূর্ণ।</p>
+        <div class="daily-actions">
+          <button class="btn primary" onclick="startReviewQuiz()">🔁 পুনরাবৃত্তি শুরু</button>
+          <button class="btn light" onclick="startDailyQuiz()">📝 Daily Quiz</button>
+        </div>
+      </div>
+      <div class="section-head"><h3>আজ আবার শেখার শব্দ</h3><span class="muted" id="due-list-label">০টি বাকি</span></div>
+      <div id="due-word-list" class="daily-list"></div>
+      <div class="section-head"><h3>ভুলের তালিকা</h3><span class="muted" id="wrong-list-label">০টি শব্দ</span></div>
+      <p class="lesson-sub">কুইজে ভুল হওয়া শব্দ এখানে থাকবে। একই শব্দ পরপর দুইবার ঠিকভাবে উত্তর দিলে তালিকা থেকে সরে যাবে।</p>
+      <div id="wrong-word-list" class="daily-list"></div>
+      <div class="section-head"><h3>আজকের কুইজের ফল</h3></div>
+      <div class="card" id="daily-quiz-summary"><p class="muted" style="margin:0">আজকের Daily Quiz এখনো দেওয়া হয়নি।</p></div>
+      <p class="note">তোমার অগ্রগতি এই ব্রাউজারের Local Storage-এ সংরক্ষিত হয়। Browser-এর Site Data মুছলে তা হারাতে পারে।</p>
+    </section>
+
     <section id="grammar" class="page">
       <div class="section-head"><h3>Grammar Master</h3><span class="badge">Beginner · A1</span></div>
       <h2 class="lesson-title">ইংরেজি ব্যাকরণ, ধাপে ধাপে</h2>
@@ -125,8 +207,10 @@
   </main>
   <nav aria-label="প্রধান নেভিগেশন"><div class="nav-inner">
     <button class="nav-btn active" data-page="home" onclick="showPage('home')"><span>⌂</span>হোম</button>
+    <button class="nav-btn" data-page="daily" onclick="showPage('daily')"><span>🗓️</span>আজ</button>
     <button class="nav-btn" data-page="learn" onclick="showPage('learn')"><span>▤</span>পাঠ</button>
     <button class="nav-btn" data-page="words" onclick="showPage('words')"><span>✦</span>শব্দ</button>
+    <button class="nav-btn" data-page="listening" onclick="showPage('listening')"><span>🎧</span>শোনা</button>
     <button class="nav-btn" data-page="grammar" onclick="showPage('grammar')"><span>🔤</span>Grammar</button>
     <button class="nav-btn" data-page="practice" onclick="showPage('practice')"><span>✓</span>অনুশীলন</button>
   </div></nav>
@@ -1757,11 +1841,36 @@ const quizQuestions = [
   {q:'“আপনার সঙ্গে পরিচিত হয়ে ভালো লাগল।”',opts:['Nice meet you.','Nice to meeting you.','Nice to meet you.'],a:2,why:'পরিচয়ের সময় প্রচলিত বাক্য হলো “Nice to meet you.”'}
 ];
 const storeKey='ema_v1_progress';
-let saved={learned:[],lessonDone:false,best:null,bestOutOf:null,grammarDone:[],tensesDone:[]};
-try{const raw=localStorage.getItem(storeKey);if(raw){const old=JSON.parse(raw);saved={...saved,...old};if(saved.best!==null&&!saved.bestOutOf)saved.bestOutOf=5;if(!Array.isArray(saved.grammarDone))saved.grammarDone=[];if(!Array.isArray(saved.tensesDone))saved.tensesDone=[];}}catch(e){console.warn('Progress storage unavailable',e);}
+let saved={learned:[],lessonDone:false,best:null,bestOutOf:null,grammarDone:[],tensesDone:[],reviewState:{},wrongWords:[],dailyGoal:10,dailyLog:{}};
+try{
+  const raw=localStorage.getItem(storeKey);
+  if(raw){const old=JSON.parse(raw);saved={...saved,...old};}
+}catch(e){console.warn('Progress storage unavailable',e);}
+if(!Array.isArray(saved.learned))saved.learned=[];
+if(!Array.isArray(saved.grammarDone))saved.grammarDone=[];
+if(!Array.isArray(saved.tensesDone))saved.tensesDone=[];
+if(saved.best!==null&&!saved.bestOutOf)saved.bestOutOf=5;
+if(!saved.reviewState||typeof saved.reviewState!=='object'||Array.isArray(saved.reviewState))saved.reviewState={};
+if(!Array.isArray(saved.wrongWords))saved.wrongWords=[];
+if(!saved.dailyLog||typeof saved.dailyLog!=='object'||Array.isArray(saved.dailyLog))saved.dailyLog={};
+if(![5,10,15,20].includes(Number(saved.dailyGoal)))saved.dailyGoal=10;
+saved.dailyGoal=Number(saved.dailyGoal);
+const listeningDefaults={wordsDone:[],sentencesDone:[],dialoguesDone:[],dictationsDone:[],wrongItems:[],sessions:0,attempts:{},bestScores:{},lastScores:{}};
+if(!saved.listening||typeof saved.listening!=='object'||Array.isArray(saved.listening))saved.listening={};
+saved.listening={...listeningDefaults,...saved.listening};
+for(const field of ['wordsDone','sentencesDone','dialoguesDone','dictationsDone','wrongItems'])if(!Array.isArray(saved.listening[field]))saved.listening[field]=[];
+for(const field of ['attempts','bestScores','lastScores'])if(!saved.listening[field]||typeof saved.listening[field]!=='object'||Array.isArray(saved.listening[field]))saved.listening[field]={};
+if(!Number.isFinite(saved.listening.sessions))saved.listening.sessions=0;
+function localDateKey(date=new Date()){const y=date.getFullYear();const m=String(date.getMonth()+1).padStart(2,'0');const d=String(date.getDate()).padStart(2,'0');return `${y}-${m}-${d}`;}
+function addDays(dateKey,days){const d=new Date(`${dateKey}T12:00:00`);d.setDate(d.getDate()+days);return localDateKey(d);}
+function getTodayLog(){const key=localDateKey();if(!saved.dailyLog[key])saved.dailyLog[key]={studiedWords:[],newWords:[],reviewedWords:[],quizCorrect:0,quizTotal:0,dailyQuizDone:false,dailyQuizScore:null,dailyQuizTotal:0};const log=saved.dailyLog[key];for(const field of ['studiedWords','newWords','reviewedWords'])if(!Array.isArray(log[field]))log[field]=[];if(typeof log.quizCorrect!=='number')log.quizCorrect=0;if(typeof log.quizTotal!=='number')log.quizTotal=0;if(typeof log.dailyQuizDone!=='boolean')log.dailyQuizDone=false;return log;}
+// Keep the original progress key and word indexes so previous versions' learning data survives.
+const migrationDate=localDateKey();
+for(const id of saved.learned){if(Number.isInteger(id)&&id>=0&&!saved.reviewState[id])saved.reviewState[id]={interval:1,reps:0,correctStreak:0,lastReviewed:migrationDate,dueDate:addDays(migrationDate,1)};}
+saved.wrongWords=[...new Set(saved.wrongWords.filter(id=>Number.isInteger(id)&&id>=0))];
 function bnNum(n){return String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[Number(d)]);}
-function save(){try{localStorage.setItem(storeKey,JSON.stringify(saved));}catch(e){console.warn('Could not save progress',e);}updateProgress();}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='words')renderWords();if(id==='grammar'){renderGrammar();renderTenses();}if(id==='practice'&&!quizStarted)startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
+function save(){try{localStorage.setItem(storeKey,JSON.stringify(saved));}catch(e){console.warn('Could not save progress',e);}updateProgress();if(document.getElementById('daily'))renderDailySummaryOnly();}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===id));if(id==='words')renderWords();if(id==='listening')renderListeningDashboard();if(id==='daily')renderDailyPage();if(id==='grammar'){renderGrammar();renderTenses();}if(id==='practice'&&!quizStarted)startQuiz();window.scrollTo({top:0,behavior:'smooth'});}
 function speak(text){if(!('speechSynthesis'in window)){alert('এই ব্রাউজারে উচ্চারণ শোনার সুবিধা পাওয়া যাচ্ছে না।');return;}window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=.82;window.speechSynthesis.speak(u);}
 function renderSentences(){document.getElementById('sentences').innerHTML=lessonSentences.map((s,i)=>`<article class="sentence"><strong>${s.en}</strong><div class="bn">${s.bn}</div><div class="pron">বাংলা উচ্চারণ: ${s.pron}</div><div class="sentence-actions"><span class="muted">বাক্য ${bnNum(i+1)}</span><button class="small-btn" onclick='speak(${JSON.stringify(s.en)})' aria-label="ইংরেজি বাক্য শুনুন">🔊 শুনুন</button></div></article>`).join('');}
 function completeLesson(){saved.lessonDone=true;save();alert('দারুণ! পাঠ ১ সম্পন্ন হয়েছে। এবার কুইজ দিয়ে অনুশীলন করো।');}
@@ -1783,20 +1892,74 @@ function renderWords(){
   document.getElementById('learned-count').textContent=`${bnNum(saved.learned.length)} / ${bnNum(words.length)} শেখা`;
   document.getElementById('word-result-count').textContent=`${bnNum(list.length)}টি শব্দ দেখানো হচ্ছে`;
 }
-function toggleLearned(i){saved.learned=saved.learned.includes(i)?saved.learned.filter(x=>x!==i):[...saved.learned,i];save();renderWords();}
-let vocabQuestions=[],vocabQuestionIndex=0,vocabScore=0,vocabAnswered=false,vocabTestCategory='all';
+function getReviewState(index){return saved.reviewState[index]||null;}
+function isWordDue(index){const state=getReviewState(index);return !!state&&(!state.dueDate||state.dueDate<=localDateKey());}
+function addUnique(array,value){if(!array.includes(value))array.push(value);}
+function toggleLearned(i){
+  const today=localDateKey();const log=getTodayLog();
+  if(saved.learned.includes(i)){
+    saved.learned=saved.learned.filter(x=>x!==i);
+  }else{
+    saved.learned.push(i);addUnique(log.studiedWords,i);addUnique(log.newWords,i);
+    if(!saved.reviewState[i])saved.reviewState[i]={interval:1,reps:0,correctStreak:0,lastReviewed:today,dueDate:addDays(today,1)};
+  }
+  save();renderWords();renderDailyPage();
+}
+let vocabQuestions=[],vocabQuestionIndex=0,vocabScore=0,vocabAnswered=false,vocabTestCategory='all',vocabTestMode='category';
 function shuffleList(items){const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
-function startVocabularyTest(){
-  const selected=document.getElementById('word-category')?.value||'all';
-  const pool=words.map((w,i)=>({...w,i})).filter(w=>selected==='all'||w.category===selected);
-  if(pool.length<4){alert('এই টেস্টের জন্য অন্তত চারটি শব্দ দরকার।');return;}
-  vocabTestCategory=selected;vocabQuestions=shuffleList(pool).slice(0,Math.min(10,pool.length)).map(w=>{
-    const distractors=shuffleList(pool.filter(x=>x.i!==w.i)).slice(0,3);
+function buildVocabularyQuestions(pool){
+  return shuffleList(pool).slice(0,Math.min(10,pool.length)).map(w=>{
+    const distractors=shuffleList(words.map((item,index)=>({...item,i:index})).filter(x=>x.i!==w.i)).slice(0,3);
     const options=shuffleList([w,...distractors]);
     return {word:w,options,answer:options.findIndex(x=>x.i===w.i)};
   });
+}
+function beginVocabularyQuiz(pool,mode,key){
+  if(!pool.length||(mode==='category'&&pool.length<4)){alert(mode==='review'?'আজ পুনরাবৃত্তির জন্য কোনো শব্দ বাকি নেই।':'এই টেস্টের জন্য অন্তত চারটি শব্দ দরকার।');return;}
+  vocabTestMode=mode;vocabTestCategory=key;vocabQuestions=buildVocabularyQuestions(pool);
   vocabQuestionIndex=0;vocabScore=0;vocabAnswered=false;
-  const box=document.getElementById('vocab-test');box.hidden=false;renderVocabularyQuestion();box.scrollIntoView({behavior:'smooth',block:'start'});
+  const box=document.getElementById('vocab-test');if(box){box.hidden=false;renderVocabularyQuestion();box.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+function startVocabularyTest(){
+  const selected=document.getElementById('word-category')?.value||'all';
+  const pool=words.map((w,i)=>({...w,i})).filter(w=>selected==='all'||w.category===selected);
+  beginVocabularyQuiz(pool,'category',selected);
+}
+function getDueWordItems(){
+  return Object.keys(saved.reviewState).map(Number).filter(i=>Number.isInteger(i)&&words[i]&&isWordDue(i)).map(i=>({...words[i],i})).sort((a,b)=>{
+    const sa=getReviewState(a.i)||{},sb=getReviewState(b.i)||'';
+    return String(sa.dueDate||'').localeCompare(String(sb.dueDate||''));
+  });
+}
+function startReviewQuiz(){
+  const due=getDueWordItems();
+  if(!due.length){alert('আজ কোনো শব্দের পুনরাবৃত্তি বাকি নেই। Daily Quiz দিতে পারো অথবা নতুন শব্দ শেখো।');return;}
+  beginVocabularyQuiz(due,'review','review');
+}
+function startDailyQuiz(){
+  const due=getDueWordItems();
+  const dueIds=new Set(due.map(w=>w.i));
+  const fresh=shuffleList(words.map((w,i)=>({...w,i})).filter(w=>!dueIds.has(w.i)&&!getReviewState(w.i)));
+  const known=shuffleList(words.map((w,i)=>({...w,i})).filter(w=>!dueIds.has(w.i)&&getReviewState(w.i)));
+  const pool=[...due,...fresh,...known].slice(0,10);
+  if(pool.length<4){alert('Daily Quiz তৈরির জন্য পর্যাপ্ত শব্দ নেই।');return;}
+  beginVocabularyQuiz(pool,'daily','daily');
+}
+function registerWordAnswer(index,correct){
+  const today=localDateKey();const log=getTodayLog();const dueBefore=isWordDue(index);
+  addUnique(log.studiedWords,index);
+  if(dueBefore)addUnique(log.reviewedWords,index);
+  let state=saved.reviewState[index]||{interval:0,reps:0,correctStreak:0,lastReviewed:null,dueDate:today};
+  if(correct){
+    log.quizCorrect++;state.reps=(state.reps||0)+1;state.correctStreak=(state.correctStreak||0)+1;
+    const intervals=[1,3,7,14,30];state.interval=intervals[Math.min(state.reps-1,intervals.length-1)];
+    state.lastReviewed=today;state.dueDate=addDays(today,state.interval);
+    if(state.correctStreak>=2)saved.wrongWords=saved.wrongWords.filter(x=>x!==index);
+  }else{
+    state.correctStreak=0;state.interval=0;state.lastReviewed=today;state.dueDate=today;
+    addUnique(saved.wrongWords,index);
+  }
+  saved.reviewState[index]=state;log.quizTotal++;
 }
 function renderVocabularyQuestion(){
   const box=document.getElementById('vocab-test');
@@ -1804,22 +1967,67 @@ function renderVocabularyQuestion(){
     const total=vocabQuestions.length;const key=vocabTestCategory;
     if(!saved.vocabBest||typeof saved.vocabBest!=='object')saved.vocabBest={};
     const old=saved.vocabBest[key]??0;saved.vocabBest[key]=Math.max(old,vocabScore);
-    if(!saved.vocabTests||typeof saved.vocabTests!=='object')saved.vocabTests={};saved.vocabTests[key]=(saved.vocabTests[key]||0)+1;save();
-    box.innerHTML=`<div style="text-align:center;padding:12px"><div style="font-size:34px">🎉</div><h3>Vocabulary Test শেষ!</h3><p>তোমার ফল: <b>${bnNum(vocabScore)} / ${bnNum(total)}</b></p><p class="muted">এই বিভাগের সেরা ফল: ${bnNum(saved.vocabBest[key])} / ${bnNum(total)} · মোট চেষ্টা: ${bnNum(saved.vocabTests[key])}</p><button class="btn primary" onclick="startVocabularyTest()">আবার পরীক্ষা দাও</button> <button class="btn light" onclick="document.getElementById('vocab-test').hidden=true">বন্ধ করো</button></div>`;
+    if(!saved.vocabTests||typeof saved.vocabTests!=='object')saved.vocabTests={};saved.vocabTests[key]=(saved.vocabTests[key]||0)+1;
+    const log=getTodayLog();
+    if(vocabTestMode==='daily'){log.dailyQuizDone=true;log.dailyQuizScore=vocabScore;log.dailyQuizTotal=total;}
+    save();
+    const heading=vocabTestMode==='daily'?'Daily Quiz শেষ!':vocabTestMode==='review'?'পুনরাবৃত্তি শেষ!':'Vocabulary Test শেষ!';
+    box.innerHTML=`<div style="text-align:center;padding:12px"><div style="font-size:34px">🎉</div><h3>${heading}</h3><p>তোমার ফল: <b>${bnNum(vocabScore)} / ${bnNum(total)}</b></p><p class="muted">এই পরীক্ষার সেরা ফল: ${bnNum(saved.vocabBest[key])} / ${bnNum(total)} · মোট চেষ্টা: ${bnNum(saved.vocabTests[key])}</p><button class="btn primary" onclick="startDailyQuiz()">Daily Quiz আবার দাও</button> <button class="btn light" onclick="document.getElementById('vocab-test').hidden=true;renderDailyPage()">বন্ধ করো</button></div>`;
+    renderDailyPage();
     return;
   }
   const q=vocabQuestions[vocabQuestionIndex];
-  box.innerHTML=`<div class="quiz-meta"><span>Vocabulary প্রশ্ন ${bnNum(vocabQuestionIndex+1)} / ${bnNum(vocabQuestions.length)}</span><span>স্কোর: ${bnNum(vocabScore)}</span></div><div class="track"><div class="fill" style="width:${vocabQuestionIndex/vocabQuestions.length*100}%"></div></div><p class="muted" style="margin-top:14px">বিষয়: ${q.word.category}</p><div class="question">“${q.word.bn}” এর ইংরেজি শব্দ কোনটি?</div><div class="options">${q.options.map((w,i)=>`<button class="option vocab-option" id="vocab-opt-${i}" onclick="answerVocabularyQuestion(${i})">${String.fromCharCode(65+i)}. ${w.en}</button>`).join('')}</div><div id="vocab-feedback" class="feedback" aria-live="polite"></div><div class="quiz-bottom"><button class="btn primary" id="vocab-next" onclick="nextVocabularyQuestion()" disabled>পরের প্রশ্ন →</button></div>`;
+  const heading=vocabTestMode==='daily'?'Daily Quiz':vocabTestMode==='review'?'পুনরাবৃত্তি':'Vocabulary প্রশ্ন';
+  box.innerHTML=`<div class="quiz-meta"><span>${heading} ${bnNum(vocabQuestionIndex+1)} / ${bnNum(vocabQuestions.length)}</span><span>স্কোর: ${bnNum(vocabScore)}</span></div><div class="track"><div class="fill" style="width:${vocabQuestionIndex/vocabQuestions.length*100}%"></div></div><p class="muted" style="margin-top:14px">বিষয়: ${q.word.category}</p><div class="question">“${q.word.bn}” এর ইংরেজি শব্দ কোনটি?</div><div class="options">${q.options.map((w,i)=>`<button class="option vocab-option" id="vocab-opt-${i}" onclick="answerVocabularyQuestion(${i})">${String.fromCharCode(65+i)}. ${w.en}</button>`).join('')}</div><div id="vocab-feedback" class="feedback" aria-live="polite"></div><div class="quiz-bottom"><button class="btn primary" id="vocab-next" onclick="nextVocabularyQuestion()" disabled>পরের প্রশ্ন →</button></div>`;
   vocabAnswered=false;
 }
 function answerVocabularyQuestion(i){
   if(vocabAnswered)return;vocabAnswered=true;const q=vocabQuestions[vocabQuestionIndex];
   document.querySelectorAll('.vocab-option').forEach((b,j)=>{b.disabled=true;if(j===q.answer)b.classList.add('correct');if(j===i&&i!==q.answer)b.classList.add('wrong');});
   const correct=i===q.answer;if(correct)vocabScore++;
+  registerWordAnswer(q.word.i,correct);save();
   const fb=document.getElementById('vocab-feedback');fb.innerHTML=correct?`<span class="success-text">সঠিক উত্তর!</span> ${q.word.en} — ${q.word.bn}`:`<span class="error-text">সঠিক হয়নি।</span> সঠিক উত্তর: <b>${q.word.en}</b> — ${q.word.bn}. উচ্চারণ: ${q.word.pron}`;
   document.getElementById('vocab-next').disabled=false;
 }
 function nextVocabularyQuestion(){if(!vocabAnswered)return;vocabQuestionIndex++;renderVocabularyQuestion();}
+function setDailyGoal(value){const n=Number(value);if(![5,10,15,20].includes(n))return;saved.dailyGoal=n;save();renderDailyPage();}
+function changeDailyGoal(){setDailyGoal(document.getElementById('daily-goal').value);}
+function getActivityStreak(){
+  const today=localDateKey();const active=key=>Array.isArray(saved.dailyLog[key]?.studiedWords)&&saved.dailyLog[key].studiedWords.length>0;
+  let cursor=active(today)?today:addDays(today,-1),current=0;
+  while(active(cursor)&&current<500){current++;cursor=addDays(cursor,-1);}
+  const days=Object.keys(saved.dailyLog).filter(k=>active(k)).sort();let best=0,run=0,previous=null;
+  for(const key of days){if(previous&&addDays(previous,1)!==key)run=0;run++;best=Math.max(best,run);previous=key;}
+  return {current,best};
+}
+function renderDailySummaryOnly(){
+  const log=getTodayLog();const studied=log.studiedWords.length;const due=getDueWordItems().length;const wrong=saved.wrongWords.length;const streak=getActivityStreak();
+  const label=document.getElementById('home-daily-label'),count=document.getElementById('home-daily-count'),fill=document.getElementById('home-daily-progress'),note=document.getElementById('home-daily-note');
+  if(label)label.textContent=studied>=saved.dailyGoal?'আজকের লক্ষ্য পূরণ হয়েছে ✓':'আজকের শেখার লক্ষ্য';
+  if(count)count.textContent=`${bnNum(studied)} / ${bnNum(saved.dailyGoal)} শব্দ`;
+  if(fill)fill.style.width=`${Math.min(100,studied/saved.dailyGoal*100)}%`;
+  if(note)note.textContent=`পুনরাবৃত্তি বাকি ${bnNum(due)}টি · ভুল শব্দ ${bnNum(wrong)}টি · ধারাবাহিকতা ${bnNum(streak.current)} দিন`;
+  const dueEl=document.getElementById('daily-due-count');if(dueEl)dueEl.textContent=bnNum(due);
+  const wrongEl=document.getElementById('daily-wrong-count');if(wrongEl)wrongEl.textContent=bnNum(wrong);
+  const streakEl=document.getElementById('daily-streak-count');if(streakEl)streakEl.textContent=`${bnNum(streak.current)} দিন`;
+  const studiedEl=document.getElementById('daily-studied-count');if(studiedEl)studiedEl.textContent=`${bnNum(studied)} / ${bnNum(saved.dailyGoal)}`;
+  const goalLabel=document.getElementById('daily-goal-caption');if(goalLabel)goalLabel.textContent=`আজ ${bnNum(saved.dailyGoal)}টি শব্দ`;
+  const goalSelect=document.getElementById('daily-goal');if(goalSelect)goalSelect.value=String(saved.dailyGoal);
+  const goalFill=document.getElementById('daily-goal-progress');if(goalFill)goalFill.style.width=`${Math.min(100,studied/saved.dailyGoal*100)}%`;
+  const goalMsg=document.getElementById('daily-goal-message');if(goalMsg)goalMsg.textContent=studied>=saved.dailyGoal?'অভিনন্দন! আজকের লক্ষ্য পূরণ হয়েছে। কাল আবার চালিয়ে যাও।':`আর ${bnNum(Math.max(0,saved.dailyGoal-studied))}টি শব্দের অনুশীলন করলে আজকের লক্ষ্য পূরণ হবে।`;
+  const summary=document.getElementById('daily-quiz-summary');if(summary){summary.innerHTML=log.dailyQuizDone?`<p style="margin:0"><b>আজকের ফল:</b> ${bnNum(log.dailyQuizScore)} / ${bnNum(log.dailyQuizTotal)} · Daily Quiz সম্পন্ন ✓</p>`:'<p class="muted" style="margin:0">আজকের Daily Quiz এখনো দেওয়া হয়নি।</p>';}
+}
+function dailyWordMarkup(w,wrong=false){return `<article class="daily-word"><div><strong>${w.en}</strong><small>${w.bn} · উচ্চারণ: ${w.pron}</small></div><div class="word-tools"><button class="small-btn" onclick='speak(${JSON.stringify(w.en)})'>🔊</button><button class="small-btn" onclick="openWordInVocabulary(${w.i})">দেখো</button></div></article>`;}
+function openWordInVocabulary(index){showPage('words');document.getElementById('word-search').value=words[index]?.en||'';document.getElementById('word-category').value='all';renderWords();}
+function renderDailyPage(){
+  renderDailySummaryOnly();const due=getDueWordItems();const dueList=document.getElementById('due-word-list');const dueLabel=document.getElementById('due-list-label');
+  if(dueLabel)dueLabel.textContent=`${bnNum(due.length)}টি বাকি`;
+  if(dueList)dueList.innerHTML=due.length?due.slice(0,20).map(w=>dailyWordMarkup(w)).join('')+(due.length>20?`<div class="muted">আরও ${bnNum(due.length-20)}টি শব্দ বাকি। পুনরাবৃত্তির কুইজে ধাপে ধাপে সেগুলো আসবে।</div>`:''):'<div class="daily-empty">আজ কোনো নির্ধারিত পুনরাবৃত্তি নেই। নতুন শব্দ শিখতে Vocabulary Master-এ যাও, অথবা Daily Quiz দাও।</div>';
+  const wrong=saved.wrongWords.filter(i=>words[i]).map(i=>({...words[i],i}));const wrongList=document.getElementById('wrong-word-list');const wrongLabel=document.getElementById('wrong-list-label');
+  if(wrongLabel)wrongLabel.textContent=`${bnNum(wrong.length)}টি শব্দ`;
+  if(wrongList)wrongList.innerHTML=wrong.length?wrong.slice(0,20).map(w=>dailyWordMarkup(w,true)).join(''):'<div class="daily-empty">এখনো কোনো ভুল শব্দের তালিকা নেই। কুইজে ভুল হলে এখানে দেখা যাবে।</div>';
+}
+
 
 const grammarTopics = [
   {id:1,title:'Pronouns ও be verb',short:'I am, You are, He is',intro:'Pronoun হলো এমন শব্দ, যা noun-এর বদলে বসে। Be verb দিয়ে পরিচয়, অবস্থা বা অবস্থান বোঝানো যায়।',rules:[
@@ -1920,14 +2128,170 @@ function checkTenseAnswer(i){
 }
 function resetTenseQuestion(){tenseAnswered=false;renderTenseDetail();}
 
+
+// Listening Master v0.7: browser-generated English speech plus four practical exercises.
+const listeningSentenceBank=[
+  {id:'s01',en:'I usually wake up at six.',bn:'আমি সাধারণত ছয়টায় ঘুম থেকে উঠি।'},
+  {id:'s02',en:'She is reading a book.',bn:'সে একটি বই পড়ছে।'},
+  {id:'s03',en:'We went to the market yesterday.',bn:'আমরা গতকাল বাজারে গিয়েছিলাম।'},
+  {id:'s04',en:'They will visit us tomorrow.',bn:'তারা আগামীকাল আমাদের দেখতে আসবে।'},
+  {id:'s05',en:'Could you please open the window?',bn:'তুমি কি দয়া করে জানালাটি খুলবে?'},
+  {id:'s06',en:'The weather is beautiful today.',bn:'আজ আবহাওয়া সুন্দর।'},
+  {id:'s07',en:'I would like a glass of water.',bn:'আমি এক গ্লাস পানি চাই।'},
+  {id:'s08',en:'My brother works in a hospital.',bn:'আমার ভাই একটি হাসপাতালে কাজ করে।'},
+  {id:'s09',en:'Please speak a little more slowly.',bn:'দয়া করে একটু ধীরে কথা বলুন।'},
+  {id:'s10',en:'The train leaves at eight o’clock.',bn:'ট্রেনটি আটটায় ছেড়ে যায়।'},
+  {id:'s11',en:'I have finished my homework.',bn:'আমি আমার বাড়ির কাজ শেষ করেছি।'},
+  {id:'s12',en:'Learning a language takes time.',bn:'একটি ভাষা শিখতে সময় লাগে।'}
+];
+const listeningDialogueBank=[
+  {id:'d01',title:'পরিচিত হওয়া',lines:['Hello! My name is Emma. What is your name?','Hi, I am Rafi. Nice to meet you.','Nice to meet you too.'],questions:[
+    {q:'Rafi কী বলেছে?',opts:['তার নাম রাফি','তার বয়স দশ','সে একজন শিক্ষক'],answer:'তার নাম রাফি',why:'Rafi বলেছে, “I am Rafi.”'},
+    {q:'তারা কী বলেছে?',opts:['Goodbye','Nice to meet you','See you tomorrow'],answer:'Nice to meet you',why:'দুজনেই পরিচিত হয়ে ভালো লাগার কথা বলেছে।'}]},
+  {id:'d02',title:'ক্যাফেতে অর্ডার',lines:['Good afternoon. Can I have a glass of water, please?','Of course. Would you like anything to eat?','No, thank you. That is all.'],questions:[
+    {q:'গ্রাহক কী চাইছে?',opts:['এক কাপ চা','এক গ্লাস পানি','এক প্লেট ভাত'],answer:'এক গ্লাস পানি',why:'গ্রাহক বলেছে, “a glass of water”.'},
+    {q:'গ্রাহক আর কিছু খেতে চেয়েছে কি?',opts:['হ্যাঁ, একটি স্যান্ডউইচ','হ্যাঁ, একটি কেক','না, আর কিছু নয়'],answer:'না, আর কিছু নয়',why:'সে বলেছে, “No, thank you. That is all.”'}]},
+  {id:'d03',title:'রাস্তা জিজ্ঞাসা',lines:['Excuse me, where is the bus stop?','Go straight and turn left at the bank.','Thank you for your help.'],questions:[
+    {q:'লোকটি কোন জায়গাটি খুঁজছে?',opts:['রেলস্টেশন','বাসস্টপ','হাসপাতাল'],answer:'বাসস্টপ',why:'সে বাসস্টপের অবস্থান জানতে চেয়েছে।'},
+    {q:'কোন দিকে যেতে বলা হয়েছে?',opts:['সোজা গিয়ে বামে','সোজা গিয়ে ডানে','পেছনে ফিরে'],answer:'সোজা গিয়ে বামে',why:'উত্তরে বলা হয়েছে, “Go straight and turn left”.'}]},
+  {id:'d04',title:'দোকানে কেনাকাটা',lines:['How much is this notebook?','It is two hundred taka.','Okay, I will take it.'],questions:[
+    {q:'ক্রেতা কী কিনতে চায়?',opts:['একটি খাতা','একটি কলম','একটি ব্যাগ'],answer:'একটি খাতা',why:'সে notebook-এর দাম জিজ্ঞাসা করেছে।'},
+    {q:'খাতাটির দাম কত?',opts:['একশ টাকা','দুইশ টাকা','তিনশ টাকা'],answer:'দুইশ টাকা',why:'দোকানদার বলেছে, “two hundred taka”.'}]}
+];
+const listeningDictationBank=[
+  {id:'t01',en:'I like learning English.',bn:'আমি ইংরেজি শিখতে পছন্দ করি।'},
+  {id:'t02',en:'Please call me tomorrow.',bn:'দয়া করে আমাকে আগামীকাল ফোন করো।'},
+  {id:'t03',en:'My father is at home.',bn:'আমার বাবা বাড়িতে আছেন।'},
+  {id:'t04',en:'We are going to school.',bn:'আমরা স্কুলে যাচ্ছি।'},
+  {id:'t05',en:'The children are playing outside.',bn:'শিশুরা বাইরে খেলছে।'},
+  {id:'t06',en:'I need some help, please.',bn:'আমার একটু সাহায্য দরকার, দয়া করে।'},
+  {id:'t07',en:'She has a beautiful garden.',bn:'তার একটি সুন্দর বাগান আছে।'},
+  {id:'t08',en:'Practice makes progress.',bn:'অনুশীলন উন্নতি এনে দেয়।'}
+];
+let listeningMode=null,listeningQuestions=[],listeningIndex=0,listeningScore=0,listeningAnswered=false,listeningCurrent=null;
+function renderListeningDashboard(){
+  const l=saved.listening||listeningDefaults;
+  const set=(id,value)=>{const el=document.getElementById(id);if(el)el.textContent=bnNum(value);};
+  set('listen-words-done',l.wordsDone.length);set('listen-sentences-done',l.sentencesDone.length);set('listen-sessions',l.sessions);
+  const d=document.getElementById('listen-dialogues-done');if(d)d.textContent=`${bnNum(l.dialoguesDone.length)} / ${bnNum(listeningDialogueBank.length)}`;
+  const t=document.getElementById('listen-dictations-done');if(t)t.textContent=`${bnNum(l.dictationsDone.length)} / ${bnNum(listeningDictationBank.length)}`;
+}
+function playListeningAudio(text){
+  if(!('speechSynthesis'in window)||typeof SpeechSynthesisUtterance==='undefined'){
+    alert('এই ব্রাউজারে Text-to-Speech পাওয়া যাচ্ছে না। ফোনের Settings থেকে English Text-to-Speech voice চালু করে Chrome আবার খোলো।');return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance=new SpeechSynthesisUtterance(text);
+  utterance.lang='en-US';
+  const rate=Number(document.getElementById('listening-speed')?.value||0.85);
+  utterance.rate=[0.72,0.85,1].includes(rate)?rate:0.85;
+  utterance.pitch=1;
+  const voices=window.speechSynthesis.getVoices();
+  const voice=voices.find(v=>/^en-US/i.test(v.lang))||voices.find(v=>/^en/i.test(v.lang));
+  if(voice)utterance.voice=voice;
+  utterance.onerror=()=>alert('অডিও চালানো যায়নি। ফোনের Text-to-Speech সেটিংস পরীক্ষা করো।');
+  window.speechSynthesis.speak(utterance);
+}
+function buildListeningWordQuestions(){
+  const targets=shuffleList(words.map((w,i)=>({...w,i}))).slice(0,10);
+  return targets.map(target=>{
+    const distractors=[];const used=new Set([target.bn]);
+    for(const w of shuffleList(words.filter(w=>w.bn!==target.bn))){if(!used.has(w.bn)){distractors.push(w.bn);used.add(w.bn);}if(distractors.length===3)break;}
+    const options=shuffleList([target.bn,...distractors]);
+    return {kind:'words',key:target.en.toLowerCase(),playText:target.en,question:'শব্দটি শুনে সঠিক বাংলা অর্থ বেছে নাও।',options,answer:options.indexOf(target.bn),reveal:`${target.en} = ${target.bn}`};
+  });
+}
+function buildListeningSentenceQuestions(){
+  return shuffleList(listeningSentenceBank).slice(0,10).map(target=>{
+    const distractors=shuffleList(listeningSentenceBank.filter(x=>x.id!==target.id)).slice(0,3).map(x=>x.bn);
+    const options=shuffleList([target.bn,...distractors]);
+    return {kind:'sentences',key:target.id,playText:target.en,question:'বাক্যটি শুনে সঠিক বাংলা অর্থ বেছে নাও।',options,answer:options.indexOf(target.bn),reveal:`${target.en}\n${target.bn}`};
+  });
+}
+function buildListeningDialogueQuestions(){
+  const selected=shuffleList(listeningDialogueBank).slice(0,3);
+  return selected.flatMap(dialogue=>dialogue.questions.map((q,i)=>({kind:'dialogues',key:`${dialogue.id}-${i+1}`,dialogueId:dialogue.id,title:dialogue.title,playText:dialogue.lines.join(' '),transcript:dialogue.lines,reveal:dialogue.lines.map((line,i)=>`${i%2===0?'A':'B'}: ${line}`).join('\n'),question:q.q,options:q.opts,answer:q.opts.indexOf(q.answer),why:q.why})));
+}
+function buildListeningDictationQuestions(){
+  return shuffleList(listeningDictationBank).slice(0,8).map(item=>({kind:'dictation',key:item.id,playText:item.en,question:'শোনা বাক্যটি ইংরেজিতে লিখো।',translation:item.bn,answerText:item.en,reveal:`${item.en}\n${item.bn}`}));
+}
+function startListeningMode(mode){
+  if(!['words','sentences','dialogues','dictation'].includes(mode))return;
+  if('speechSynthesis'in window)window.speechSynthesis.cancel();
+  listeningMode=mode;listeningIndex=0;listeningScore=0;listeningAnswered=false;
+  listeningQuestions=mode==='words'?buildListeningWordQuestions():mode==='sentences'?buildListeningSentenceQuestions():mode==='dialogues'?buildListeningDialogueQuestions():buildListeningDictationQuestions();
+  renderListeningQuestion();
+  document.getElementById('listening-workspace')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function listeningModeName(mode){return ({words:'শব্দ শুনে অর্থ চেনো',sentences:'বাক্য শুনে বোঝো',dialogues:'কথোপকথন বোঝো',dictation:'শুনে লিখো'})[mode]||'Listening Practice';}
+function listeningItemKey(q){return `${q.kind}:${q.key}`;}
+function renderListeningQuestion(){
+  const box=document.getElementById('listening-workspace');if(!box)return;
+  if(listeningIndex>=listeningQuestions.length){finishListeningMode();return;}
+  const q=listeningQuestions[listeningIndex];listeningCurrent=q;listeningAnswered=false;
+  const count=listeningQuestions.length;
+  const top=`<div class="listen-progress"><span>${listeningModeName(listeningMode)}</span><span>প্রশ্ন ${bnNum(listeningIndex+1)} / ${bnNum(count)} · স্কোর ${bnNum(listeningScore)}</span></div><div class="track"><div class="fill" style="width:${listeningIndex/count*100}%"></div></div>`;
+  let inner='';
+  if(listeningMode==='dictation'){
+    inner=`<p class="listen-question">${q.question}</p><p class="muted">বাংলা অর্থ: ${q.translation}</p><div class="listen-controls"><button class="listen-audio" onclick="playListeningAudio(listeningCurrent.playText)">🔊 বাক্যটি শুনুন</button><button class="small-btn" onclick="playListeningAudio(listeningCurrent.playText)">আবার শুনি</button></div><input id="listening-dictation-input" class="listen-input" type="text" placeholder="শোনা বাক্যটি এখানে লেখো…" autocomplete="off" autocapitalize="sentences"><div class="listen-controls"><button class="btn primary" id="listening-check" onclick="checkListeningDictation()">উত্তর যাচাই</button></div><div id="listening-feedback"></div>`;
+  }else{
+    inner=`<p class="listen-question">${q.question}</p>${q.title?`<p class="muted">কথোপকথন: ${q.title}</p>`:''}<div class="listen-controls"><button class="listen-audio" onclick="playListeningAudio(listeningCurrent.playText)">🔊 অডিও শুনুন</button><button class="small-btn" onclick="playListeningAudio(listeningCurrent.playText)">আবার শুনি</button></div><div class="options">${q.options.map((o,i)=>`<button class="option listening-option" id="listening-option-${i}" onclick="answerListeningOption(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div><div id="listening-feedback"></div>`;
+  }
+  box.innerHTML=`<article class="card">${top}${inner}<div id="listening-next-wrap" class="quiz-bottom" style="margin-top:12px"></div></article>`;
+}
+function saveListeningResult(q,correct){
+  const l=saved.listening;const key=listeningItemKey(q);
+  if(correct){
+    if(q.kind!=='dialogues'){
+      const field=q.kind==='words'?'wordsDone':q.kind==='sentences'?'sentencesDone':'dictationsDone';
+      if(!l[field].includes(q.key))l[field].push(q.key);
+    }
+    l.wrongItems=l.wrongItems.filter(x=>x!==key);
+  }else if(!l.wrongItems.includes(key))l.wrongItems.push(key);
+}
+function answerListeningOption(i){
+  if(listeningAnswered)return;const q=listeningCurrent;if(!q||!q.options)return;listeningAnswered=true;
+  document.querySelectorAll('.listening-option').forEach((b,j)=>{b.disabled=true;if(j===q.answer)b.classList.add('correct');if(j===i&&i!==q.answer)b.classList.add('wrong');});
+  const correct=i===q.answer;q.correctThisAttempt=correct;if(correct)listeningScore++;saveListeningResult(q,correct);
+  const fb=document.getElementById('listening-feedback');
+  fb.className=`listen-feedback ${correct?'good':'bad'}`;
+  fb.innerHTML=`${correct?'সঠিক উত্তর!':'এটি সঠিক হয়নি।'}<div class="listen-transcript">${q.reveal||q.playText}${q.why?`<p>${q.why}</p>`:''}</div>`;
+  const next=document.getElementById('listening-next-wrap');if(next)next.innerHTML=`<button class="btn primary" onclick="nextListeningQuestion()">${listeningIndex===listeningQuestions.length-1?'ফলাফল দেখো':'পরের প্রশ্ন →'}</button>`;
+  save();
+}
+function normalizeDictation(value){return String(value||'').toLowerCase().replace(/[’‘]/g,"'").replace(/[^a-z0-9\s']/g,' ').replace(/\s+/g,' ').trim();}
+function checkListeningDictation(){
+  if(listeningAnswered)return;const q=listeningCurrent;if(!q)return;
+  const input=document.getElementById('listening-dictation-input');const value=input?.value||'';
+  if(!value.trim()){alert('আগে বাক্যটি লিখে নাও।');return;}
+  listeningAnswered=true;const correct=normalizeDictation(value)===normalizeDictation(q.answerText);q.correctThisAttempt=correct;if(correct)listeningScore++;
+  saveListeningResult(q,correct);if(input)input.disabled=true;
+  const check=document.getElementById('listening-check');if(check)check.disabled=true;
+  const fb=document.getElementById('listening-feedback');fb.className=`listen-feedback ${correct?'good':'bad'}`;fb.innerHTML=`${correct?'চমৎকার! বাক্যটি ঠিক লিখেছ।':'মিল হয়নি। সঠিক বাক্যটি দেখে আবার অনুশীলন করো।'}<div class="listen-transcript"><strong>${q.answerText}</strong><p>${q.translation}</p></div>`;
+  const next=document.getElementById('listening-next-wrap');if(next)next.innerHTML=`<button class="btn primary" onclick="nextListeningQuestion()">${listeningIndex===listeningQuestions.length-1?'ফলাফল দেখো':'পরের প্রশ্ন →'}</button>`;
+  save();
+}
+function nextListeningQuestion(){if(!listeningAnswered)return;listeningIndex++;renderListeningQuestion();}
+function finishListeningMode(){
+  const box=document.getElementById('listening-workspace');const total=listeningQuestions.length;const percent=Math.round(listeningScore/total*100);const l=saved.listening;
+  l.sessions=(l.sessions||0)+1;l.attempts[listeningMode]=(l.attempts[listeningMode]||0)+1;l.bestScores[listeningMode]=Math.max(l.bestScores[listeningMode]||0,listeningScore);l.lastScores[listeningMode]={score:listeningScore,total,date:localDateKey()};
+  if(listeningMode==='dialogues'){
+    for(const d of listeningDialogueBank){const qs=listeningQuestions.filter(q=>q.dialogueId===d.id);if(qs.length&&qs.every(q=>q.correctThisAttempt===true)){if(!l.dialoguesDone.includes(d.id))l.dialoguesDone.push(d.id);}}
+  }
+  save();renderListeningDashboard();
+  box.innerHTML=`<article class="card listen-end"><div style="font-size:36px">🎉</div><h3>অনুশীলন শেষ!</h3><div class="big-score">${bnNum(listeningScore)} / ${bnNum(total)}</div><p>সঠিক উত্তরের হার: <b>${bnNum(percent)}%</b></p><p class="muted">এই মডিউলে তোমার সেরা ফল: ${bnNum(l.bestScores[listeningMode])} / ${bnNum(total)}</p><button class="btn primary" onclick="startListeningMode('${listeningMode}')">আবার অনুশীলন করো</button> <button class="btn light" onclick="resetListeningWorkspace()">অন্য অনুশীলন বেছে নাও</button></article>`;
+  if('speechSynthesis'in window)window.speechSynthesis.cancel();
+}
+function resetListeningWorkspace(){if('speechSynthesis'in window)window.speechSynthesis.cancel();listeningMode=null;document.getElementById('listening-workspace').innerHTML='<div class="empty">শুরু করতে উপরের চারটি অনুশীলনের যেকোনো একটি বেছে নাও।</div>';}
+
 let quizIndex=0,quizScore=0,quizAnswered=false,quizStarted=false;
 function startQuiz(){quizIndex=0;quizScore=0;quizAnswered=false;quizStarted=true;renderQuiz();}
 function renderQuiz(){const box=document.getElementById('quiz-box');if(quizIndex>=quizQuestions.length){if(saved.best===null||quizScore>saved.best||saved.bestOutOf!==quizQuestions.length){saved.best=quizScore;saved.bestOutOf=quizQuestions.length;}save();box.innerHTML=`<div style="text-align:center;padding:15px"><div style="font-size:36px">🎉</div><h3>অনুশীলন শেষ!</h3><p>তোমার ফল: <b>${bnNum(quizScore)} / ${bnNum(quizQuestions.length)}</b></p><p class="muted">ভুলগুলো আবার দেখে নিলে আরও ভালো হবে।</p><button class="btn primary" onclick="startQuiz()">আবার চেষ্টা করো</button></div>`;return;}const q=quizQuestions[quizIndex];box.innerHTML=`<div class="quiz-meta"><span>প্রশ্ন ${bnNum(quizIndex+1)} / ${bnNum(quizQuestions.length)}</span><span>স্কোর: ${bnNum(quizScore)}</span></div><div class="track"><div class="fill" style="width:${quizIndex/quizQuestions.length*100}%"></div></div><div class="question">${q.q}</div><div class="options">${q.opts.map((o,i)=>`<button class="option" id="opt-${i}" onclick="answerQuiz(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div><div class="feedback" id="quiz-feedback" aria-live="polite"></div><div class="quiz-bottom"><button class="btn primary" id="next-question" onclick="nextQuestion()" disabled>পরের প্রশ্ন →</button></div>`;quizAnswered=false;}
 function answerQuiz(i){if(quizAnswered)return;quizAnswered=true;const q=quizQuestions[quizIndex];document.querySelectorAll('.option').forEach((b,j)=>{b.disabled=true;if(j===q.a)b.classList.add('correct');if(j===i&&i!==q.a)b.classList.add('wrong');});if(i===q.a)quizScore++;document.getElementById('quiz-feedback').textContent=(i===q.a?'সঠিক উত্তর! ':'আবার চেষ্টা করো। ')+q.why;document.getElementById('next-question').disabled=false;}
 function nextQuestion(){if(!quizAnswered)return;quizIndex++;renderQuiz();}
 function checkWriting(){const val=document.getElementById('writing-answer').value.trim().toLowerCase().replace(/[.!?]/g,'').replace(/\s+/g,' ');const feedback=document.getElementById('writing-feedback');if(val==='i am learning english'){feedback.textContent='সঠিক হয়েছে! “I am learning English.” — খুব ভালো!';feedback.className='feedback success-text';}else{feedback.textContent='আবার চেষ্টা করো। সঠিক বাক্য: I am learning English. “I am + verb-ing” মনে রাখো।';feedback.className='feedback error-text';}}
-function updateProgress(){const n=saved.learned.length;document.getElementById('word-progress-label').textContent=`${bnNum(n)} / ${bnNum(words.length)}`;document.getElementById('word-progress').style.width=(n/words.length*100)+'%';document.getElementById('best-score').textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;document.getElementById('lesson-status').textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;document.getElementById('grammar-progress-label').textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;document.getElementById('grammar-progress').style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;document.getElementById('tense-progress-label').textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;document.getElementById('tense-progress').style.width=(td/tenseTopics.length*100)+'%';}
-if(!Array.isArray(saved.grammarDone))saved.grammarDone=[];if(!Array.isArray(saved.tensesDone))saved.tensesDone=[];renderSentences();updateProgress();
+function updateProgress(){const n=saved.learned.length;const label=document.getElementById('word-progress-label');if(label)label.textContent=`${bnNum(n)} / ${bnNum(words.length)}`;const bar=document.getElementById('word-progress');if(bar)bar.style.width=(n/words.length*100)+'%';const best=document.getElementById('best-score');if(best)best.textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;const lesson=document.getElementById('lesson-status');if(lesson)lesson.textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;const gl=document.getElementById('grammar-progress-label');if(gl)gl.textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;const gb=document.getElementById('grammar-progress');if(gb)gb.style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;const tl=document.getElementById('tense-progress-label');if(tl)tl.textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;const tb=document.getElementById('tense-progress');if(tb)tb.style.width=(td/tenseTopics.length*100)+'%';renderDailySummaryOnly();renderListeningDashboard();}
+renderSentences();updateProgress();renderDailyPage();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.log('Offline setup skipped',err)));}
 </script>
 </body>

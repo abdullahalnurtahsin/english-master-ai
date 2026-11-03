@@ -2406,16 +2406,58 @@ function finishTutorSession(){
 function resetTutorWorkspace(){if(tutorRecognition){try{tutorRecognition.stop();}catch(e){}tutorRecognition=null;}tutorTopic=null;tutorSessionDone=false;const box=document.getElementById('tutor-workspace');if(box)box.innerHTML='<div class="empty">একটি বিষয় বেছে নিয়ে অনুশীলন শুরু করো।</div>';}
 function startTutorVoiceInput(){
   const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SpeechRecognition){const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='এই ব্রাউজারে speech-to-text পাওয়া যাচ্ছে না। কিবোর্ডে উত্তর লিখে অনুশীলন চালিয়ে যাও।';}return;}
+  const fb=document.getElementById('tutor-feedback');
+  const button=document.getElementById('tutor-mic-button');
+  const showMicMessage=(message,kind='bad')=>{if(fb){fb.hidden=false;fb.className='tutor-feedback '+kind;fb.textContent=message;}};
+  if(!SpeechRecognition){showMicMessage('এই ব্রাউজারে Voice-to-Text সমর্থিত নয়। Chrome-এর সর্বশেষ সংস্করণে চেষ্টা করো, অথবা কিবোর্ডে উত্তর লেখো।');return;}
+  if(location.protocol!=='https:' && location.hostname!=='localhost'){
+    showMicMessage('মাইক্রোফোনের জন্য নিরাপদ HTTPS ওয়েবসাইট প্রয়োজন। প্রকাশিত GitHub Pages লিংক দিয়ে খোলো।');return;
+  }
   try{
-    if(tutorRecognition){try{tutorRecognition.stop();}catch(e){}}
-    tutorRecognition=new SpeechRecognition();tutorRecognition.lang='en-US';tutorRecognition.interimResults=false;tutorRecognition.maxAlternatives=1;
-    const button=document.getElementById('tutor-mic-button');if(button)button.textContent='🎙️ শুনছি…';
-    tutorRecognition.onresult=event=>{const transcript=event.results?.[0]?.[0]?.transcript||'';const input=document.getElementById('tutor-answer-input');if(input)input.value=transcript;const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback';fb.textContent='শোনা উত্তরটি বসানো হয়েছে। জমা দেওয়ার আগে দেখে নাও।';}};
-    tutorRecognition.onerror=()=>{const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='কণ্ঠ শনাক্ত করা যায়নি। আবার চেষ্টা করো অথবা কিবোর্ডে লেখো।';};};
-    tutorRecognition.onend=()=>{const button=document.getElementById('tutor-mic-button');if(button)button.textContent='🎙️ মাইক্রোফোন';tutorRecognition=null;};
+    if(tutorRecognition){try{tutorRecognition.abort();}catch(e){}}
+    tutorRecognition=new SpeechRecognition();
+    tutorRecognition.lang='en-US';
+    tutorRecognition.interimResults=false;
+    tutorRecognition.maxAlternatives=1;
+    let receivedResult=false;
+    if(button)button.textContent='🎙️ শুনছি…';
+    showMicMessage('এখন স্পষ্টভাবে ইংরেজিতে বলো। কথা শেষ হলে একটু অপেক্ষা করো।','');
+    tutorRecognition.onstart=()=>showMicMessage('মাইক্রোফোন শুনছে—একটি ছোট ইংরেজি বাক্য বলো।','');
+    tutorRecognition.onspeechstart=()=>showMicMessage('কথা শনাক্ত হয়েছে—বাক্যটি শেষ করো।','');
+    tutorRecognition.onresult=event=>{
+      const transcript=event.results?.[0]?.[0]?.transcript?.trim()||'';
+      if(!transcript){showMicMessage('কোনো শব্দ বোঝা যায়নি। একটু জোরে ও স্পষ্টভাবে আবার বলো।');return;}
+      receivedResult=true;
+      const input=document.getElementById('tutor-answer-input');
+      if(input)input.value=transcript;
+      showMicMessage('শোনা উত্তরটি বসানো হয়েছে: “'+transcript+'”। জমা দেওয়ার আগে দেখে নাও।','');
+    };
+    tutorRecognition.onnomatch=()=>showMicMessage('কথা শোনা গেছে, কিন্তু ইংরেজি শব্দ বোঝা যায়নি। ধীরে ও স্পষ্টভাবে বলো।');
+    tutorRecognition.onerror=event=>{
+      const code=event?.error||'unknown';
+      const messages={
+        'not-allowed':'মাইক্রোফোনের অনুমতি বন্ধ। Chrome-এর Site settings → Microphone → Allow করো; Android Settings → Apps → Chrome → Permissions → Microphone-ও Allow থাকতে হবে।',
+        'service-not-allowed':'ব্রাউজারের Speech Recognition সেবা চালু হয়নি। Chrome আপডেট করো; তারপর আবার চেষ্টা করো।',
+        'no-speech':'কোনো কথা শনাক্ত হয়নি। মাইক্রোফোনের কাছে থেকে বোতাম চাপার পর সঙ্গে সঙ্গে ছোট ইংরেজি বাক্য বলো।',
+        'audio-capture':'মাইক্রোফোন পাওয়া যাচ্ছে না বা অন্য অ্যাপ ব্যবহার করছে। অন্য অ্যাপের মাইক বন্ধ করে আবার চেষ্টা করো।',
+        'network':'Speech Recognition সেবায় নেটওয়ার্ক সমস্যা হয়েছে। ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করো।',
+        'language-not-supported':'এই Speech Recognition সেবায় নির্বাচিত ভাষা সমর্থিত নয়। কিবোর্ডে উত্তর লেখো।',
+        'aborted':'ভয়েস ইনপুট বন্ধ হয়েছে। চাইলে আবার মাইক্রোফোন চাপো।',
+        'bad-grammar':'Speech Recognition সেবা অনুরোধটি গ্রহণ করেনি। কিবোর্ডে উত্তর লিখে চালিয়ে যাও।'
+      };
+      showMicMessage((messages[code]||('Voice input-এ সমস্যা হয়েছে (code: '+code+')। কিবোর্ডে উত্তর লিখতে পারো.')));
+    };
+    tutorRecognition.onend=()=>{
+      if(button)button.textContent='🎙️ মাইক্রোফোন';
+      if(!receivedResult && fb && !fb.textContent.trim())showMicMessage('কোনো উত্তর পাওয়া যায়নি। আবার চেষ্টা করো অথবা কিবোর্ডে লেখো।');
+      tutorRecognition=null;
+    };
     tutorRecognition.start();
-  }catch(e){const fb=document.getElementById('tutor-feedback');if(fb){fb.hidden=false;fb.className='tutor-feedback bad';fb.textContent='মাইক্রোফোন চালু করা যায়নি। ব্রাউজারের অনুমতি পরীক্ষা করো অথবা কিবোর্ডে উত্তর লেখো।';}}
+  }catch(e){
+    if(button)button.textContent='🎙️ মাইক্রোফোন';
+    showMicMessage('মাইক্রোফোন চালু করা যায়নি। Chrome-এর অনুমতি পরীক্ষা করো; অথবা কিবোর্ডে উত্তর লেখো।');
+    tutorRecognition=null;
+  }
 }
 
 

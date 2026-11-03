@@ -1,4 +1,4 @@
-# English Master AI — সংস্করণ 0.8
+# English Master AI — সংস্করণ 0.8.1
 
 বাংলা সহায়তায় ইংরেজি শেখার মোবাইল-ফ্রেন্ডলি ওয়েব অ্যাপ/PWA।
 
@@ -30,3 +30,9 @@ Tutor Practice Beta হলো নির্দিষ্ট প্রশ্ন ও
 
 ## প্রকাশিত ঠিকানা
 `https://abdullahalnurtahsin.github.io/english-master-ai/`
+
+
+## Version 0.8.1 — Voice input diagnosis
+- Microphone error messages now distinguish permission, no-speech, audio-capture, network and unavailable service errors.
+- If voice input fails, first allow microphone permission in Chrome Site settings and Android app permissions.
+- Chrome speech recognition may use a server-based recognition service and may require an internet connection; it is not guaranteed on every Android browser/device.

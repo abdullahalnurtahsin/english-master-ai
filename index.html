@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10233f">
-  <meta name="description" content="English Master AI — বাংলা সহায়তায় English Lesson, Vocabulary, Grammar, Tense, Listening ও Smart Tutor Preview।">
+  <meta name="description" content="English Master AI — বাংলা সহায়তায় ইংরেজি শেখার পূর্ণাঙ্গ প্ল্যাটফর্ম ও নিরাপদ AI Tutor।">
   <title>English Master AI</title>
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icon-192.png" type="image/png">
@@ -47,11 +47,23 @@
     .tutor-message .tutor-bn{white-space:pre-wrap}.tutor-message .tutor-en{white-space:pre-wrap}
     @media(max-width:380px){.tutor-settings{grid-template-columns:1fr}.tutor-studio-head{display:block}.tutor-live-status{display:inline-block;margin-top:8px}}
 
+
+    .ai-safety-card{margin-top:12px;background:#eef6ff;border:1px solid #cfe0f5;color:#24486f;padding:12px 13px;border-radius:13px;font-size:11px;line-height:1.65}
+    .ai-safety-card p{margin:5px 0 0}.ai-safety-card code{font-family:inherit;font-weight:800}
+    .ai-connect-panel{margin-top:12px;border:1px solid var(--line);border-radius:14px;background:#fff;padding:13px}
+    .ai-connect-panel summary{cursor:pointer;font-size:13px;font-weight:800;color:var(--navy)}
+    .ai-connect-panel[open] summary{margin-bottom:12px}
+    .ai-connect-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}
+    .ai-connect-actions .btn{flex:1;min-width:145px;font-size:12px}
+    .ai-turnstile-widget{margin-top:12px;min-height:65px;overflow:hidden}
+    .tutor-live-status.live{background:#e8f7ef;color:#13734f;border-color:#c8ead8}
+    .tutor-live-status.local{background:#fff4dc;color:#8a5a00;border-color:#f0dfb8}
+
   </style>
 </head>
 <body>
   <header class="top">
-    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা · v0.8</div></div>
+    <div class="topline"><div class="brand">📘 English Master AI</div><div class="tag">BEGINNER • বাংলা · v1.0</div></div>
     <div class="welcome"><div class="eyebrow">আজ থেকেই শুরু হোক</div><h1>Learn English, step by step.</h1><p>প্রতিদিন অল্প অল্প শিখো, নিয়মিত অনুশীলন করো, আত্মবিশ্বাস বাড়াও।</p></div>
   </header>
   <main>
@@ -85,7 +97,7 @@
         <div class="track"><div class="fill" id="tense-progress"></div></div>
         <div class="progress-top" style="margin-top:12px"><span>কুইজের সেরা ফল</span><span id="best-score">এখনো শুরু হয়নি</span></div>
       </div>
-      <p class="note">Vocabulary Master-এ ২০০টি শব্দ, ১৬টি বিভাগ, বাংলা অর্থ, উচ্চারণ-সহায়তা, উদাহরণ ও কুইজ রয়েছে। AI Tutor এখনো যুক্ত হয়নি।</p>
+      <p class="note">Vocabulary Master-এ ২০০টি শব্দ, ১৬টি বিভাগ, বাংলা অর্থ, উচ্চারণ-সহায়তা, উদাহরণ ও কুইজ রয়েছে। AI Tutor-এর Live mode অভিভাবক-পরিচালিত নিরাপদ Backend সংযুক্ত হলে চালু হবে।</p>
     </section>
 
     <section id="learn" class="page">
@@ -160,7 +172,7 @@
     </section>
 
     <section id="tutor" class="page">
-      <div class="section-head"><h3>🤖 AI Tutor Studio</h3><span class="badge">Version 0.9 Beta</span></div>
+      <div class="section-head"><h3>🤖 AI Tutor Studio</h3><span class="badge">Version 1.0</span></div>
       <div class="tutor-hero">
         <small>SMART ENGLISH PRACTICE</small>
         <h2>Let’s practise English together.</h2>
@@ -177,7 +189,7 @@
       <div class="tutor-studio">
         <div class="tutor-studio-head">
           <div><h3>💬 Smart Tutor Chat</h3><div class="muted" style="margin-top:4px">লিখে প্রশ্ন করো বা নিজের বাক্য যাচাই করো</div></div>
-          <span class="tutor-live-status">OFFLINE PREVIEW</span>
+          <span class="tutor-live-status" id="tutor-live-status">LOCAL PRACTICE</span>
         </div>
         <div class="tutor-settings">
           <label>তোমার শেখার স্তর
@@ -198,7 +210,7 @@
           </label>
         </div>
         <div id="tutor-studio-chat-log" class="tutor-chat-log" aria-live="polite">
-          <div class="tutor-message bot"><span class="who">Smart Tutor Preview</span><span class="tutor-en">Hello! I’m your English practice tutor. Write a sentence or ask about a simple grammar topic.</span><span class="tutor-bn">বাংলা অর্থ: চলো ইংরেজি অনুশীলন করি। একটি বাক্য লেখো অথবা সহজ Grammar বিষয়ে প্রশ্ন করো।</span></div>
+          <div class="tutor-message bot"><span class="who">English Master Tutor</span><span class="tutor-en">Hello! I’m your English practice tutor. Write a sentence or ask about a simple grammar topic.</span><span class="tutor-bn">বাংলা অর্থ: চলো ইংরেজি অনুশীলন করি। একটি বাক্য লেখো অথবা সহজ Grammar বিষয়ে প্রশ্ন করো।</span></div>
         </div>
         <div class="tutor-quick-prompts">
           <button type="button" onclick="tutorSetPrompt('Correct this sentence: I goes to school.')">বাক্য সংশোধন</button>
@@ -216,7 +228,25 @@
           </div>
           <div class="tutor-chat-meta"><span id="tutor-chat-status">কথোপকথন শুধু এই সেশনে থাকবে।</span><button class="small-btn" type="button" onclick="tutorClearChat()">চ্যাট পরিষ্কার</button></div>
         </div>
-        <div class="tutor-studio-note"><b>সীমাবদ্ধতা:</b> এই Preview-তে লেখা তোমার ডিভাইসেই নিয়মভিত্তিকভাবে বিশ্লেষণ হয়। এটি Live AI নয় এবং সব ভুল ধরতে পারে না। কোনো API Key এখানে দিতে হবে না। ব্যক্তিগত তথ্য না লিখে উদাহরণ হিসেবে কাল্পনিক তথ্য ব্যবহার করো।</div>
+        <div class="tutor-studio-note"><b>এখনকার অবস্থা:</b> Backend সংযুক্ত না থাকলে এটি Local Practice Mode-এ চলবে। Live AI চালু হলে সাম্প্রতিক কথোপকথন নিরাপদ Backend হয়ে AI-তে পাঠানো হবে। এখানে কখনো API Key লিখবে না।</div>
+        <div class="ai-safety-card">
+          <b>🔒 নিরাপত্তা ও গোপনীয়তা</b>
+          <p>Live AI ব্যবহার করার আগে অভিভাবক/অভিভাবিকার অনুমতি ও তত্ত্বাবধান প্রয়োজন। AI-তে নিজের পূর্ণ নাম, বাসার ঠিকানা, ফোন, ইমেইল, স্কুল, পাসওয়ার্ড বা অন্য ব্যক্তিগত তথ্য লিখবে না। কথোপকথন এই অ্যাপের Local Storage-এ রাখা হয় না; Live mode-এ সাম্প্রতিক বার্তা OpenAI API-তে প্রক্রিয়াকরণের জন্য পাঠানো হয়। API-তে <code>store:false</code> ব্যবহৃত হয়, তবে এটি সব ধরনের provider-side retention শূন্য করে—এমন নিশ্চয়তা নয়।</p>
+        </div>
+        <details class="ai-connect-panel" id="ai-connect-panel">
+          <summary>⚙️ Live AI সংযোগ (শুধু অভিভাবক/পরিচালকের জন্য)</summary>
+          <p class="muted">এখানে শুধু Backend URL এবং Cloudflare Turnstile-এর Public Site Key বসবে। এগুলো API Key নয়। OpenAI API Key এই ওয়েবসাইটে কখনো বসানো যাবে না।</p>
+          <label class="field-label" for="ai-backend-url">নিরাপদ Backend URL</label>
+          <input id="ai-backend-url" class="text-input" type="url" inputmode="url" placeholder="https://your-worker.workers.dev">
+          <label class="field-label" for="ai-turnstile-sitekey" style="margin-top:9px">Turnstile Public Site Key</label>
+          <input id="ai-turnstile-sitekey" class="text-input" type="text" autocomplete="off" placeholder="Cloudflare Site Key (public)">
+          <div class="ai-connect-actions">
+            <button class="btn primary" type="button" onclick="saveAiConnectionSettings()">সেটিংস সংরক্ষণ ও পরীক্ষা</button>
+            <button class="btn light" type="button" onclick="clearAiConnectionSettings()">সংযোগ মুছো</button>
+          </div>
+          <div id="ai-turnstile-widget" class="ai-turnstile-widget" aria-label="Human verification" hidden></div>
+          <p id="ai-connection-status" class="muted" aria-live="polite">Live AI এখনো সংযুক্ত নয়। Local Practice ব্যবহার করা যাবে।</p>
+        </details>
         <div class="tutor-stats" style="margin-top:12px">
           <div class="tutor-stat"><strong id="tutor-chat-sessions">০</strong><span>Chat সেশন</span></div>
           <div class="tutor-stat"><strong id="tutor-chat-messages">০</strong><span>তোমার বার্তা</span></div>
@@ -235,7 +265,7 @@
         </div>
         <div id="tutor-workspace" class="tutor-workspace"><div class="empty">একটি বিষয় বেছে নিয়ে অনুশীলন শুরু করো।</div></div>
       </details>
-      <p class="tutor-privacy">গোপনীয়তা: Smart Tutor Chat-এর লেখা Local Storage-এ রাখা হয় না; শুধু মোট সেশন, বার্তা ও সহায়তার সংখ্যা রাখা হয়। পেজ বন্ধ করলে কথোপকথন মুছে যাবে। Microphone input ব্রাউজার/ডিভাইসের Speech Recognition ব্যবহার করতে পারে।</p>
+      <p class="tutor-privacy">গোপনীয়তা: Chat transcript Local Storage-এ রাখা হয় না; শুধু মোট সেশন ও অনুশীলনের সংখ্যা থাকে। Live AI mode-এ সাম্প্রতিক বার্তা অভিভাবক-পরিচালিত Backend হয়ে OpenAI-তে যায়। ব্যক্তিগত তথ্য লিখবে না।</p>
     </section>
 
     <section id="daily" class="page">
@@ -2535,14 +2565,23 @@ function startTutorVoiceInput(){
 }
 
 
-// Version 0.9 Smart Tutor Preview. This runs locally with curated rules; it is NOT a live AI model.
+// English Master AI v1.0 Tutor: local preview plus optional secure parent-managed backend.
+// Never place an OpenAI API key in this file or the public repository.
 let tutorChatStartedThisView=false;
 let tutorChatLastEnglish='';
 let tutorChatRecognition=null;
+let tutorChatHistory=[]; // memory only; never persisted to Local Storage
+let tutorConnectionMode='local';
+let tutorBackendConnected=false;
+let aiPublicConfig={backendUrl:'',turnstileSiteKey:''};
+let aiTurnstileWidgetId=null;
+let aiTurnstileScriptLoading=false;
+const AI_PUBLIC_CONFIG_KEY='ema_ai_public_config_v1';
+
 function tutorChatAppend(role,english,bangla=''){
   const log=document.getElementById('tutor-studio-chat-log');if(!log)return;
   const item=document.createElement('div');item.className=`tutor-message ${role==='user'?'user':'bot'}`;
-  const who=document.createElement('span');who.className='who';who.textContent=role==='user'?'তুমি':'Smart Tutor Preview';item.appendChild(who);
+  const who=document.createElement('span');who.className='who';who.textContent=role==='user'?'তুমি':(tutorConnectionMode==='live'?'English Master AI Tutor':'Tutor Practice Preview');item.appendChild(who);
   const en=document.createElement('span');en.className='tutor-en';en.textContent=String(english||'');item.appendChild(en);
   if(bangla){const bn=document.createElement('span');bn.className='tutor-bn';bn.textContent=String(bangla);item.appendChild(bn);}
   log.appendChild(item);log.scrollTop=log.scrollHeight;
@@ -2566,7 +2605,7 @@ function tutorGrammarCheck(raw){
     {re:/\bdoesn't\s+(goes|plays|studies|works|lives|reads|watches|likes)\b/i,fix:s=>s.replace(/\bdoesn't\s+(goes|plays|studies|works|lives|reads|watches|likes)\b/i,(_,v)=>"doesn't "+({goes:'go',plays:'play',studies:'study',works:'work',lives:'live',reads:'read',watches:'watch',likes:'like'}[v.toLowerCase()])),why:'“Doesn’t” এর পরে verb-এর মূল রূপ বসে।'},
     {re:/\bi\s+am\s+(go|play|study|read|live|work|eat|drink|watch|like|learn|write|speak)\b/i,fix:s=>s.replace(/\bi\s+am\s+(go|play|study|read|live|work|eat|drink|watch|like|learn|write|speak)\b/i,(_,v)=>'I '+v),why:'অভ্যাস বোঝালে “I + verb” হয়। এখনই কাজটি চলছে বোঝালে “I am + verb-ing” হবে।'},
     {re:/\bi\s+like\s+(read|play|swim|dance|sing|write|watch|learn|cook|travel)\b/i,fix:s=>s.replace(/\bi\s+like\s+(read|play|swim|dance|sing|write|watch|learn|cook|travel)\b/i,(_,v)=>'I like '+({read:'reading',play:'playing',swim:'swimming',dance:'dancing',sing:'singing',write:'writing',watch:'watching',learn:'learning',cook:'cooking',travel:'travelling'}[v.toLowerCase()])),why:'“Like” এর পরে verb-ing বা “to + verb” ব্যবহার করা যায়।'},
-    {re:/\b(i am|he is|she is)\s+(student|teacher|doctor|driver|farmer|writer|player)\b/i,fix:s=>s.replace(/\b(i am|he is|she is)\s+(student|teacher|doctor|driver|farmer|writer|player)\b/i,'$1 a $2'),why:'একটি পেশা বা পরিচয় বোঝাতে singular countable noun-এর আগে “a” লাগে।'}
+    {re:/\b(i am|he is|she is)\s+(student|teacher|doctor|driver|farmer|writer|player)\b/i,fix:s=>s.replace(/\b(i am|he is|she is)\s+(student|teacher|doctor|driver|farmer|writer|player)\b/i,'$1 a $2'),why:'একটি পেশা বা পরিচয় বোঝাতে singular countable noun-এর আগে “a” লাগে。'}
   ];
   for(const rule of rules){if(rule.re.test(corrected)){corrected=rule.fix(corrected);explanation=rule.why;break;}}
   if(!explanation && /^i\b/.test(corrected) && !/^I\b/.test(corrected)){corrected=corrected.replace(/^i\b/,'I');explanation='ইংরেজিতে “I” সবসময় বড় হাতের অক্ষরে লেখা হয়।';}
@@ -2575,67 +2614,140 @@ function tutorGrammarCheck(raw){
   return {found:false,known,corrected,why:''};
 }
 function tutorLookupWord(message){
-  const text=String(message||'').toLowerCase();
-  let target='';
-  const patterns=[/what does\s+['"“]?([a-z-]+)['"”]?\s+mean/i,/meaning of\s+['"“]?([a-z-]+)['"”]?/i,/['"“]([a-z-]+)['"”]/];
+  const text=String(message||'').toLowerCase();let target='';
+  const patterns=[/what does\s+['"“]?([a-z-]+)['"”]?\s+mean/i,/meaning of\s+['"“]?([a-z-]+)['"”]?/,/['"“]([a-z-]+)['"”]/];
   for(const re of patterns){const m=text.match(re);if(m){target=m[1];break;}}
   if(!target){const m=text.trim().match(/^(?:meaning|অর্থ)\s*[:：]?\s*([a-z-]+)$/i);if(m)target=m[1];}
   if(!target && /^[a-z-]{2,24}[.!?]?$/.test(text.trim()))target=text.trim().replace(/[.!?]$/,'');
-  if(!target)return null;
-  return words.find(w=>String(w.en).toLowerCase()===target)||null;
+  if(!target)return null;return words.find(w=>String(w.en).toLowerCase()===target)||null;
 }
 function tutorSmartReply(raw,mode,level){
-  const text=String(raw||'').trim();const lower=text.toLowerCase();const norm=tutorNormalizeText(text);
+  const text=String(raw||'').trim();const lower=text.toLowerCase();
   if(mode==='correction'||/^(correct|check|fix)\s*(this sentence)?\s*:/i.test(text)){
-    const target=text.replace(/^(correct|check|fix)\s*(this sentence)?\s*:\s*/i,'').trim()||text;
-    const result=tutorGrammarCheck(target);
+    const target=text.replace(/^(correct|check|fix)\s*(this sentence)?\s*:\s*/i,'').trim()||text;const result=tutorGrammarCheck(target);
     if(result.found)return {en:'Suggested correction: '+result.corrected+'\n\nWhy: '+result.why,bn:'সংশোধনটি সাধারণ Grammar নিয়মের ভিত্তিতে দেওয়া হয়েছে। অন্য অর্থ বোঝাতে চাইলে বাক্যের প্রসঙ্গও জানাও।',correction:true};
-    return {en:result.known?'I did not find one of the common errors checked in this preview. Your sentence uses a familiar pattern.':'I could not confidently check this sentence. This preview only checks a limited set of common patterns.',bn:'এটি পূর্ণাঙ্গ Grammar Checker নয়। তাই ভুল ধরতে না পারা মানেই বাক্যটি শতভাগ সঠিক—এমন নয়। চাইলে বাক্যের অর্থ/প্রসঙ্গও লিখে দাও।',correction:false};
+    return {en:result.known?'I did not find one of the common errors checked in this preview.':'I could not confidently check this sentence.',bn:'এটি পূর্ণাঙ্গ Grammar Checker নয়। ভুল ধরতে না পারা মানেই বাক্যটি শতভাগ সঠিক—এমন নয়।',correction:false};
   }
-  const grammar = tutorGrammarCheck(text);
-  if(grammar.found){return {en:'I noticed a grammar pattern to improve.\nSuggested correction: '+grammar.corrected+'\n\nWhy: '+grammar.why,bn:'ভালো চেষ্টা! ছোট ভুলগুলো অনুশীলনের মাধ্যমেই ঠিক হয়।',correction:true};}
+  const grammar=tutorGrammarCheck(text);if(grammar.found)return {en:'Suggested correction: '+grammar.corrected+'\n\nWhy: '+grammar.why,bn:'ভালো চেষ্টা! ছোট ভুলগুলো অনুশীলনের মাধ্যমেই ঠিক হয়।',correction:true};
   if(/\b(hi|hello|hey|good morning|good afternoon|good evening)\b/i.test(lower))return {en:'Hello! Nice to meet you. What would you like to practise today?',bn:'হ্যালো! আজ তুমি কোন বিষয় অনুশীলন করতে চাও—কথোপকথন, Grammar, Vocabulary, নাকি Writing?'};
   if(/how are you/.test(lower))return {en:"I’m doing well, thank you! How are you today?",bn:'আমি ভালো আছি, ধন্যবাদ! আজ তুমি কেমন আছ?'};
-  const name=text.match(/\bmy name is\s+([a-z][a-z '-]{0,30})/i);
-  if(name)return {en:'Nice to meet you, '+name[1].trim()+'. Where do you live?',bn:'তোমার সঙ্গে পরিচিত হয়ে ভালো লাগল। তুমি কোথায় থাকো? নিজের ব্যক্তিগত তথ্য দিতে না চাইলে কাল্পনিক নাম ব্যবহার করতে পারো।'};
-  if(/\b(i am from|i'm from)\s+([a-z ]+)/i.test(text))return {en:'That’s nice! What do you like about your hometown?',bn:'ভালো! তোমার শহরের কোন বিষয়টি তোমার সবচেয়ে ভালো লাগে?'};
-  if(/\b(i live in|i'm living in)\s+([a-z ]+)/i.test(text))return {en:'Great! Is your town busy or quiet?',bn:'চমৎকার! তোমার শহরটি কি ব্যস্ত, নাকি শান্ত?'};
-  if(/\b(i like|i love|i enjoy)\s+(.+)/i.test(text))return {en:'That sounds interesting! Can you tell me one reason you enjoy it?',bn:'বেশ! তুমি এটি কেন পছন্দ করো, একটি কারণ ইংরেজিতে বলার চেষ্টা করো।'};
-  if(/\b(i want to learn english|i am learning english|i want to improve my english)\b/i.test(lower))return {en:'That is a useful goal. Try practising for a short time every day. Which skill is hardest for you: speaking, listening, reading, or writing?',bn:'প্রতিদিন অল্প সময় অনুশীলন করো। তোমার কাছে কোন দক্ষতাটি বেশি কঠিন—Speaking, Listening, Reading, নাকি Writing?'};
-  if(/\b(thank you|thanks)\b/i.test(lower))return {en:"You’re welcome! Keep practising. Would you like another question?",bn:'স্বাগতম! অনুশীলন চালিয়ে যাও। আরেকটি প্রশ্ন নিতে চাও?'};
-  if(/\b(bye|goodbye|see you)\b/i.test(lower))return {en:'Goodbye! Keep practising a little every day.',bn:'বিদায়! প্রতিদিন অল্প করে অনুশীলন করো।'};
-  if(/present simple|simple present|বর্তমান সাধারণ কাল/i.test(lower))return {en:'Present Simple: Subject + base verb. Add -s/-es with he, she, and it.\nExample: I study English. / She studies English.',bn:'অভ্যাস বা নিয়মিত কাজ বোঝাতে Present Simple ব্যবহার করি। I/You/We/They-এর সঙ্গে মূল verb; He/She/It-এর সঙ্গে সাধারণত verb-এর -s/-es হয়।'};
-  if(/present continuous|চলমান বর্তমান/i.test(lower))return {en:'Present Continuous: Subject + am/is/are + verb-ing.\nExample: I am reading a book.',bn:'এখন কোনো কাজ চলছে বোঝালে Present Continuous ব্যবহার করি। I am, He/She/It is, You/We/They are + verb-ing।'};
-  if(/article|a and an|a আর an|a ও an/i.test(lower))return {en:'Use “a” before a consonant sound and “an” before a vowel sound.\nExamples: a book, an apple, an hour.',bn:'Article-এর ক্ষেত্রে বানান নয়, শুরুর ধ্বনি গুরুত্বপূর্ণ। consonant sound হলে a, vowel sound হলে an।'};
-  if(/what is a noun|noun কী|বিশেষ্য/i.test(lower))return {en:'A noun is the name of a person, place, thing, or idea. Examples: teacher, Dhaka, book, happiness.',bn:'Noun বা বিশেষ্য হলো ব্যক্তি, স্থান, বস্তু বা ভাবের নাম।'};
-  if(/what is a verb|verb কী|ক্রিয়া/i.test(lower))return {en:'A verb tells us about an action or state. Examples: read, write, run, be.',bn:'Verb বা ক্রিয়া দিয়ে কাজ বা অবস্থা বোঝায়। যেমন: read, write, run, be।'};
-  const word=tutorLookupWord(text);
-  if(word){return {en:word.en+' — '+word.bn+'\nExample: '+word.ex,bn:'উচ্চারণ-সহায়তা: '+word.pron+'\nউদাহরণের অর্থ: '+word.exbn};}
-  if(mode==='vocabulary')return {en:'I can look up words from the built-in Vocabulary list. Try: “What does beautiful mean?” or type one English word.',bn:'অ্যাপের Vocabulary তালিকায় থাকা শব্দের অর্থ, উচ্চারণ-সহায়তা ও উদাহরণ দেখাতে পারি।'};
-  if(mode==='grammar')return {en:'Choose a focused topic such as Present Simple, Present Continuous, articles (a/an), noun, or verb. I can explain these basic topics in this preview.',bn:'একটি নির্দিষ্ট বিষয় লিখো—Present Simple, Present Continuous, A/An, Noun বা Verb।'};
-  if(mode==='writing')return {en:'Try writing two short sentences about your day. I can check a few common grammar patterns, but this preview is not a full writing evaluator.',bn:'দিনটি নিয়ে দুটি ছোট ইংরেজি বাক্য লেখো। আমি কিছু সাধারণ ভুল ধরতে পারি, তবে পুরো লেখার মান যাচাই করতে পারি না।'};
-  if(level==='beginner')return {en:'Let’s make it easier. Try one short sentence, for example: “I study English.” You can also choose a button above for a guided prompt.',bn:'একটি ছোট বাক্য লেখো। আমি কয়েকটি পরিচিত Grammar pattern দেখে সাহায্য করতে পারি।'};
-  return {en:'I’m not able to answer that freely in this offline preview. Try a basic grammar question, a word from the Vocabulary list, or ask me to check a sentence.',bn:'এই Preview-তে সব ধরনের প্রশ্নের উত্তর দেওয়ার ক্ষমতা নেই। নির্দিষ্ট Grammar বিষয়, Vocabulary শব্দ বা একটি ইংরেজি বাক্য দিয়ে চেষ্টা করো।'};
+  const word=tutorLookupWord(text);if(word)return {en:word.en+' — '+word.bn+'\nExample: '+word.ex,bn:'উচ্চারণ-সহায়তা: '+word.pron+'\nউদাহরণের অর্থ: '+word.exbn};
+  if(/present simple|simple present|বর্তমান সাধারণ কাল/i.test(lower))return {en:'Present Simple: Subject + base verb. Add -s/-es with he, she, and it. Example: I study English. / She studies English.',bn:'অভ্যাস বা নিয়মিত কাজ বোঝাতে Present Simple ব্যবহার করি। I/You/We/They-এর সঙ্গে মূল verb; He/She/It-এর সঙ্গে সাধারণত verb-এর -s/-es হয়।'};
+  if(/present continuous|চলমান বর্তমান/i.test(lower))return {en:'Present Continuous: Subject + am/is/are + verb-ing. Example: I am reading a book.',bn:'এখন কোনো কাজ চলছে বোঝালে Present Continuous ব্যবহার করি। I am, He/She/It is, You/We/They are + verb-ing।'};
+  return {en:level==='beginner'?'Try one short sentence, for example: “I study English.”':'Try asking about a specific grammar topic or writing a short paragraph.',bn:'এটি Local Practice Mode-এর সীমিত উত্তর। Live AI সংযুক্ত না থাকলে সব প্রশ্নের উত্তর দেওয়া সম্ভব নয়।'};
 }
-function sendTutorChatMessage(){
+
+function tutorSetChatStatus(message){const el=document.getElementById('tutor-chat-status');if(el)el.textContent=message;}
+function setTutorLiveBadge(isLive){
+  tutorConnectionMode=isLive?'live':'local';
+  const el=document.getElementById('tutor-live-status');if(el){el.textContent=isLive?'LIVE AI':'LOCAL PRACTICE';el.classList.toggle('live',isLive);el.classList.toggle('local',!isLive);}
+}
+function readAiPublicConfig(){
+  try{const savedConfig=JSON.parse(localStorage.getItem(AI_PUBLIC_CONFIG_KEY)||'{}');return {backendUrl:String(savedConfig.backendUrl||''),turnstileSiteKey:String(savedConfig.turnstileSiteKey||'')};}
+  catch(_){return {backendUrl:'',turnstileSiteKey:''};}
+}
+function initAiTutorV1(){
+  aiPublicConfig=readAiPublicConfig();
+  const url=document.getElementById('ai-backend-url');const key=document.getElementById('ai-turnstile-sitekey');
+  if(url)url.value=aiPublicConfig.backendUrl;if(key)key.value=aiPublicConfig.turnstileSiteKey;
+  setTutorLiveBadge(false);
+  if(aiPublicConfig.backendUrl&&aiPublicConfig.turnstileSiteKey){loadTurnstileForAi();checkAiBackend(false);}
+}
+function saveAiConnectionSettings(){
+  const urlValue=document.getElementById('ai-backend-url')?.value.trim()||'';
+  const siteKey=document.getElementById('ai-turnstile-sitekey')?.value.trim()||'';
+  if(!urlValue||!siteKey){setAiConnectionStatus('Backend URL এবং Public Site Key—দুটিই প্রয়োজন। API Key এখানে লিখবে না।');return;}
+  let parsed;try{parsed=new URL(urlValue);}catch(_){setAiConnectionStatus('সঠিক Backend URL লিখো।');return;}
+  if(parsed.protocol!=='https:'){setAiConnectionStatus('নিরাপত্তার জন্য Backend URL অবশ্যই HTTPS হতে হবে।');return;}
+  aiPublicConfig={backendUrl:parsed.href.replace(/\/+$/,''),turnstileSiteKey:siteKey};
+  try{localStorage.setItem(AI_PUBLIC_CONFIG_KEY,JSON.stringify(aiPublicConfig));}catch(_){setAiConnectionStatus('এই ব্রাউজারে সংযোগ সেটিংস সংরক্ষণ করা যায়নি।');return;}
+  loadTurnstileForAi();checkAiBackend(true);
+}
+function clearAiConnectionSettings(){
+  aiPublicConfig={backendUrl:'',turnstileSiteKey:''};aiBackendConnected=false;tutorChatHistory=[];
+  try{localStorage.removeItem(AI_PUBLIC_CONFIG_KEY);}catch(_){}
+  const url=document.getElementById('ai-backend-url');const key=document.getElementById('ai-turnstile-sitekey');if(url)url.value='';if(key)key.value='';
+  const widget=document.getElementById('ai-turnstile-widget');if(widget)widget.hidden=true;
+  if(window.turnstile&&aiTurnstileWidgetId!==null){try{window.turnstile.remove(aiTurnstileWidgetId);}catch(_){}}aiTurnstileWidgetId=null;
+  setTutorLiveBadge(false);setAiConnectionStatus('সংযোগের সেটিংস মুছে ফেলা হয়েছে। Local Practice চালু আছে।');
+}
+function setAiConnectionStatus(message){const el=document.getElementById('ai-connection-status');if(el)el.textContent=message;}
+function loadTurnstileForAi(){
+  if(!aiPublicConfig.turnstileSiteKey)return;
+  const widget=document.getElementById('ai-turnstile-widget');if(widget)widget.hidden=false;
+  if(window.turnstile){renderAiTurnstile();return;}
+  if(aiTurnstileScriptLoading)return;aiTurnstileScriptLoading=true;
+  const script=document.createElement('script');script.id='ema-turnstile-script';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;script.defer=true;
+  script.onload=()=>{aiTurnstileScriptLoading=false;renderAiTurnstile();};
+  script.onerror=()=>{aiTurnstileScriptLoading=false;setAiConnectionStatus('Turnstile যাচাই লোড হয়নি। ইন্টারনেট সংযোগ পরীক্ষা করো।');};
+  document.head.appendChild(script);
+}
+function renderAiTurnstile(){
+  const widget=document.getElementById('ai-turnstile-widget');if(!widget||!window.turnstile||!aiPublicConfig.turnstileSiteKey)return;
+  try{if(aiTurnstileWidgetId!==null){window.turnstile.remove(aiTurnstileWidgetId);aiTurnstileWidgetId=null;}widget.innerHTML='';
+    aiTurnstileWidgetId=window.turnstile.render(widget,{sitekey:aiPublicConfig.turnstileSiteKey,action:'ema_chat',theme:'light',callback:()=>setAiConnectionStatus('মানব যাচাই সম্পন্ন। এখন Tutor-কে বার্তা পাঠাতে পারো।'), 'expired-callback':()=>setAiConnectionStatus('যাচাইয়ের সময় শেষ হয়েছে। আবার Turnstile সম্পন্ন করো।'),'error-callback':()=>setAiConnectionStatus('Turnstile যাচাইয়ে সমস্যা হয়েছে। পেজ Refresh করে আবার চেষ্টা করো।')});
+  }catch(_){setAiConnectionStatus('Turnstile চালু হয়নি। Site Key সঠিক কি না যাচাই করো।');}
+}
+function getAiTurnstileToken(){try{return window.turnstile&&aiTurnstileWidgetId!==null?window.turnstile.getResponse(aiTurnstileWidgetId):'';}catch(_){return '';}}
+function resetAiTurnstile(){try{if(window.turnstile&&aiTurnstileWidgetId!==null)window.turnstile.reset(aiTurnstileWidgetId);}catch(_){}}
+async function checkAiBackend(showMessage=true){
+  if(!aiPublicConfig.backendUrl||!aiPublicConfig.turnstileSiteKey){aiBackendConnected=false;setTutorLiveBadge(false);if(showMessage)setAiConnectionStatus('এখনো Live AI সংযুক্ত নয়। Local Practice ব্যবহার করা যাবে।');return false;}
+  setAiConnectionStatus('Backend পরীক্ষা করা হচ্ছে…');
+  try{const response=await fetch(aiPublicConfig.backendUrl+'/health',{method:'GET',cache:'no-store'});const data=await response.json().catch(()=>({}));
+    if(!response.ok||!data.ok||!data.configured){aiBackendConnected=false;setTutorLiveBadge(false);setAiConnectionStatus(data.message||'Backend প্রস্তুত নয়। অভিভাবক/পরিচালককে Worker Secrets ও Rate Limit binding পরীক্ষা করতে বলো।');return false;}
+    aiBackendConnected=true;setTutorLiveBadge(true);setAiConnectionStatus('Live AI Backend সংযুক্ত। Turnstile যাচাই শেষ করে অনুশীলন শুরু করো।');return true;
+  }catch(_){aiBackendConnected=false;setTutorLiveBadge(false);setAiConnectionStatus('Backend পাওয়া যায়নি। URL ও Worker deployment পরীক্ষা করো।');return false;}
+}
+function parseTutorLiveReply(raw){
+  const text=String(raw||'').trim();
+  const match=text.match(/(?:বাংলা সহায়তা|বাংলা ব্যাখ্যা|Bangla support)\s*[:：]\s*([\s\S]*)$/i);
+  if(!match)return {en:text,bn:''};
+  const en=text.slice(0,match.index).replace(/^(?:English|EN)\s*[:：]\s*/i,'').trim();
+  return {en:en||'Let’s keep practising English.',bn:match[1].trim()};
+}
+async function sendTutorChatMessage(){
   const input=document.getElementById('tutor-chat-input');if(!input)return;
   const text=input.value.trim();if(!text)return;
   if(text.length>500){tutorSetChatStatus('বার্তাটি ৫০০ অক্ষরের মধ্যে রাখো।');return;}
-  tutorChatAppend('user',text);input.value='';
-  const t=saved.tutor;
-  if(!tutorChatStartedThisView){t.chatSessions++;tutorChatStartedThisView=true;}
-  t.chatMessages++;
   const mode=document.getElementById('tutor-chat-mode')?.value||'conversation';
   const level=document.getElementById('tutor-chat-level')?.value||'beginner';
+  const t=saved.tutor;
+  const liveToken=aiBackendConnected?getAiTurnstileToken():'';
+  if(aiBackendConnected&&!liveToken){tutorSetChatStatus('বার্তা পাঠানোর আগে নিচের Turnstile মানব যাচাই সম্পন্ন করো।');return;}
+  if(!tutorChatStartedThisView){t.chatSessions++;tutorChatStartedThisView=true;}
+  t.chatMessages++;
+  tutorChatAppend('user',text);input.value='';
+  if(aiBackendConnected){
+    const token=liveToken;
+    tutorChatHistory.push({role:'user',content:text});tutorChatHistory=tutorChatHistory.slice(-8);
+    const buttons=document.querySelectorAll('.tutor-chat-actions button');buttons.forEach(b=>b.disabled=true);
+    tutorSetChatStatus('AI Tutor উত্তর তৈরি করছে…');
+    try{
+      const response=await fetch(aiPublicConfig.backendUrl+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:tutorChatHistory,level,mode,turnstileToken:token})});
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok||!data.ok)throw new Error(data.message||('Request failed ('+response.status+')'));
+      const parsed=parseTutorLiveReply(data.reply||'');
+      tutorChatAppend('bot',parsed.en,parsed.bn);
+      tutorChatHistory.push({role:'assistant',content:String(data.reply||'')});tutorChatHistory=tutorChatHistory.slice(-8);
+      if(/suggested correction|corrected sentence/i.test(data.reply||''))t.chatCorrections++;
+      tutorSetChatStatus('Live AI Tutor উত্তর দিয়েছে। কথোপকথন পেজ বন্ধ হলে মুছে যাবে।');
+    }catch(error){
+      const message=String(error.message||'');
+      tutorChatAppend('bot','The live tutor could not respond just now. Please try again later.','Live AI থেকে উত্তর পাওয়া যায়নি। সংযোগ, যাচাই বা API সীমা পরীক্ষা করো।');
+      tutorSetChatStatus(message.slice(0,160)||'Live AI সংযোগে সমস্যা হয়েছে।');
+      if(tutorChatHistory.at(-1)?.role==='user')tutorChatHistory.pop();
+    }finally{resetAiTurnstile();buttons.forEach(b=>b.disabled=false);save();}
+    return;
+  }
   const reply=tutorSmartReply(text,mode,level);
   tutorChatAppend('bot',reply.en,reply.bn);
   if(reply.correction)t.chatCorrections++;
-  save();tutorSetChatStatus('বার্তা এই সেশনে দেখানো হচ্ছে; কথোপকথন সংরক্ষণ করা হয় না।');
+  save();tutorSetChatStatus('Local Practice Mode: সীমিত নিয়মভিত্তিক উত্তর। Live AI সংযুক্ত নয়।');
 }
 function tutorSetChatStatus(message){const el=document.getElementById('tutor-chat-status');if(el)el.textContent=message;}
 function tutorClearChat(){
   const log=document.getElementById('tutor-studio-chat-log');if(!log)return;
-  log.innerHTML='';tutorChatLastEnglish='';tutorChatStartedThisView=false;
+  log.innerHTML='';tutorChatLastEnglish='';tutorChatStartedThisView=false;tutorChatHistory=[];
   tutorChatAppend('bot','Hello! I’m your English practice tutor. Write a sentence or ask about a simple grammar topic.','বাংলা অর্থ: চলো ইংরেজি অনুশীলন করি। একটি বাক্য লেখো অথবা সহজ Grammar বিষয়ে প্রশ্ন করো।');
   const input=document.getElementById('tutor-chat-input');if(input)input.value='';
   tutorSetChatStatus('নতুন কথোপকথন শুরু হয়েছে।');
@@ -2676,7 +2788,7 @@ function answerQuiz(i){if(quizAnswered)return;quizAnswered=true;const q=quizQues
 function nextQuestion(){if(!quizAnswered)return;quizIndex++;renderQuiz();}
 function checkWriting(){const val=document.getElementById('writing-answer').value.trim().toLowerCase().replace(/[.!?]/g,'').replace(/\s+/g,' ');const feedback=document.getElementById('writing-feedback');if(val==='i am learning english'){feedback.textContent='সঠিক হয়েছে! “I am learning English.” — খুব ভালো!';feedback.className='feedback success-text';}else{feedback.textContent='আবার চেষ্টা করো। সঠিক বাক্য: I am learning English. “I am + verb-ing” মনে রাখো।';feedback.className='feedback error-text';}}
 function updateProgress(){const n=saved.learned.length;const label=document.getElementById('word-progress-label');if(label)label.textContent=`${bnNum(n)} / ${bnNum(words.length)}`;const bar=document.getElementById('word-progress');if(bar)bar.style.width=(n/words.length*100)+'%';const best=document.getElementById('best-score');if(best)best.textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;const lesson=document.getElementById('lesson-status');if(lesson)lesson.textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;const gl=document.getElementById('grammar-progress-label');if(gl)gl.textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;const gb=document.getElementById('grammar-progress');if(gb)gb.style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;const tl=document.getElementById('tense-progress-label');if(tl)tl.textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;const tb=document.getElementById('tense-progress');if(tb)tb.style.width=(td/tenseTopics.length*100)+'%';renderDailySummaryOnly();renderListeningDashboard();renderTutorDashboard();}
-renderSentences();updateProgress();renderDailyPage();
+renderSentences();updateProgress();renderDailyPage();initAiTutorV1();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.log('Offline setup skipped',err)));}
 </script>
 </body>

@@ -172,7 +172,7 @@
     </section>
 
     <section id="tutor" class="page">
-      <div class="section-head"><h3>🤖 AI Tutor Studio</h3><span class="badge">Version 1.0</span></div>
+      <div class="section-head"><h3>🤖 AI Tutor Studio</h3><span class="badge">Version 1.1</span></div>
       <div class="tutor-hero">
         <small>SMART ENGLISH PRACTICE</small>
         <h2>Let’s practise English together.</h2>
@@ -184,7 +184,7 @@
         </div>
       </div>
 
-      <div class="tutor-disclosure"><b>সংস্করণ ০.৯-এর অবস্থা:</b> এটি একটি Smart Tutor Preview। এখানে কিছু সাধারণ Grammar pattern, Vocabulary lookup ও guided response কাজ করে। প্রকৃত Live AI model এখনো সংযুক্ত নয়; তাই এটি সব প্রশ্ন বুঝতে বা সব বাক্যের নির্ভুলতা যাচাই করতে পারবে না।</div>
+      <div class="tutor-disclosure"><b>Version 1.1 — AI Tutor Beta:</b> Local Practice-এ নিয়মভিত্তিক সহায়তা পাওয়া যাবে। Live AI কেবল অভিভাবক/পরিচালক-অনুমোদিত ও নিয়ন্ত্রিত Backend প্রস্তুত থাকলে কাজ করবে। AI-এর উত্তর ভুল হতে পারে; গুরুত্বপূর্ণ শেখার ক্ষেত্রে বই বা শিক্ষকের সঙ্গে মিলিয়ে নাও।</div>
 
       <div class="tutor-studio">
         <div class="tutor-studio-head">
@@ -206,7 +206,25 @@
               <option value="grammar">Grammar Help</option>
               <option value="vocabulary">Vocabulary Help</option>
               <option value="writing">Writing Practice</option>
+              <option value="translation">Translation Practice</option>
             </select>
+          </label>
+          <label>আজকের শেখার লক্ষ্য
+            <select id="tutor-chat-goal" class="text-input">
+              <option value="confidence">কথা বলার আত্মবিশ্বাস</option>
+              <option value="accuracy">Grammar নির্ভুলতা</option>
+              <option value="vocabulary">শব্দভান্ডার বাড়ানো</option>
+              <option value="writing">লেখার দক্ষতা</option>
+              <option value="balanced">সব দক্ষতায় অনুশীলন</option>
+            </select>
+          </label>
+          <label>আজ কতক্ষণ অনুশীলন করবে?
+            <select id="tutor-chat-duration" class="text-input">
+              <option value="5">৫ মিনিট</option>
+              <option value="10" selected>১০ মিনিট</option>
+              <option value="15">১৫ মিনিট</option>
+            </select>
+            <small class="muted">এটি অনুশীলনের লক্ষ্য, স্বয়ংক্রিয় Timer নয়।</small>
           </label>
         </div>
         <div id="tutor-studio-chat-log" class="tutor-chat-log" aria-live="polite">
@@ -217,6 +235,7 @@
           <button type="button" onclick="tutorSetPrompt('What does beautiful mean?')">শব্দের অর্থ</button>
           <button type="button" onclick="tutorSetPrompt('Explain Present Simple in Bangla.')">Grammar বুঝি</button>
           <button type="button" onclick="tutorGeneratePrompt()">আমাকে প্রশ্ন করো</button>
+          <button type="button" onclick="tutorRequestStudySummary()">আজকের শেখার সারাংশ</button>
         </div>
         <div class="tutor-composer">
           <label class="field-label" for="tutor-chat-input">তোমার বার্তা</label>
@@ -226,12 +245,12 @@
             <button class="btn light" type="button" onclick="startTutorChatVoice()">🎙️ Voice Input</button>
             <button class="btn light" type="button" onclick="tutorSpeakLastReply()">🔊 উত্তর শোনো</button>
           </div>
-          <div class="tutor-chat-meta"><span id="tutor-chat-status">কথোপকথন শুধু এই সেশনে থাকবে।</span><button class="small-btn" type="button" onclick="tutorClearChat()">চ্যাট পরিষ্কার</button></div>
+          <div class="tutor-chat-meta"><span id="tutor-chat-status">চ্যাট শুধু এই ট্যাবে থাকবে; Live AI-তে সর্বশেষ ৮টি বার্তা পাঠানো হয়।</span><button class="small-btn" type="button" onclick="tutorClearChat()">চ্যাট পরিষ্কার</button></div>
         </div>
-        <div class="tutor-studio-note"><b>এখনকার অবস্থা:</b> Backend সংযুক্ত না থাকলে এটি Local Practice Mode-এ চলবে। Live AI চালু হলে সাম্প্রতিক কথোপকথন নিরাপদ Backend হয়ে AI-তে পাঠানো হবে। এখানে কখনো API Key লিখবে না।</div>
+        <div class="tutor-studio-note"><b>Version 1.1:</b> লক্ষ্য ও অনুশীলনের সময় বেছে Tutor-কে আরও নির্দিষ্ট নির্দেশনা দিতে পারো। Live AI-র জন্য অভিভাবক-পরিচালিত Backend দরকার। এই ওয়েবসাইটে API Key, পাসওয়ার্ড বা গোপন কোড লিখবে না।</div>
         <div class="ai-safety-card">
           <b>🔒 নিরাপত্তা ও গোপনীয়তা</b>
-          <p>Live AI ব্যবহার করার আগে অভিভাবক/অভিভাবিকার অনুমতি ও তত্ত্বাবধান প্রয়োজন। AI-তে নিজের পূর্ণ নাম, বাসার ঠিকানা, ফোন, ইমেইল, স্কুল, পাসওয়ার্ড বা অন্য ব্যক্তিগত তথ্য লিখবে না। কথোপকথন এই অ্যাপের Local Storage-এ রাখা হয় না; Live mode-এ সাম্প্রতিক বার্তা OpenAI API-তে প্রক্রিয়াকরণের জন্য পাঠানো হয়। API-তে <code>store:false</code> ব্যবহৃত হয়, তবে এটি সব ধরনের provider-side retention শূন্য করে—এমন নিশ্চয়তা নয়।</p>
+          <p>Live AI ব্যবহারে অভিভাবক/অভিভাবিকার অনুমতি ও তত্ত্বাবধান প্রয়োজন। নিজের পূর্ণ নাম, ঠিকানা, ফোন, ইমেইল, স্কুল, পাসওয়ার্ড, OTP বা ব্যক্তিগত তথ্য লিখবে না। Chat transcript Local Storage-এ রাখা হয় না; Live mode-এ সর্বশেষ ৮টি বার্তা নিরাপদ Backend হয়ে OpenAI API-তে পাঠানো হয়। <code>store:false</code> সব provider-side retention শূন্য হওয়ার নিশ্চয়তা নয়। AI ভুলও করতে পারে—শিক্ষকের বিকল্প নয়।</p>
         </div>
         <details class="ai-connect-panel" id="ai-connect-panel">
           <summary>⚙️ Live AI সংযোগ (শুধু অভিভাবক/পরিচালকের জন্য)</summary>
@@ -1968,6 +1987,7 @@ const quizQuestions = [
   {q:'“আমি প্রতিদিন পড়াশোনা করি।”',opts:['I study every day.','I studies every day.','I am study every day.'],a:0,why:'“I” এর সঙ্গে সাধারণ বর্তমান কালে “study” হয়।'},
   {q:'“আপনার সঙ্গে পরিচিত হয়ে ভালো লাগল।”',opts:['Nice meet you.','Nice to meeting you.','Nice to meet you.'],a:2,why:'পরিচয়ের সময় প্রচলিত বাক্য হলো “Nice to meet you.”'}
 ];
+// v1.1 deliberately retains the original key so existing learner progress is preserved.
 const storeKey='ema_v1_progress';
 let saved={learned:[],lessonDone:false,best:null,bestOutOf:null,grammarDone:[],tensesDone:[],reviewState:{},wrongWords:[],dailyGoal:10,dailyLog:{}};
 try{
@@ -2565,7 +2585,7 @@ function startTutorVoiceInput(){
 }
 
 
-// English Master AI v1.0 Tutor: local preview plus optional secure parent-managed backend.
+// English Master AI v1.1 Tutor: session goals, privacy checks, local preview and optional supervised backend.
 // Never place an OpenAI API key in this file or the public repository.
 let tutorChatStartedThisView=false;
 let tutorChatLastEnglish='';
@@ -2578,12 +2598,13 @@ let aiTurnstileWidgetId=null;
 let aiTurnstileScriptLoading=false;
 const AI_PUBLIC_CONFIG_KEY='ema_ai_public_config_v1';
 
-function tutorChatAppend(role,english,bangla=''){
+function tutorChatAppend(role,english,bangla='',practice=''){
   const log=document.getElementById('tutor-studio-chat-log');if(!log)return;
   const item=document.createElement('div');item.className=`tutor-message ${role==='user'?'user':'bot'}`;
   const who=document.createElement('span');who.className='who';who.textContent=role==='user'?'তুমি':(tutorConnectionMode==='live'?'English Master AI Tutor':'Tutor Practice Preview');item.appendChild(who);
   const en=document.createElement('span');en.className='tutor-en';en.textContent=String(english||'');item.appendChild(en);
   if(bangla){const bn=document.createElement('span');bn.className='tutor-bn';bn.textContent=String(bangla);item.appendChild(bn);}
+  if(practice){const next=document.createElement('span');next.className='tutor-bn';next.style.fontWeight='700';next.textContent='পরের অনুশীলন: '+String(practice);item.appendChild(next);}
   log.appendChild(item);log.scrollTop=log.scrollHeight;
   if(role!=='user'&&english)tutorChatLastEnglish=String(english);
 }
@@ -2623,6 +2644,7 @@ function tutorLookupWord(message){
 }
 function tutorSmartReply(raw,mode,level){
   const text=String(raw||'').trim();const lower=text.toLowerCase();
+  if(mode==='translation')return {en:'Translation Practice needs a sentence in Bangla or English. In Local Practice, only a small set of examples is available.',bn:'Local Practice-এ অনুবাদের ক্ষমতা সীমিত। Live AI না থাকলে সহজ অনুবাদ অনুশীলনের জন্য আগে থেকে দেওয়া Lesson ব্যবহার করো।'};
   if(mode==='correction'||/^(correct|check|fix)\s*(this sentence)?\s*:/i.test(text)){
     const target=text.replace(/^(correct|check|fix)\s*(this sentence)?\s*:\s*/i,'').trim()||text;const result=tutorGrammarCheck(target);
     if(result.found)return {en:'Suggested correction: '+result.corrected+'\n\nWhy: '+result.why,bn:'সংশোধনটি সাধারণ Grammar নিয়মের ভিত্তিতে দেওয়া হয়েছে। অন্য অর্থ বোঝাতে চাইলে বাক্যের প্রসঙ্গও জানাও।',correction:true};
@@ -2694,23 +2716,43 @@ async function checkAiBackend(showMessage=true){
   if(!aiPublicConfig.backendUrl||!aiPublicConfig.turnstileSiteKey){aiBackendConnected=false;setTutorLiveBadge(false);if(showMessage)setAiConnectionStatus('এখনো Live AI সংযুক্ত নয়। Local Practice ব্যবহার করা যাবে।');return false;}
   setAiConnectionStatus('Backend পরীক্ষা করা হচ্ছে…');
   try{const response=await fetch(aiPublicConfig.backendUrl+'/health',{method:'GET',cache:'no-store'});const data=await response.json().catch(()=>({}));
-    if(!response.ok||!data.ok||!data.configured){aiBackendConnected=false;setTutorLiveBadge(false);setAiConnectionStatus(data.message||'Backend প্রস্তুত নয়। অভিভাবক/পরিচালককে Worker Secrets ও Rate Limit binding পরীক্ষা করতে বলো।');return false;}
+    if(!response.ok||!data.ok||!data.configured||data.guardianSupervised!==true){aiBackendConnected=false;setTutorLiveBadge(false);setAiConnectionStatus(data.message||'Backend এখনো অভিভাবক-অনুমোদিত নিয়ন্ত্রিত Beta হিসেবে প্রস্তুত নয়।');return false;}
     aiBackendConnected=true;setTutorLiveBadge(true);setAiConnectionStatus('Live AI Backend সংযুক্ত। Turnstile যাচাই শেষ করে অনুশীলন শুরু করো।');return true;
   }catch(_){aiBackendConnected=false;setTutorLiveBadge(false);setAiConnectionStatus('Backend পাওয়া যায়নি। URL ও Worker deployment পরীক্ষা করো।');return false;}
 }
 function parseTutorLiveReply(raw){
   const text=String(raw||'').trim();
-  const match=text.match(/(?:বাংলা সহায়তা|বাংলা ব্যাখ্যা|Bangla support)\s*[:：]\s*([\s\S]*)$/i);
-  if(!match)return {en:text,bn:''};
-  const en=text.slice(0,match.index).replace(/^(?:English|EN)\s*[:：]\s*/i,'').trim();
-  return {en:en||'Let’s keep practising English.',bn:match[1].trim()};
+  const bnMatch=text.match(/(?:বাংলা সহায়তা|বাংলা ব্যাখ্যা|Bangla support)\s*[:：]\s*([\s\S]*)$/i);
+  const beforeBn=bnMatch?text.slice(0,bnMatch.index):text;
+  const practiceMatch=beforeBn.match(/(?:Practice|Next practice|পরের অনুশীলন)\s*[:：]\s*([\s\S]*)$/i);
+  const englishRaw=practiceMatch?beforeBn.slice(0,practiceMatch.index):beforeBn;
+  const en=englishRaw.replace(/^(?:English|EN)\s*[:：]\s*/i,'').trim();
+  return {en:en||'Let’s keep practising English.',bn:bnMatch?bnMatch[1].trim():'',practice:practiceMatch?practiceMatch[1].trim():''};
+}
+function tutorLooksLikePrivateInfo(value){
+  const text=String(value||'');
+  const email=/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/i;
+  const phone=/(?:\+?\d[\d\s().-]{7,}\d)/;
+  const credentials=/\b(password|passcode|otp|one[- ]time code|verification code)\s*[:=]/i;
+  const personalLabels=/\b(my (?:full )?name is|my (?:home )?address is|my phone number is|my email is|my school is)\b/i;
+  return email.test(text)||phone.test(text)||credentials.test(text)||personalLabels.test(text);
+}
+function tutorRequestStudySummary(){
+  if(!aiBackendConnected){tutorSetChatStatus('শেখার সারাংশ তৈরি করতে Live AI দরকার। এখন Local Practice Mode চলছে।');return;}
+  const historyCount=tutorChatHistory.length;
+  if(historyCount<2){tutorSetChatStatus('আগে Tutor-এর সঙ্গে অন্তত একটি প্রশ্নোত্তর করো, তারপর সারাংশ চাইতে পারবে।');return;}
+  tutorSetPrompt('Please give me a short study summary of this session: what I practised, one useful correction, and one next step. Do not repeat any personal details.');
+  sendTutorChatMessage();
 }
 async function sendTutorChatMessage(){
   const input=document.getElementById('tutor-chat-input');if(!input)return;
   const text=input.value.trim();if(!text)return;
   if(text.length>500){tutorSetChatStatus('বার্তাটি ৫০০ অক্ষরের মধ্যে রাখো।');return;}
+  if(tutorLooksLikePrivateInfo(text)){input.value='';tutorSetChatStatus('গোপনীয়তার জন্য বার্তাটি পাঠানো হয়নি। নিজের নাম, ফোন, ইমেইল, ঠিকানা, স্কুল, পাসওয়ার্ড বা OTP শেয়ার কোরো না।');return;}
   const mode=document.getElementById('tutor-chat-mode')?.value||'conversation';
   const level=document.getElementById('tutor-chat-level')?.value||'beginner';
+  const goal=document.getElementById('tutor-chat-goal')?.value||'balanced';
+  const duration=Number(document.getElementById('tutor-chat-duration')?.value||10);
   const t=saved.tutor;
   const liveToken=aiBackendConnected?getAiTurnstileToken():'';
   if(aiBackendConnected&&!liveToken){tutorSetChatStatus('বার্তা পাঠানোর আগে নিচের Turnstile মানব যাচাই সম্পন্ন করো।');return;}
@@ -2723,14 +2765,14 @@ async function sendTutorChatMessage(){
     const buttons=document.querySelectorAll('.tutor-chat-actions button');buttons.forEach(b=>b.disabled=true);
     tutorSetChatStatus('AI Tutor উত্তর তৈরি করছে…');
     try{
-      const response=await fetch(aiPublicConfig.backendUrl+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:tutorChatHistory,level,mode,turnstileToken:token})});
+      const response=await fetch(aiPublicConfig.backendUrl+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:tutorChatHistory,level,mode,goal,duration,turnstileToken:token})});
       const data=await response.json().catch(()=>({}));
       if(!response.ok||!data.ok)throw new Error(data.message||('Request failed ('+response.status+')'));
       const parsed=parseTutorLiveReply(data.reply||'');
-      tutorChatAppend('bot',parsed.en,parsed.bn);
+      tutorChatAppend('bot',parsed.en,parsed.bn,parsed.practice);
       tutorChatHistory.push({role:'assistant',content:String(data.reply||'')});tutorChatHistory=tutorChatHistory.slice(-8);
       if(/suggested correction|corrected sentence/i.test(data.reply||''))t.chatCorrections++;
-      tutorSetChatStatus('Live AI Tutor উত্তর দিয়েছে। কথোপকথন পেজ বন্ধ হলে মুছে যাবে।');
+      tutorSetChatStatus('Live AI Tutor উত্তর দিয়েছে। লক্ষ্য ও লেভেল অনুযায়ী অনুশীলন চলছে; চ্যাট শুধু এই সেশনে থাকে।');
     }catch(error){
       const message=String(error.message||'');
       tutorChatAppend('bot','The live tutor could not respond just now. Please try again later.','Live AI থেকে উত্তর পাওয়া যায়নি। সংযোগ, যাচাই বা API সীমা পরীক্ষা করো।');
@@ -2742,7 +2784,7 @@ async function sendTutorChatMessage(){
   const reply=tutorSmartReply(text,mode,level);
   tutorChatAppend('bot',reply.en,reply.bn);
   if(reply.correction)t.chatCorrections++;
-  save();tutorSetChatStatus('Local Practice Mode: সীমিত নিয়মভিত্তিক উত্তর। Live AI সংযুক্ত নয়।');
+  save();tutorSetChatStatus('Local Practice: সীমিত নিয়মভিত্তিক উত্তর। লক্ষ্য: '+({confidence:'কথার আত্মবিশ্বাস',accuracy:'Grammar নির্ভুলতা',vocabulary:'শব্দভান্ডার',writing:'Writing',balanced:'সব দক্ষতা'}[goal]||'সব দক্ষতা')+' · '+duration+' মিনিটের পরিকল্পনা। Live AI সংযুক্ত নয়।');
 }
 function tutorSetChatStatus(message){const el=document.getElementById('tutor-chat-status');if(el)el.textContent=message;}
 function tutorClearChat(){
@@ -2788,7 +2830,8 @@ function answerQuiz(i){if(quizAnswered)return;quizAnswered=true;const q=quizQues
 function nextQuestion(){if(!quizAnswered)return;quizIndex++;renderQuiz();}
 function checkWriting(){const val=document.getElementById('writing-answer').value.trim().toLowerCase().replace(/[.!?]/g,'').replace(/\s+/g,' ');const feedback=document.getElementById('writing-feedback');if(val==='i am learning english'){feedback.textContent='সঠিক হয়েছে! “I am learning English.” — খুব ভালো!';feedback.className='feedback success-text';}else{feedback.textContent='আবার চেষ্টা করো। সঠিক বাক্য: I am learning English. “I am + verb-ing” মনে রাখো।';feedback.className='feedback error-text';}}
 function updateProgress(){const n=saved.learned.length;const label=document.getElementById('word-progress-label');if(label)label.textContent=`${bnNum(n)} / ${bnNum(words.length)}`;const bar=document.getElementById('word-progress');if(bar)bar.style.width=(n/words.length*100)+'%';const best=document.getElementById('best-score');if(best)best.textContent=saved.best===null?'এখনো শুরু হয়নি':`${bnNum(saved.best)} / ${bnNum(saved.bestOutOf||quizQuestions.length)}${saved.bestOutOf===5?' (আগের কুইজ)':''}`;const lesson=document.getElementById('lesson-status');if(lesson)lesson.textContent=saved.lessonDone?'সম্পন্ন ✓':'অসম্পূর্ণ';const gd=Array.isArray(saved.grammarDone)?saved.grammarDone.length:0;const gl=document.getElementById('grammar-progress-label');if(gl)gl.textContent=`${bnNum(gd)} / ${bnNum(grammarTopics.length)}`;const gb=document.getElementById('grammar-progress');if(gb)gb.style.width=(gd/grammarTopics.length*100)+'%';const td=Array.isArray(saved.tensesDone)?saved.tensesDone.length:0;const tl=document.getElementById('tense-progress-label');if(tl)tl.textContent=`${bnNum(td)} / ${bnNum(tenseTopics.length)}`;const tb=document.getElementById('tense-progress');if(tb)tb.style.width=(td/tenseTopics.length*100)+'%';renderDailySummaryOnly();renderListeningDashboard();renderTutorDashboard();}
-renderSentences();updateProgress();renderDailyPage();initAiTutorV1();
+renderSentences();updateProgress();renderDailyPage();window.addEventListener('pagehide',()=>{tutorChatHistory=[];tutorChatLastEnglish='';});
+initAiTutorV1();
 if('serviceWorker'in navigator&&location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(err=>console.log('Offline setup skipped',err)));}
 </script>
 </body>
